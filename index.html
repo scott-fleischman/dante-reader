@@ -116,6 +116,35 @@
     color: var(--accent);
   }
 
+  .voice-select {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5'%3E%3Cpath d='M0 0l4 5 4-5z' fill='%239a8b75'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    padding-right: 22px;
+  }
+
+  .voice-select:hover, .voice-select:focus {
+    border-color: var(--accent);
+    color: var(--accent);
+    outline: none;
+  }
+
+  .voice-select option {
+    background: var(--surface);
+    color: var(--text);
+  }
+
   .progress-bar {
     position: absolute;
     bottom: 0;
@@ -382,6 +411,7 @@
 <div class="header">
   <div class="title">Inferno <span>Canto I</span></div>
   <div class="controls">
+    <select class="voice-select" id="voiceSelect"></select>
     <button class="speed-btn" data-speed="0.8">0.8x</button>
     <button class="speed-btn active" data-speed="1">1x</button>
     <button class="play-btn" id="playBtn" title="Play / Pause">
@@ -452,6 +482,34 @@ const STANZAS = [
   {"stanza":46,"italian":["Allor si mosse, e io li tenni dietro."],"english":["Then he moved, and I him followed behind."],"wordMap":[{"it":"Allor","en":"Then"},{"it":"si","en":"he"},{"it":"mosse","en":"moved"},{"it":"e","en":"and"},{"it":"io","en":"I"},{"it":"li","en":"him"},{"it":"tenni","en":"followed"},{"it":"dietro","en":"behind"}]}
 ];
 
+// Voice definitions — each entry is a pre-generated ElevenLabs voice+speed combination
+// To add a new voice: generate audio with ElevenLabs, create timing JSON, add entry here
+const VOICES = [
+  {
+    id: 'female-1x',
+    name: 'Female (1×)',
+    audioFile: 'canto1.mp3',
+    timingFile: 'canto1_timing.json',
+    elevenLabs: {
+      voiceId: null,       // ElevenLabs voice ID used to generate
+      model: 'eleven_multilingual_v2',
+      speed: 1.0           // speed parameter sent to ElevenLabs API
+    }
+  },
+  // Example: uncomment and provide files to add a male slow voice
+  // {
+  //   id: 'male-slow',
+  //   name: 'Male (slow)',
+  //   audioFile: 'canto1_male_slow.mp3',
+  //   timingFile: 'canto1_male_slow_timing.json',
+  //   elevenLabs: {
+  //     voiceId: null,
+  //     model: 'eleven_multilingual_v2',
+  //     speed: 0.7
+  //   }
+  // },
+];
+
 // State
 let isPlaying = false;
 let currentStanza = 0;
@@ -462,12 +520,13 @@ let wordElements = { it: [], en: [] }; // [stanza][wordIndex]
 let itToEnMaps = []; // [stanza] -> { itWordIdx: [enWordIdx, ...] }
 let enToItMap = [];  // [stanza] -> { enWordIdx: itWordIdx }
 
-// Audio state for ElevenLabs (Web Audio API for precise timing)
+// Voice state
+let currentVoiceId = VOICES[0].id;
+const voiceCache = {}; // id -> { rawData, buffer, timings }
+
+// Audio playback state (Web Audio API)
 let audioCtx = null;
-let audioBuffer = null; // decoded AudioBuffer
 let audioSource = null; // current BufferSourceNode
-let audioTimings = null; // word-level timing data
-let audioLoaded = false;
 let trackingGen = 0; // generation counter to cancel stale tracking loops
 let audioStartCtxTime = 0; // audioCtx.currentTime when playback started
 let audioStartOffset = 0; // offset into buffer when playback started
@@ -480,32 +539,41 @@ const progressBar = document.getElementById('progressBar');
 const tooltip = document.getElementById('tooltip');
 const mainScroll = document.getElementById('mainScroll');
 
+function getVoice() {
+  return voiceCache[currentVoiceId] || {};
+}
+
 function getAudioTime() {
   if (audioPausedAt >= 0) return audioPausedAt;
   if (!audioCtx || !audioSource) return 0;
   return audioStartOffset + (audioCtx.currentTime - audioStartCtxTime) * speechRate;
 }
 
-// Try to load ElevenLabs audio via Web Audio API
-let audioRawData = null; // raw ArrayBuffer before decoding
+// Load audio + timing data for a voice (fetches files, doesn't decode yet)
+function loadVoice(voice) {
+  if (voiceCache[voice.id]) return; // already loading/loaded
+  const entry = { rawData: null, buffer: null, timings: null };
+  voiceCache[voice.id] = entry;
 
-function initAudio() {
-  fetch('canto1.mp3')
+  fetch(voice.audioFile)
     .then(r => r.ok ? r.arrayBuffer() : Promise.reject())
-    .then(data => { audioRawData = data; })
-    .catch(() => { audioRawData = null; });
+    .then(data => { entry.rawData = data; })
+    .catch(() => {});
 
-  fetch('canto1_timing.json')
+  fetch(voice.timingFile)
     .then(r => r.ok ? r.json() : Promise.reject())
-    .then(data => { audioTimings = data; })
-    .catch(() => { audioTimings = null; });
+    .then(data => { entry.timings = data; })
+    .catch(() => {});
 }
-initAudio();
+
+// Preload all voices
+VOICES.forEach(v => loadVoice(v));
 
 // Create AudioContext and decode on first user interaction (required for iOS)
-async function ensureAudioContext() {
-  if (audioBuffer) return true;
-  if (!audioRawData) return false;
+async function ensureAudioReady() {
+  const v = getVoice();
+  if (v.buffer) return true;
+  if (!v.rawData) return false;
   try {
     if (!audioCtx) {
       audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -513,13 +581,42 @@ async function ensureAudioContext() {
     if (audioCtx.state === 'suspended') {
       await audioCtx.resume();
     }
-    audioBuffer = await audioCtx.decodeAudioData(audioRawData.slice(0));
-    audioLoaded = true;
+    v.buffer = await audioCtx.decodeAudioData(v.rawData.slice(0));
     return true;
   } catch(e) {
-    audioLoaded = false;
     return false;
   }
+}
+
+// Build voice selector dropdown from VOICES config
+function buildVoiceSelector() {
+  const select = document.getElementById('voiceSelect');
+  select.innerHTML = '';
+  VOICES.forEach(v => {
+    const opt = document.createElement('option');
+    opt.value = v.id;
+    opt.textContent = v.name;
+    if (v.id === currentVoiceId) opt.selected = true;
+    select.appendChild(opt);
+  });
+}
+
+async function switchVoice(voiceId) {
+  if (voiceId === currentVoiceId) return;
+  // Stop any current playback
+  if (isPlaying) {
+    isPlaying = false;
+    ++trackingGen;
+    window.speechSynthesis.cancel();
+    if (audioSource) {
+      try { audioSource.stop(); } catch(e) {}
+      audioSource = null;
+    }
+    clearSpeakingHighlights();
+    updatePlayButton();
+  }
+  audioPausedAt = -1;
+  currentVoiceId = voiceId;
 }
 
 // Build DOM
@@ -859,8 +956,9 @@ async function startAudioFrom(offset) {
   // Resume AudioContext if suspended (iOS / browser autoplay policy)
   if (audioCtx.state === 'suspended') await audioCtx.resume();
 
+  const v = getVoice();
   audioSource = audioCtx.createBufferSource();
-  audioSource.buffer = audioBuffer;
+  audioSource.buffer = v.buffer;
   audioSource.playbackRate.value = speechRate;
   audioSource.connect(audioCtx.destination);
   audioStartCtxTime = audioCtx.currentTime;
@@ -885,8 +983,9 @@ async function togglePlay() {
     pause();
   } else {
     // Ensure audio context is ready (creates on first tap for iOS)
-    const audioReady = await ensureAudioContext();
-    if (audioReady && audioTimings) {
+    const audioReady = await ensureAudioReady();
+    const v = getVoice();
+    if (audioReady && v.timings) {
       if (audioPausedAt >= 0) {
         // Resume from where we paused
         isPlaying = true;
@@ -933,8 +1032,9 @@ async function startFromStanza(si) {
   clearSpeakingHighlights();
   currentStanza = si;
   currentWordIndex = -1;
-  const audioReady = await ensureAudioContext();
-  if (audioReady && audioTimings) {
+  const audioReady = await ensureAudioReady();
+  const v = getVoice();
+  if (audioReady && v.timings) {
     playWithAudio(si);
   } else {
     play(si);
@@ -950,7 +1050,8 @@ async function playWithAudio(fromStanza) {
   highlightActiveStanza(fromStanza);
 
   // Seek to the stanza start time
-  const stanzaStart = audioTimings.stanzas[fromStanza];
+  const v = getVoice();
+  const stanzaStart = v.timings.stanzas[fromStanza];
   const offset = stanzaStart ? stanzaStart.startTime : 0;
   await startAudioFrom(offset);
 
@@ -960,10 +1061,11 @@ async function playWithAudio(fromStanza) {
 }
 
 function trackAudioWords(gen) {
-  if (!isPlaying || !audioTimings || gen !== trackingGen) return;
+  const v = getVoice();
+  if (!isPlaying || !v.timings || gen !== trackingGen) return;
 
   const currentTime = getAudioTime();
-  const words = audioTimings.words;
+  const words = v.timings.words;
 
   // Find current word
   clearSpeakingHighlights();
@@ -1146,7 +1248,13 @@ document.querySelectorAll('.speed-btn').forEach(btn => {
   });
 });
 
+// Voice selector
+document.getElementById('voiceSelect').addEventListener('change', (e) => {
+  switchVoice(e.target.value);
+});
+
 // Init
+buildVoiceSelector();
 buildStanzas();
 
 // Preload voices
