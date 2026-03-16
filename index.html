@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dante's Inferno — Canto I</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600&display=swap');
+
+  :root {
+    --bg: #1a1410;
+    --surface: #231e18;
+    --surface-hover: #2d261e;
+    --text: #e8dcc8;
+    --text-muted: #9a8b75;
+    --accent: #c4956a;
+    --accent-glow: #e8b888;
+    --highlight-it: rgba(196, 149, 106, 0.35);
+    --highlight-en: rgba(196, 149, 106, 0.25);
+    --highlight-active: rgba(232, 184, 136, 0.5);
+    --border: #3a3228;
+    --scrollbar: #4a3e32;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Cormorant Garamond', serif;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    z-index: 10;
+    position: relative;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+  }
+
+  .title span {
+    color: var(--text-muted);
+    font-weight: 400;
+    font-size: 1.1rem;
+    margin-left: 12px;
+  }
+
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .play-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    background: transparent;
+    color: var(--accent);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  .play-btn:hover {
+    background: var(--accent);
+    color: var(--bg);
+  }
+
+  .play-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+  }
+
+  .play-btn.playing {
+    border-color: var(--accent-glow);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(196, 149, 106, 0.3); }
+    50% { box-shadow: 0 0 12px 4px rgba(196, 149, 106, 0.15); }
+  }
+
+  .speed-btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .speed-btn:hover, .speed-btn.active {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s linear;
+  }
+
+  .container {
+    display: flex;
+    height: calc(100vh - 81px);
+  }
+
+  .column {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .column-header {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    padding: 12px 32px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    position: sticky;
+    top: 0;
+    z-index: 5;
+  }
+
+  .divider {
+    width: 1px;
+    background: var(--border);
+  }
+
+  .scroll-viewport {
+    height: calc(100% - 37px);
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    padding: 0 0 200px 0;
+  }
+
+  .scroll-viewport::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scroll-viewport::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scroll-viewport::-webkit-scrollbar-thumb {
+    background: var(--scrollbar);
+    border-radius: 3px;
+  }
+
+  .stanza {
+    padding: 20px 32px;
+    position: relative;
+    border-bottom: 1px solid rgba(58, 50, 40, 0.5);
+    transition: background 0.3s;
+  }
+
+  .stanza.active {
+    background: rgba(196, 149, 106, 0.05);
+  }
+
+  .stanza-number {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    opacity: 0.5;
+    position: absolute;
+    left: 10px;
+    top: 22px;
+  }
+
+  .stanza-play {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.2s;
+  }
+
+  .stanza:hover .stanza-play {
+    opacity: 0.4;
+  }
+
+  .stanza-play:hover {
+    opacity: 1 !important;
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .stanza-play svg {
+    width: 10px;
+    height: 10px;
+    fill: currentColor;
+  }
+
+  .line {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    padding-left: 20px;
+  }
+
+  .italian .line {
+    font-style: italic;
+  }
+
+  .word {
+    cursor: pointer;
+    padding: 1px 2px;
+    border-radius: 3px;
+    transition: background 0.15s, color 0.15s;
+    position: relative;
+  }
+
+  .word:hover {
+    background: var(--highlight-it);
+  }
+
+  .word.highlighted {
+    background: var(--highlight-it);
+    color: var(--accent-glow);
+  }
+
+  .word.speaking {
+    background: var(--highlight-active);
+    color: var(--accent-glow);
+    font-weight: 600;
+  }
+
+  .word.pair-highlight {
+    background: var(--highlight-en);
+    color: var(--accent);
+  }
+
+  .tooltip {
+    position: fixed;
+    background: var(--surface);
+    border: 1px solid var(--accent);
+    color: var(--text);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.15s;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    white-space: nowrap;
+  }
+
+  .tooltip .it-text {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .tooltip .en-text {
+    color: var(--text-muted);
+    margin-left: 8px;
+  }
+
+  .tooltip.visible {
+    opacity: 1;
+  }
+
+  .punct {
+    cursor: default;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title">Inferno <span>Canto I</span></div>
+  <div class="controls">
+    <button class="speed-btn" data-speed="0.8">0.8x</button>
+    <button class="speed-btn active" data-speed="1">1x</button>
+    <button class="speed-btn" data-speed="1.2">1.2x</button>
+    <button class="play-btn" id="playBtn" title="Play / Pause">
+      <svg class="play-icon" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>
+      <svg class="pause-icon" viewBox="0 0 24 24" style="display:none"><rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/></svg>
+    </button>
+  </div>
+  <div class="progress-bar" id="progressBar"></div>
+</div>
+
+<div class="container">
+  <div class="column italian">
+    <div class="column-header">Italiano</div>
+    <div class="scroll-viewport" id="italianScroll"></div>
+  </div>
+  <div class="divider"></div>
+  <div class="column english">
+    <div class="column-header">English</div>
+    <div class="scroll-viewport" id="englishScroll"></div>
+  </div>
+</div>
+
+<div class="tooltip" id="tooltip"></div>
+
+<script>
+const STANZAS = [
+  {
+    "stanza": 1,
+    "italian": ["Nel mezzo del cammin di nostra vita", "mi ritrovai per una selva oscura,", "ch\u00e9 la diritta via era smarrita."],
+    "english": ["In the middle of the journey of our life", "I found myself in a dark forest,", "for the straight way was lost."],
+    "wordMap": [{"it":"Nel","en":"In-the"},{"it":"mezzo","en":"middle"},{"it":"del","en":"of-the"},{"it":"cammin","en":"journey"},{"it":"di","en":"of"},{"it":"nostra","en":"our"},{"it":"vita","en":"life"},{"it":"mi","en":"myself"},{"it":"ritrovai","en":"found-again"},{"it":"per","en":"in"},{"it":"una","en":"a"},{"it":"selva","en":"forest"},{"it":"oscura","en":"dark"},{"it":"ch\u00e9","en":"for"},{"it":"la","en":"the"},{"it":"diritta","en":"straight"},{"it":"via","en":"way"},{"it":"era","en":"was"},{"it":"smarrita","en":"lost"}]
+  },
+  {
+    "stanza": 2,
+    "italian": ["Ahi quanto a dir qual era \u00e8 cosa dura!", "esta selva selvaggia e aspra e forte", "che nel pensier rinova la paura!"],
+    "english": ["Ah how hard a thing it is to tell!", "This savage forest, harsh and strong,", "that in thought renews the fear!"],
+    "wordMap": [{"it":"Ahi","en":"Ah"},{"it":"quanto","en":"how"},{"it":"a","en":"to"},{"it":"dir","en":"tell"},{"it":"qual","en":"what"},{"it":"era","en":"it-was"},{"it":"\u00e8","en":"is"},{"it":"cosa","en":"thing"},{"it":"dura","en":"hard"},{"it":"esta","en":"This"},{"it":"selva","en":"forest"},{"it":"selvaggia","en":"savage"},{"it":"e","en":"and"},{"it":"aspra","en":"harsh"},{"it":"e","en":"and"},{"it":"forte","en":"strong"},{"it":"che","en":"that"},{"it":"nel","en":"in"},{"it":"pensier","en":"thought"},{"it":"rinova","en":"renews"},{"it":"la","en":"the"},{"it":"paura","en":"fear"}]
+  },
+  {
+    "stanza": 3,
+    "italian": ["Tant' \u00e8 amara che poco \u00e8 pi\u00f9 morte;", "ma per trattar del ben ch'i' vi trovai,", "dir\u00f2 de l'altre cose ch'i' v'ho scorte."],
+    "english": ["So bitter it is that death is scarcely more;", "but to treat of the good that I found there,", "I will tell of the other things I saw."],
+    "wordMap": [{"it":"Tant'","en":"So"},{"it":"\u00e8","en":"is"},{"it":"amara","en":"bitter"},{"it":"che","en":"that"},{"it":"poco","en":"scarcely"},{"it":"\u00e8","en":"is"},{"it":"pi\u00f9","en":"more"},{"it":"morte","en":"death"},{"it":"ma","en":"but"},{"it":"per","en":"to"},{"it":"trattar","en":"treat"},{"it":"del","en":"of-the"},{"it":"ben","en":"good"},{"it":"ch'i'","en":"that-I"},{"it":"vi","en":"there"},{"it":"trovai","en":"found"},{"it":"dir\u00f2","en":"I-will-tell"},{"it":"de","en":"of"},{"it":"l'altre","en":"the-other"},{"it":"cose","en":"things"},{"it":"ch'i'","en":"that-I"},{"it":"v'ho","en":"have"},{"it":"scorte","en":"seen"}]
+  },
+  {
+    "stanza": 4,
+    "italian": ["Io non so ben ridir com' i' v'intrai,", "tant' era pien di sonno a quel punto", "che la verace via abbandonai."],
+    "english": ["I cannot rightly tell how I entered there,", "so full of sleep was I at that point", "that I abandoned the true way."],
+    "wordMap": [{"it":"Io","en":"I"},{"it":"non","en":"cannot"},{"it":"so","en":"rightly"},{"it":"ben","en":"well"},{"it":"ridir","en":"tell"},{"it":"com'","en":"how"},{"it":"i'","en":"I"},{"it":"v'intrai","en":"entered"},{"it":"tant'","en":"so"},{"it":"era","en":"was"},{"it":"pien","en":"full"},{"it":"di","en":"of"},{"it":"sonno","en":"sleep"},{"it":"a","en":"at"},{"it":"quel","en":"that"},{"it":"punto","en":"point"},{"it":"che","en":"that"},{"it":"la","en":"the"},{"it":"verace","en":"true"},{"it":"via","en":"way"},{"it":"abbandonai","en":"abandoned"}]
+  },
+  {
+    "stanza": 5,
+    "italian": ["Ma poi ch'i' fui al pi\u00e8 d'un colle giunto,", "l\u00e0 dove terminava quella valle", "che m'avea di paura il cor compunto,"],
+    "english": ["But when I reached the foot of a hill,", "there where that valley ended", "which had pierced my heart with fear,"],
+    "wordMap": [{"it":"Ma","en":"But"},{"it":"poi","en":"when"},{"it":"ch'i'","en":"I"},{"it":"fui","en":"reached"},{"it":"al","en":"the"},{"it":"pi\u00e8","en":"foot"},{"it":"d'un","en":"of-a"},{"it":"colle","en":"hill"},{"it":"giunto","en":"arrived"},{"it":"l\u00e0","en":"there"},{"it":"dove","en":"where"},{"it":"terminava","en":"ended"},{"it":"quella","en":"that"},{"it":"valle","en":"valley"},{"it":"che","en":"which"},{"it":"m'avea","en":"had"},{"it":"di","en":"with"},{"it":"paura","en":"fear"},{"it":"il","en":"my"},{"it":"cor","en":"heart"},{"it":"compunto","en":"pierced"}]
+  },
+  {
+    "stanza": 6,
+    "italian": ["guardai in alto e vidi le sue spalle", "vestite gi\u00e0 de' raggi del pianeta", "che mena dritto altrui per ogne calle."],
+    "english": ["I looked up and saw its shoulders", "already clothed with the rays of that planet", "which leads others straight on every path."],
+    "wordMap": [{"it":"guardai","en":"I-looked"},{"it":"in","en":"up"},{"it":"alto","en":"high"},{"it":"e","en":"and"},{"it":"vidi","en":"saw"},{"it":"le","en":"its"},{"it":"sue","en":"its"},{"it":"spalle","en":"shoulders"},{"it":"vestite","en":"clothed"},{"it":"gi\u00e0","en":"already"},{"it":"de'","en":"with-the"},{"it":"raggi","en":"rays"},{"it":"del","en":"of-the"},{"it":"pianeta","en":"planet"},{"it":"che","en":"which"},{"it":"mena","en":"leads"},{"it":"dritto","en":"straight"},{"it":"altrui","en":"others"},{"it":"per","en":"on"},{"it":"ogne","en":"every"},{"it":"calle","en":"path"}]
+  },
+  {
+    "stanza": 7,
+    "italian": ["Allor fu la paura un poco queta,", "che nel lago del cor m'era durata", "la notte ch'i' passai con tanta pi\u00e8ta."],
+    "english": ["Then was the fear a little calmed,", "which in the lake of my heart had lasted", "the night I passed with such anguish."],
+    "wordMap": [{"it":"Allor","en":"Then"},{"it":"fu","en":"was"},{"it":"la","en":"the"},{"it":"paura","en":"fear"},{"it":"un","en":"a"},{"it":"poco","en":"little"},{"it":"queta","en":"calmed"},{"it":"che","en":"which"},{"it":"nel","en":"in-the"},{"it":"lago","en":"lake"},{"it":"del","en":"of"},{"it":"cor","en":"heart"},{"it":"m'era","en":"had"},{"it":"durata","en":"lasted"},{"it":"la","en":"the"},{"it":"notte","en":"night"},{"it":"ch'i'","en":"I"},{"it":"passai","en":"passed"},{"it":"con","en":"with"},{"it":"tanta","en":"such"},{"it":"pi\u00e8ta","en":"anguish"}]
+  },
+  {
+    "stanza": 8,
+    "italian": ["E come quei che con lena affannata,", "uscito fuor del pelago a la riva,", "si volge a l'acqua perigliosa e guata,"],
+    "english": ["And as one who with laboring breath,", "having escaped the deep sea for the shore,", "turns to the perilous water and gazes,"],
+    "wordMap": [{"it":"E","en":"And"},{"it":"come","en":"as"},{"it":"quei","en":"one"},{"it":"che","en":"who"},{"it":"con","en":"with"},{"it":"lena","en":"breath"},{"it":"affannata","en":"laboring"},{"it":"uscito","en":"escaped"},{"it":"fuor","en":"from"},{"it":"del","en":"the"},{"it":"pelago","en":"deep-sea"},{"it":"a","en":"for"},{"it":"la","en":"the"},{"it":"riva","en":"shore"},{"it":"si","en":"turns"},{"it":"volge","en":"toward"},{"it":"a","en":"the"},{"it":"l'acqua","en":"water"},{"it":"perigliosa","en":"perilous"},{"it":"e","en":"and"},{"it":"guata","en":"gazes"}]
+  },
+  {
+    "stanza": 9,
+    "italian": ["cos\u00ec l'animo mio, ch'ancor fuggiva,", "si volse a retro a rimirar lo passo", "che non lasci\u00f2 gi\u00e0 mai persona viva."],
+    "english": ["so my spirit, which still was fleeing,", "turned back to gaze upon the pass", "that never yet let any person leave alive."],
+    "wordMap": [{"it":"cos\u00ec","en":"so"},{"it":"l'animo","en":"spirit"},{"it":"mio","en":"my"},{"it":"ch'ancor","en":"still"},{"it":"fuggiva","en":"fleeing"},{"it":"si","en":"turned"},{"it":"volse","en":"back"},{"it":"a retro","en":"to"},{"it":"a","en":"gaze-upon"},{"it":"rimirar","en":"the"},{"it":"lo","en":"pass"},{"it":"passo","en":"that"},{"it":"che","en":"never"},{"it":"non","en":"yet"},{"it":"lasci\u00f2","en":"let"},{"it":"gi\u00e0","en":"any"},{"it":"mai","en":"person"},{"it":"persona","en":"leave"},{"it":"viva","en":"alive"}]
+  },
+  {
+    "stanza": 10,
+    "italian": ["Poi ch'\u00e8i posato un poco il corpo lasso,", "ripresi via per la piaggia diserta,", "s\u00ec che 'l pi\u00e8 fermo sempre era 'l pi\u00f9 basso."],
+    "english": ["After I had rested my weary body a little,", "I resumed my way along the deserted slope,", "so that the firm foot was always the lower."],
+    "wordMap": [{"it":"Poi","en":"After"},{"it":"ch'\u00e8i","en":"I-had"},{"it":"posato","en":"rested"},{"it":"un","en":"a"},{"it":"poco","en":"little"},{"it":"il","en":"my"},{"it":"corpo","en":"body"},{"it":"lasso","en":"weary"},{"it":"ripresi","en":"resumed"},{"it":"via","en":"way"},{"it":"per","en":"along"},{"it":"la","en":"the"},{"it":"piaggia","en":"slope"},{"it":"diserta","en":"deserted"},{"it":"s\u00ec","en":"so"},{"it":"che","en":"that"},{"it":"'l","en":"the"},{"it":"pi\u00e8","en":"foot"},{"it":"fermo","en":"firm"},{"it":"sempre","en":"always"},{"it":"era","en":"was"},{"it":"'l","en":"the"},{"it":"pi\u00f9","en":"more"},{"it":"basso","en":"low"}]
+  },
+  {
+    "stanza": 11,
+    "italian": ["Ed ecco, quasi al cominciar de l'erta,", "una lonza leggiera e presta molto,", "che di pel macolato era coverta;"],
+    "english": ["And behold, near the beginning of the steep,", "a leopard, light and very nimble,", "covered with a spotted hide;"],
+    "wordMap": [{"it":"Ed","en":"And"},{"it":"ecco","en":"behold"},{"it":"quasi","en":"near"},{"it":"al","en":"the"},{"it":"cominciar","en":"beginning"},{"it":"de","en":"of"},{"it":"l'erta","en":"the-steep"},{"it":"una","en":"a"},{"it":"lonza","en":"leopard"},{"it":"leggiera","en":"light"},{"it":"e","en":"and"},{"it":"presta","en":"nimble"},{"it":"molto","en":"very"},{"it":"che","en":"covered"},{"it":"di","en":"with"},{"it":"pel","en":"hide"},{"it":"macolato","en":"spotted"},{"it":"era","en":"was"},{"it":"coverta","en":"covered"}]
+  },
+  {
+    "stanza": 12,
+    "italian": ["e non mi si partia dinanzi al volto,", "anzi 'mpediva tanto il mio cammino,", "ch'i' fui per ritornar pi\u00f9 volte v\u00f2lto."],
+    "english": ["and did not move from before my face,", "but rather so blocked my way,", "that many times I turned to go back."],
+    "wordMap": [{"it":"e","en":"and"},{"it":"non","en":"not"},{"it":"mi","en":"from-me"},{"it":"si","en":"did"},{"it":"partia","en":"move"},{"it":"dinanzi","en":"before"},{"it":"al","en":"my"},{"it":"volto","en":"face"},{"it":"anzi","en":"but"},{"it":"'mpediva","en":"blocked"},{"it":"tanto","en":"so"},{"it":"il","en":"my"},{"it":"mio","en":"way"},{"it":"cammino","en":"that"},{"it":"ch'i'","en":"I"},{"it":"fui","en":"many"},{"it":"per","en":"times"},{"it":"ritornar","en":"turned"},{"it":"pi\u00f9","en":"to-go"},{"it":"volte","en":"back"},{"it":"v\u00f2lto","en":"turned"}]
+  },
+  {
+    "stanza": 13,
+    "italian": ["Temp' era dal principio del mattino,", "e 'l sol montava 'n su con quelle stelle", "ch'eran con lui quando l'amor divino"],
+    "english": ["It was the beginning of the morning,", "and the sun was rising with those stars", "that were with it when divine love"],
+    "wordMap": [{"it":"Temp'","en":"It-was"},{"it":"era","en":"the"},{"it":"dal","en":"beginning"},{"it":"principio","en":"of-the"},{"it":"del","en":"morning"},{"it":"mattino","en":"and"},{"it":"e","en":"the"},{"it":"'l","en":"sun"},{"it":"sol","en":"was-rising"},{"it":"montava","en":"with"},{"it":"'n","en":"those"},{"it":"su","en":"stars"},{"it":"con","en":"that"},{"it":"quelle","en":"were"},{"it":"stelle","en":"with"},{"it":"ch'eran","en":"it"},{"it":"con","en":"when"},{"it":"lui","en":"divine"},{"it":"quando","en":"love"},{"it":"l'amor","en":"divine"},{"it":"divino","en":"love"}]
+  },
+  {
+    "stanza": 14,
+    "italian": ["mosse di prima quelle cose belle;", "s\u00ec ch'a bene sperar m'era cagione", "di quella fiera a la gaetta pelle"],
+    "english": ["first set those beautiful things in motion;", "so that the hour and the sweet season", "gave me cause for hoping well"],
+    "wordMap": [{"it":"mosse","en":"set"},{"it":"di","en":"in"},{"it":"prima","en":"first"},{"it":"quelle","en":"those"},{"it":"cose","en":"things"},{"it":"belle","en":"beautiful"},{"it":"s\u00ec","en":"so"},{"it":"ch'a","en":"that"},{"it":"bene","en":"well"},{"it":"sperar","en":"hoping"},{"it":"m'era","en":"gave-me"},{"it":"cagione","en":"cause"},{"it":"di","en":"of"},{"it":"quella","en":"that"},{"it":"fiera","en":"beast"},{"it":"a","en":"with"},{"it":"la","en":"the"},{"it":"gaetta","en":"gay"},{"it":"pelle","en":"skin"}]
+  },
+  {
+    "stanza": 15,
+    "italian": ["l'ora del tempo e la dolce stagione;", "ma non s\u00ec che paura non mi desse", "la vista che m'apparve d'un leone."],
+    "english": ["of that beast with the pretty skin;", "but not so much that I did not fear", "the sight of a lion that appeared."],
+    "wordMap": [{"it":"l'ora","en":"the-hour"},{"it":"del","en":"of"},{"it":"tempo","en":"time"},{"it":"e","en":"and"},{"it":"la","en":"the"},{"it":"dolce","en":"sweet"},{"it":"stagione","en":"season"},{"it":"ma","en":"but"},{"it":"non","en":"not"},{"it":"s\u00ec","en":"so"},{"it":"che","en":"that"},{"it":"paura","en":"fear"},{"it":"non","en":"not"},{"it":"mi","en":"me"},{"it":"desse","en":"gave"},{"it":"la","en":"the"},{"it":"vista","en":"sight"},{"it":"che","en":"that"},{"it":"m'apparve","en":"appeared"},{"it":"d'un","en":"of-a"},{"it":"leone","en":"lion"}]
+  },
+  {
+    "stanza": 16,
+    "italian": ["Questi parea che contra me venisse", "con la test' alta e con rabbiosa fame,", "s\u00ec che parea che l'aere ne tremesse."],
+    "english": ["He seemed to be coming against me", "with head held high and ravenous hunger,", "so that it seemed the air trembled."],
+    "wordMap": [{"it":"Questi","en":"He"},{"it":"parea","en":"seemed"},{"it":"che","en":"to-be"},{"it":"contra","en":"against"},{"it":"me","en":"me"},{"it":"venisse","en":"coming"},{"it":"con","en":"with"},{"it":"la","en":"head"},{"it":"test'","en":"held"},{"it":"alta","en":"high"},{"it":"e","en":"and"},{"it":"con","en":"with"},{"it":"rabbiosa","en":"ravenous"},{"it":"fame","en":"hunger"},{"it":"s\u00ec","en":"so"},{"it":"che","en":"that"},{"it":"parea","en":"seemed"},{"it":"che","en":"the"},{"it":"l'aere","en":"air"},{"it":"ne","en":"trembled"},{"it":"tremesse","en":"trembled"}]
+  },
+  {
+    "stanza": 17,
+    "italian": ["Ed una lupa, che di tutte brame", "sembiava carca ne la sua magrezza,", "e molte genti f\u00e9' gi\u00e0 viver grame,"],
+    "english": ["And a she-wolf, laden with all cravings", "in her gauntness, she seemed", "and had made many people live in wretchedness,"],
+    "wordMap": [{"it":"Ed","en":"And"},{"it":"una","en":"a"},{"it":"lupa","en":"she-wolf"},{"it":"che","en":"laden"},{"it":"di","en":"with"},{"it":"tutte","en":"all"},{"it":"brame","en":"cravings"},{"it":"sembiava","en":"seemed"},{"it":"carca","en":"laden"},{"it":"ne","en":"in"},{"it":"la","en":"her"},{"it":"sua","en":"gauntness"},{"it":"magrezza","en":"she-seemed"},{"it":"e","en":"and"},{"it":"molte","en":"many"},{"it":"genti","en":"people"},{"it":"f\u00e9'","en":"made"},{"it":"gi\u00e0","en":"already"},{"it":"viver","en":"live"},{"it":"grame","en":"wretched"}]
+  },
+  {
+    "stanza": 18,
+    "italian": ["questa mi porse tanto di gravezza", "con la paura ch'uscia di sua vista,", "ch'io perdei la speranza de l'altezza."],
+    "english": ["she brought upon me such heaviness", "with the fear that came from her sight,", "that I lost all hope of the heights."],
+    "wordMap": [{"it":"questa","en":"she"},{"it":"mi","en":"upon-me"},{"it":"porse","en":"brought"},{"it":"tanto","en":"such"},{"it":"di","en":"of"},{"it":"gravezza","en":"heaviness"},{"it":"con","en":"with"},{"it":"la","en":"the"},{"it":"paura","en":"fear"},{"it":"ch'uscia","en":"that-came"},{"it":"di","en":"from"},{"it":"sua","en":"her"},{"it":"vista","en":"sight"},{"it":"ch'io","en":"that-I"},{"it":"perdei","en":"lost"},{"it":"la","en":"all"},{"it":"speranza","en":"hope"},{"it":"de","en":"of"},{"it":"l'altezza","en":"the-heights"}]
+  },
+  {
+    "stanza": 19,
+    "italian": ["E qual \u00e8 quei che volontieri acquista,", "e giugne 'l tempo che perder lo face,", "che 'n tutt' i suoi pensier piange e s'attrista;"],
+    "english": ["And like one who gladly gains,", "when the time comes that makes him lose,", "who in all his thoughts weeps and grieves;"],
+    "wordMap": [{"it":"E","en":"And"},{"it":"qual","en":"like"},{"it":"\u00e8","en":"is"},{"it":"quei","en":"one"},{"it":"che","en":"who"},{"it":"volontieri","en":"gladly"},{"it":"acquista","en":"gains"},{"it":"e","en":"when"},{"it":"giugne","en":"comes"},{"it":"'l","en":"the"},{"it":"tempo","en":"time"},{"it":"che","en":"that"},{"it":"perder","en":"makes"},{"it":"lo","en":"him"},{"it":"face","en":"lose"},{"it":"che","en":"who"},{"it":"'n","en":"in"},{"it":"tutt'","en":"all"},{"it":"i","en":"his"},{"it":"suoi","en":"thoughts"},{"it":"pensier","en":"weeps"},{"it":"piange","en":"and"},{"it":"e","en":"grieves"},{"it":"s'attrista","en":"grieves"}]
+  },
+  {
+    "stanza": 20,
+    "italian": ["tal mi fece la bestia sanza pace,", "che, venendomi 'ncontro, a poco a poco", "mi ripigneva l\u00e0 dove 'l sol tace."],
+    "english": ["such did the beast without peace make me,", "which, coming toward me, step by step", "drove me back to where the sun is silent."],
+    "wordMap": [{"it":"tal","en":"such"},{"it":"mi","en":"me"},{"it":"fece","en":"made"},{"it":"la","en":"the"},{"it":"bestia","en":"beast"},{"it":"sanza","en":"without"},{"it":"pace","en":"peace"},{"it":"che","en":"which"},{"it":"venendomi","en":"coming-toward-me"},{"it":"'ncontro","en":"step"},{"it":"a","en":"by"},{"it":"poco","en":"step"},{"it":"a","en":"drove"},{"it":"poco","en":"me"},{"it":"mi","en":"back"},{"it":"ripigneva","en":"drove-back"},{"it":"l\u00e0","en":"where"},{"it":"dove","en":"the"},{"it":"'l","en":"sun"},{"it":"sol","en":"is"},{"it":"tace","en":"silent"}]
+  }
+];
+
+// State
+let isPlaying = false;
+let currentStanza = 0;
+let currentWordIndex = -1;
+let speechRate = 1;
+let utterance = null;
+let wordElements = { it: [], en: [] }; // [stanza][wordIndex]
+let itToEnMaps = []; // [stanza] → { itWordIdx: [enWordIdx, ...] }
+
+const playBtn = document.getElementById('playBtn');
+const playIcon = playBtn.querySelector('.play-icon');
+const pauseIcon = playBtn.querySelector('.pause-icon');
+const progressBar = document.getElementById('progressBar');
+const tooltip = document.getElementById('tooltip');
+const italianScroll = document.getElementById('italianScroll');
+const englishScroll = document.getElementById('englishScroll');
+
+// Build DOM
+function buildStanzas() {
+  wordElements = { it: [], en: [] };
+
+  STANZAS.forEach((s, si) => {
+    const itDiv = document.createElement('div');
+    itDiv.className = 'stanza';
+    itDiv.dataset.stanza = si;
+
+    const enDiv = document.createElement('div');
+    enDiv.className = 'stanza';
+    enDiv.dataset.stanza = si;
+
+    // Stanza number
+    const numIt = document.createElement('div');
+    numIt.className = 'stanza-number';
+    numIt.textContent = s.stanza;
+    itDiv.appendChild(numIt);
+
+    const numEn = document.createElement('div');
+    numEn.className = 'stanza-number';
+    numEn.textContent = s.stanza;
+    enDiv.appendChild(numEn);
+
+    // Stanza play button
+    const playBtnIt = document.createElement('button');
+    playBtnIt.className = 'stanza-play';
+    playBtnIt.innerHTML = '<svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>';
+    playBtnIt.onclick = (e) => { e.stopPropagation(); startFromStanza(si); };
+    itDiv.appendChild(playBtnIt);
+
+    const playBtnEn = document.createElement('button');
+    playBtnEn.className = 'stanza-play';
+    playBtnEn.innerHTML = '<svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>';
+    playBtnEn.onclick = (e) => { e.stopPropagation(); startFromStanza(si); };
+    enDiv.appendChild(playBtnEn);
+
+    wordElements.it[si] = [];
+    wordElements.en[si] = [];
+
+    // Build lines with word spans
+    s.italian.forEach((line, li) => {
+      const lineDiv = document.createElement('div');
+      lineDiv.className = 'line';
+      const words = tokenizeLine(line);
+      words.forEach(token => {
+        if (token.isWord) {
+          const span = document.createElement('span');
+          span.className = 'word';
+          span.textContent = token.text;
+          const wIdx = wordElements.it[si].length;
+          span.dataset.stanza = si;
+          span.dataset.wordIdx = wIdx;
+          span.dataset.side = 'it';
+          wordElements.it[si].push(span);
+          lineDiv.appendChild(span);
+        } else {
+          const span = document.createElement('span');
+          span.className = 'punct';
+          span.textContent = token.text;
+          lineDiv.appendChild(span);
+        }
+      });
+      itDiv.appendChild(lineDiv);
+    });
+
+    // English side - build from wordMap to maintain alignment
+    // We'll tokenize the english lines and match words to wordMap entries
+    let enWordIdx = 0;
+    s.english.forEach((line, li) => {
+      const lineDiv = document.createElement('div');
+      lineDiv.className = 'line';
+      const words = tokenizeLine(line);
+      words.forEach(token => {
+        if (token.isWord) {
+          const span = document.createElement('span');
+          span.className = 'word';
+          span.textContent = token.text;
+          const wIdx = wordElements.en[si].length;
+          span.dataset.stanza = si;
+          span.dataset.wordIdx = wIdx;
+          span.dataset.side = 'en';
+          wordElements.en[si].push(span);
+          lineDiv.appendChild(span);
+        } else {
+          const span = document.createElement('span');
+          span.className = 'punct';
+          span.textContent = token.text;
+          lineDiv.appendChild(span);
+        }
+      });
+      enDiv.appendChild(lineDiv);
+    });
+
+    italianScroll.appendChild(itDiv);
+    englishScroll.appendChild(enDiv);
+  });
+
+  // Build Italian→English word index maps
+  itToEnMaps = [];
+  STANZAS.forEach((s, si) => {
+    const map = s.wordMap;
+    const enWords = wordElements.en[si].map(el => el.textContent.toLowerCase());
+    const claimed = new Set();
+    const itToEn = {};
+
+    for (let itIdx = 0; itIdx < map.length; itIdx++) {
+      const parts = map[itIdx].en.split('-').map(p => p.toLowerCase());
+      const enIndices = [];
+      const expectedPos = (itIdx / map.length) * enWords.length;
+
+      for (const part of parts) {
+        let bestIdx = -1;
+        let bestDist = Infinity;
+        for (let ei = 0; ei < enWords.length; ei++) {
+          if (claimed.has(ei)) continue;
+          if (enWords[ei] === part) {
+            const dist = Math.abs(ei - expectedPos);
+            if (dist < bestDist) {
+              bestDist = dist;
+              bestIdx = ei;
+            }
+          }
+        }
+        if (bestIdx >= 0) {
+          enIndices.push(bestIdx);
+          claimed.add(bestIdx);
+        }
+      }
+
+      itToEn[itIdx] = enIndices;
+    }
+
+    itToEnMaps.push(itToEn);
+  });
+}
+
+function tokenizeLine(line) {
+  const tokens = [];
+  let i = 0;
+  while (i < line.length) {
+    if (/[\s,;:.!?'\u2018\u2019\u201c\u201d]/.test(line[i]) && !/['\u2019]/.test(line[i])) {
+      let punct = '';
+      while (i < line.length && /[\s,;:.!?\u2018\u2019\u201c\u201d]/.test(line[i]) && !/['\u2019]/.test(line[i])) {
+        punct += line[i]; i++;
+      }
+      tokens.push({ text: punct, isWord: false });
+    } else {
+      let word = '';
+      while (i < line.length && !/[\s,;:.!?\u2018\u2019\u201c\u201d]/.test(line[i]) || (i < line.length && /['\u2019]/.test(line[i]))) {
+        // Include apostrophes as part of words
+        if (/[,;:.!?]/.test(line[i])) break;
+        word += line[i]; i++;
+      }
+      if (word) tokens.push({ text: word, isWord: true });
+    }
+  }
+  return tokens;
+}
+
+// Sync scrolling
+let syncingScroll = false;
+function syncScroll(source, target) {
+  if (syncingScroll) return;
+  syncingScroll = true;
+  const ratio = source.scrollTop / (source.scrollHeight - source.clientHeight || 1);
+  target.scrollTop = ratio * (target.scrollHeight - target.clientHeight || 1);
+  syncingScroll = false;
+}
+
+italianScroll.addEventListener('scroll', () => syncScroll(italianScroll, englishScroll));
+englishScroll.addEventListener('scroll', () => syncScroll(englishScroll, italianScroll));
+
+// Hover handling
+function getWordPairIndex(stanza, wordIdx, side) {
+  const map = STANZAS[stanza].wordMap;
+  // For Italian side, wordIdx maps directly to wordMap index
+  // For English side, we need to find the corresponding Italian word
+  const maxIdx = Math.min(wordIdx, map.length - 1);
+  return Math.max(0, maxIdx);
+}
+
+function handleWordHover(e) {
+  const el = e.target;
+  if (!el.classList.contains('word')) return;
+
+  const si = parseInt(el.dataset.stanza);
+  const wi = parseInt(el.dataset.wordIdx);
+  const side = el.dataset.side;
+  const map = STANZAS[si].wordMap;
+
+  // Find pair index
+  const pairIdx = Math.min(wi, map.length - 1);
+
+  if (isPlaying) {
+    // Show tooltip with Italian/English pair
+    if (pairIdx < map.length) {
+      tooltip.innerHTML = `<span class="it-text">${map[pairIdx].it}</span><span class="en-text">${map[pairIdx].en}</span>`;
+      tooltip.classList.add('visible');
+      positionTooltip(e);
+    }
+  } else {
+    // Highlight corresponding word on opposite side
+    clearHighlights();
+    el.classList.add('highlighted');
+
+    const otherSide = side === 'it' ? 'en' : 'it';
+    if (wordElements[otherSide][si] && wordElements[otherSide][si][pairIdx]) {
+      wordElements[otherSide][si][pairIdx].classList.add('pair-highlight');
+    }
+  }
+}
+
+function handleWordLeave(e) {
+  if (!e.target.classList.contains('word')) return;
+  clearHighlights();
+  tooltip.classList.remove('visible');
+}
+
+function positionTooltip(e) {
+  tooltip.style.left = (e.clientX + 12) + 'px';
+  tooltip.style.top = (e.clientY - 32) + 'px';
+}
+
+document.addEventListener('mousemove', (e) => {
+  if (tooltip.classList.contains('visible')) {
+    positionTooltip(e);
+  }
+});
+
+function clearHighlights() {
+  document.querySelectorAll('.word.highlighted, .word.pair-highlight').forEach(el => {
+    el.classList.remove('highlighted', 'pair-highlight');
+  });
+}
+
+// Click to read single word
+function handleWordClick(e) {
+  const el = e.target;
+  if (!el.classList.contains('word') || isPlaying) return;
+
+  const si = parseInt(el.dataset.stanza);
+  const wi = parseInt(el.dataset.wordIdx);
+  const side = el.dataset.side;
+  const map = STANZAS[si].wordMap;
+  const pairIdx = Math.min(wi, map.length - 1);
+
+  if (pairIdx < map.length) {
+    const italianWord = map[pairIdx].it;
+    speakWord(italianWord);
+
+    // Flash highlight
+    el.classList.add('speaking');
+    const otherSide = side === 'it' ? 'en' : 'it';
+    if (wordElements[otherSide][si] && wordElements[otherSide][si][pairIdx]) {
+      wordElements[otherSide][si][pairIdx].classList.add('speaking');
+    }
+    setTimeout(() => {
+      el.classList.remove('speaking');
+      if (wordElements[otherSide][si] && wordElements[otherSide][si][pairIdx]) {
+        wordElements[otherSide][si][pairIdx].classList.remove('speaking');
+      }
+    }, 800);
+  }
+}
+
+function speakWord(word) {
+  window.speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(word);
+  u.lang = 'it-IT';
+  u.rate = 0.9;
+  setItalianVoice(u);
+  window.speechSynthesis.speak(u);
+}
+
+function setItalianVoice(utt) {
+  const voices = window.speechSynthesis.getVoices();
+  // Prefer high quality Italian voices
+  const italianVoices = voices.filter(v => v.lang.startsWith('it'));
+  const premium = italianVoices.find(v => v.name.includes('Premium') || v.name.includes('Enhanced') || v.name.includes('Google'));
+  utt.voice = premium || italianVoices[0] || null;
+}
+
+// Ensure voices are loaded
+window.speechSynthesis.onvoiceschanged = () => {};
+
+// Event delegation
+italianScroll.addEventListener('mouseover', handleWordHover);
+italianScroll.addEventListener('mouseout', handleWordLeave);
+italianScroll.addEventListener('click', handleWordClick);
+englishScroll.addEventListener('mouseover', handleWordHover);
+englishScroll.addEventListener('mouseout', handleWordLeave);
+englishScroll.addEventListener('click', handleWordClick);
+
+// Playback
+function togglePlay() {
+  if (isPlaying) {
+    pause();
+  } else {
+    if (window.speechSynthesis.paused) {
+      window.speechSynthesis.resume();
+      isPlaying = true;
+      updatePlayButton();
+    } else {
+      play(currentStanza);
+    }
+  }
+}
+
+function pause() {
+  isPlaying = false;
+  window.speechSynthesis.pause();
+  updatePlayButton();
+}
+
+function startFromStanza(si) {
+  window.speechSynthesis.cancel();
+  currentStanza = si;
+  currentWordIndex = -1;
+  play(si);
+}
+
+function play(fromStanza) {
+  isPlaying = true;
+  currentStanza = fromStanza;
+  updatePlayButton();
+  speakStanza(fromStanza);
+}
+
+function getStanzaWords(si) {
+  const words = [];
+  STANZAS[si].italian.forEach(line => {
+    const tokens = tokenizeLine(line);
+    tokens.forEach(token => {
+      if (token.isWord) words.push(token.text);
+    });
+  });
+  return words;
+}
+
+function speakStanza(si) {
+  if (si >= STANZAS.length) {
+    isPlaying = false;
+    currentStanza = 0;
+    updatePlayButton();
+    clearSpeakingHighlights();
+    return;
+  }
+
+  currentStanza = si;
+  scrollToStanza(si);
+  highlightActiveStanza(si);
+
+  const words = getStanzaWords(si);
+  let wordIdx = 0;
+
+  function speakNextWord() {
+    if (!isPlaying) {
+      clearSpeakingHighlights();
+      return;
+    }
+    if (wordIdx >= words.length) {
+      clearSpeakingHighlights();
+      speakStanza(si + 1);
+      return;
+    }
+
+    clearSpeakingHighlights();
+    currentWordIndex = wordIdx;
+
+    if (wordElements.it[si] && wordElements.it[si][wordIdx]) {
+      wordElements.it[si][wordIdx].classList.add('speaking');
+    }
+    // Highlight corresponding English word(s) via precomputed map
+    const enIndices = itToEnMaps[si] && itToEnMaps[si][wordIdx];
+    if (enIndices) {
+      enIndices.forEach(ei => {
+        if (wordElements.en[si] && wordElements.en[si][ei]) {
+          wordElements.en[si][ei].classList.add('speaking');
+        }
+      });
+    }
+    updateProgress(si, wordIdx + 1);
+
+    utterance = new SpeechSynthesisUtterance(words[wordIdx]);
+    utterance.lang = 'it-IT';
+    utterance.rate = speechRate;
+    setItalianVoice(utterance);
+
+    utterance.onend = () => {
+      wordIdx++;
+      speakNextWord();
+    };
+
+    utterance.onerror = (e) => {
+      if (e.error !== 'interrupted' && e.error !== 'canceled') {
+        console.error('Speech error:', e);
+      }
+    };
+
+    window.speechSynthesis.speak(utterance);
+  }
+
+  speakNextWord();
+}
+
+function clearSpeakingHighlights() {
+  document.querySelectorAll('.word.speaking').forEach(el => el.classList.remove('speaking'));
+}
+
+function highlightActiveStanza(si) {
+  document.querySelectorAll('.stanza.active').forEach(el => el.classList.remove('active'));
+  const itStanzas = italianScroll.querySelectorAll('.stanza');
+  const enStanzas = englishScroll.querySelectorAll('.stanza');
+  if (itStanzas[si]) itStanzas[si].classList.add('active');
+  if (enStanzas[si]) enStanzas[si].classList.add('active');
+}
+
+function scrollToStanza(si) {
+  const itStanzas = italianScroll.querySelectorAll('.stanza');
+  if (itStanzas[si]) {
+    const target = itStanzas[si];
+    const containerRect = italianScroll.getBoundingClientRect();
+    const targetRect = target.getBoundingClientRect();
+    const offset = targetRect.top - containerRect.top - containerRect.height / 3;
+
+    italianScroll.scrollBy({ top: offset, behavior: 'smooth' });
+    // English syncs via scroll listener
+  }
+}
+
+function updateProgress(stanza, wordInStanza) {
+  const totalWords = STANZAS.reduce((sum, s) => sum + s.wordMap.length, 0);
+  let wordsBefore = 0;
+  for (let i = 0; i < stanza; i++) wordsBefore += STANZAS[i].wordMap.length;
+  const progress = ((wordsBefore + wordInStanza) / totalWords) * 100;
+  progressBar.style.width = progress + '%';
+}
+
+function updatePlayButton() {
+  if (isPlaying) {
+    playBtn.classList.add('playing');
+    playIcon.style.display = 'none';
+    pauseIcon.style.display = 'block';
+  } else {
+    playBtn.classList.remove('playing');
+    playIcon.style.display = 'block';
+    pauseIcon.style.display = 'none';
+  }
+}
+
+// Controls
+playBtn.addEventListener('click', togglePlay);
+
+document.querySelectorAll('.speed-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.speed-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    speechRate = parseFloat(btn.dataset.speed);
+  });
+});
+
+// Init
+buildStanzas();
+
+// Preload voices
+if (window.speechSynthesis.getVoices().length === 0) {
+  window.speechSynthesis.addEventListener('voiceschanged', () => {});
+}
+</script>
+</body>
+</html>
