@@ -632,6 +632,7 @@ let enToItMap = [];  // [stanza] -> { enWordIdx: itWordIdx }
 let audioElement = null;
 let audioTimings = null; // word-level timing data
 let audioLoaded = false;
+let trackingGen = 0; // generation counter to cancel stale tracking loops
 
 const playBtn = document.getElementById('playBtn');
 const playIcon = playBtn.querySelector('.play-icon');
@@ -640,12 +641,15 @@ const progressBar = document.getElementById('progressBar');
 const tooltip = document.getElementById('tooltip');
 const mainScroll = document.getElementById('mainScroll');
 
-// Try to load ElevenLabs audio
+// Try to load ElevenLabs audio (fetch entire file so seeking always works)
 function initAudio() {
-  audioElement = new Audio('canto1.mp3');
-  audioElement.preload = 'auto';
-  audioElement.addEventListener('canplaythrough', () => { audioLoaded = true; });
-  audioElement.addEventListener('error', () => { audioLoaded = false; });
+  fetch('canto1.mp3')
+    .then(r => r.ok ? r.blob() : Promise.reject())
+    .then(blob => {
+      audioElement = new Audio(URL.createObjectURL(blob));
+      audioLoaded = true;
+    })
+    .catch(() => { audioLoaded = false; });
 
   fetch('canto1_timing.json')
     .then(r => r.ok ? r.json() : Promise.reject())
@@ -980,8 +984,9 @@ function togglePlay() {
         audioPaused = false;
         updatePlayButton();
         audioElement.playbackRate = speechRate;
+        const gen = ++trackingGen;
         audioElement.play();
-        trackAudioWords();
+        trackAudioWords(gen);
       } else {
         playWithAudio(currentStanza);
       }
@@ -1028,28 +1033,29 @@ function playWithAudio(fromStanza) {
   scrollToStanza(fromStanza);
   highlightActiveStanza(fromStanza);
 
-  // Find the start time for this stanza in the timing data
-  const stanzaStart = audioTimings.stanzas[fromStanza];
-  if (stanzaStart !== undefined) {
-    audioElement.currentTime = stanzaStart.startTime;
-  }
-
   audioElement.playbackRate = speechRate;
-  audioElement.play();
-
-  // Start word tracking
-  trackAudioWords();
-
   audioElement.onended = () => {
     isPlaying = false;
     currentStanza = 0;
     updatePlayButton();
     clearSpeakingHighlights();
   };
+
+  // Seek to the stanza start time
+  const stanzaStart = audioTimings.stanzas[fromStanza];
+  if (stanzaStart) {
+    audioElement.currentTime = stanzaStart.startTime;
+  }
+
+  // Cancel any stale tracking loop and start a new one
+  const gen = ++trackingGen;
+  audioElement.play().then(() => {
+    if (isPlaying && gen === trackingGen) trackAudioWords(gen);
+  }).catch(() => {});
 }
 
-function trackAudioWords() {
-  if (!isPlaying || !audioTimings) return;
+function trackAudioWords(gen) {
+  if (!isPlaying || !audioTimings || gen !== trackingGen) return;
 
   const currentTime = audioElement.currentTime;
   const words = audioTimings.words;
@@ -1088,8 +1094,8 @@ function trackAudioWords() {
     updateProgress(foundStanza, foundWordIdx + 1);
   }
 
-  if (isPlaying) {
-    requestAnimationFrame(trackAudioWords);
+  if (isPlaying && gen === trackingGen) {
+    requestAnimationFrame(() => trackAudioWords(gen));
   }
 }
 
