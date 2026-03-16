@@ -133,13 +133,15 @@
 
   .column-headers {
     display: flex;
-    justify-content: center;
     gap: 24px;
     border-bottom: 1px solid var(--border);
     background: var(--surface);
     z-index: 5;
     flex-shrink: 0;
-    padding: 0 32px;
+    padding: 0 32px 0 120px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
   }
 
   .column-header {
@@ -156,6 +158,7 @@
   .column-header + .column-header {
     padding-left: 24px;
     border-left: 1px solid var(--border);
+    flex: 1 1 auto;
   }
 
   .scroll-viewport {
@@ -180,11 +183,13 @@
 
   .stanza-row {
     display: flex;
-    justify-content: center;
     gap: 24px;
     border-bottom: 1px solid rgba(58, 50, 40, 0.5);
     transition: background 0.3s;
-    padding: 20px 32px;
+    padding: 20px 32px 20px 120px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
   }
 
   .stanza-row.active {
@@ -199,6 +204,7 @@
   .stanza.english {
     border-left: 1px solid var(--border);
     padding-left: 24px;
+    flex: 1 1 auto;
   }
 
   .stanza-number {
@@ -207,13 +213,13 @@
     color: var(--text-muted);
     opacity: 0.5;
     position: absolute;
-    left: -18px;
+    left: -48px;
     top: 2px;
   }
 
   .stanza-play {
     position: absolute;
-    right: 8px;
+    left: -30px;
     top: 50%;
     transform: translateY(-50%);
     width: 24px;
@@ -473,11 +479,6 @@ function buildStanzas() {
     numIt.textContent = s.stanza;
     itDiv.appendChild(numIt);
 
-    const numEn = document.createElement('div');
-    numEn.className = 'stanza-number';
-    numEn.textContent = s.stanza;
-    enDiv.appendChild(numEn);
-
     // Stanza play button (only on Italian side)
     const playBtnIt = document.createElement('button');
     playBtnIt.className = 'stanza-play';
@@ -665,18 +666,19 @@ function handleWordHover(e) {
   const mapIdx = getMapIdx(si, wi, side);
   if (mapIdx < 0) return;
 
-  if (isPlaying) {
-    if (mapIdx < map.length) {
-      tooltip.innerHTML = `<span class="it-text">${map[mapIdx].it}</span><span class="en-text">${map[mapIdx].en}</span>`;
-      tooltip.classList.add('visible');
-      positionTooltip(e);
-    }
-  } else {
+  // Always show tooltip
+  if (mapIdx < map.length) {
+    tooltip.innerHTML = `<span class="it-text">${map[mapIdx].it}</span><span class="en-text">${map[mapIdx].en}</span>`;
+    tooltip.classList.add('visible');
+    positionTooltip(e);
+  }
+
+  // Highlight paired words when not playing
+  if (!isPlaying) {
     clearHighlights();
     el.classList.add('highlighted');
 
     if (side === 'it') {
-      // Highlight corresponding English word(s)
       const enIndices = itToEnMaps[si] && itToEnMaps[si][mapIdx];
       if (enIndices) {
         enIndices.forEach(ei => {
@@ -686,7 +688,6 @@ function handleWordHover(e) {
         });
       }
     } else {
-      // Highlight corresponding Italian word
       if (wordElements.it[si] && wordElements.it[si][mapIdx]) {
         wordElements.it[si][mapIdx].classList.add('pair-highlight');
       }
@@ -803,8 +804,10 @@ function startAudioFrom(offset) {
   audioPausedAt = -1;
   audioSource.start(0, offset);
 
+  // Capture reference so onended only acts if this is still the active source
+  const thisSource = audioSource;
   audioSource.onended = () => {
-    if (isPlaying && audioPausedAt < 0) {
+    if (audioSource === thisSource && isPlaying && audioPausedAt < 0) {
       isPlaying = false;
       currentStanza = 0;
       updatePlayButton();
@@ -852,12 +855,16 @@ function pause() {
 }
 
 function startFromStanza(si) {
+  // Stop any existing playback first
+  isPlaying = false;
+  ++trackingGen; // cancel stale tracking loop
   window.speechSynthesis.cancel();
   if (audioSource) {
     try { audioSource.stop(); } catch(e) {}
     audioSource = null;
   }
   audioPausedAt = -1;
+  clearSpeakingHighlights();
   currentStanza = si;
   currentWordIndex = -1;
   if (audioLoaded && audioTimings) {
