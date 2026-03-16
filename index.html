@@ -673,24 +673,22 @@ function handleWordHover(e) {
     positionTooltip(e);
   }
 
-  // Highlight paired words when not playing
-  if (!isPlaying) {
-    clearHighlights();
-    el.classList.add('highlighted');
+  // Highlight paired words
+  clearHighlights();
+  el.classList.add('highlighted');
 
-    if (side === 'it') {
-      const enIndices = itToEnMaps[si] && itToEnMaps[si][mapIdx];
-      if (enIndices) {
-        enIndices.forEach(ei => {
-          if (wordElements.en[si] && wordElements.en[si][ei]) {
-            wordElements.en[si][ei].classList.add('pair-highlight');
-          }
-        });
-      }
-    } else {
-      if (wordElements.it[si] && wordElements.it[si][mapIdx]) {
-        wordElements.it[si][mapIdx].classList.add('pair-highlight');
-      }
+  if (side === 'it') {
+    const enIndices = itToEnMaps[si] && itToEnMaps[si][mapIdx];
+    if (enIndices) {
+      enIndices.forEach(ei => {
+        if (wordElements.en[si] && wordElements.en[si][ei]) {
+          wordElements.en[si][ei].classList.add('pair-highlight');
+        }
+      });
+    }
+  } else {
+    if (wordElements.it[si] && wordElements.it[si][mapIdx]) {
+      wordElements.it[si][mapIdx].classList.add('pair-highlight');
     }
   }
 }
