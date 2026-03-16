@@ -127,16 +127,20 @@
 
   .container {
     display: flex;
+    flex-direction: column;
     height: calc(100vh - 81px);
   }
 
-  .column {
-    flex: 1;
-    overflow: hidden;
-    position: relative;
+  .column-headers {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    z-index: 5;
+    flex-shrink: 0;
   }
 
   .column-header {
+    flex: 1;
     font-family: 'Inter', sans-serif;
     font-size: 0.7rem;
     font-weight: 600;
@@ -144,20 +148,14 @@
     letter-spacing: 0.15em;
     color: var(--text-muted);
     padding: 12px 32px;
-    border-bottom: 1px solid var(--border);
-    background: var(--surface);
-    position: sticky;
-    top: 0;
-    z-index: 5;
   }
 
-  .divider {
-    width: 1px;
-    background: var(--border);
+  .column-header + .column-header {
+    border-left: 1px solid var(--border);
   }
 
   .scroll-viewport {
-    height: calc(100% - 37px);
+    flex: 1;
     overflow-y: auto;
     scroll-behavior: smooth;
     padding: 0 0 200px 0;
@@ -176,15 +174,24 @@
     border-radius: 3px;
   }
 
-  .stanza {
-    padding: 20px 32px;
-    position: relative;
+  .stanza-row {
+    display: flex;
     border-bottom: 1px solid rgba(58, 50, 40, 0.5);
     transition: background 0.3s;
   }
 
-  .stanza.active {
+  .stanza-row.active {
     background: rgba(196, 149, 106, 0.05);
+  }
+
+  .stanza {
+    flex: 1;
+    padding: 20px 32px;
+    position: relative;
+  }
+
+  .stanza.english {
+    border-left: 1px solid var(--border);
   }
 
   .stanza-number {
@@ -216,7 +223,7 @@
     transition: all 0.2s;
   }
 
-  .stanza:hover .stanza-play {
+  .stanza-row:hover .stanza-play {
     opacity: 0.4;
   }
 
@@ -322,15 +329,11 @@
 </div>
 
 <div class="container">
-  <div class="column italian">
+  <div class="column-headers">
     <div class="column-header">Italiano</div>
-    <div class="scroll-viewport" id="italianScroll"></div>
-  </div>
-  <div class="divider"></div>
-  <div class="column english">
     <div class="column-header">English</div>
-    <div class="scroll-viewport" id="englishScroll"></div>
   </div>
+  <div class="scroll-viewport" id="mainScroll"></div>
 </div>
 
 <div class="tooltip" id="tooltip"></div>
@@ -623,6 +626,7 @@ let speechRate = 1;
 let utterance = null;
 let wordElements = { it: [], en: [] }; // [stanza][wordIndex]
 let itToEnMaps = []; // [stanza] -> { itWordIdx: [enWordIdx, ...] }
+let enToItMap = [];  // [stanza] -> { enWordIdx: itWordIdx }
 
 // Audio state for ElevenLabs
 let audioElement = null;
@@ -634,8 +638,7 @@ const playIcon = playBtn.querySelector('.play-icon');
 const pauseIcon = playBtn.querySelector('.pause-icon');
 const progressBar = document.getElementById('progressBar');
 const tooltip = document.getElementById('tooltip');
-const italianScroll = document.getElementById('italianScroll');
-const englishScroll = document.getElementById('englishScroll');
+const mainScroll = document.getElementById('mainScroll');
 
 // Try to load ElevenLabs audio
 function initAudio() {
@@ -656,12 +659,16 @@ function buildStanzas() {
   wordElements = { it: [], en: [] };
 
   STANZAS.forEach((s, si) => {
+    const row = document.createElement('div');
+    row.className = 'stanza-row';
+    row.dataset.stanza = si;
+
     const itDiv = document.createElement('div');
-    itDiv.className = 'stanza';
+    itDiv.className = 'stanza italian';
     itDiv.dataset.stanza = si;
 
     const enDiv = document.createElement('div');
-    enDiv.className = 'stanza';
+    enDiv.className = 'stanza english';
     enDiv.dataset.stanza = si;
 
     // Stanza number
@@ -675,18 +682,12 @@ function buildStanzas() {
     numEn.textContent = s.stanza;
     enDiv.appendChild(numEn);
 
-    // Stanza play button
+    // Stanza play button (only on Italian side)
     const playBtnIt = document.createElement('button');
     playBtnIt.className = 'stanza-play';
     playBtnIt.innerHTML = '<svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>';
     playBtnIt.onclick = (e) => { e.stopPropagation(); startFromStanza(si); };
     itDiv.appendChild(playBtnIt);
-
-    const playBtnEn = document.createElement('button');
-    playBtnEn.className = 'stanza-play';
-    playBtnEn.innerHTML = '<svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>';
-    playBtnEn.onclick = (e) => { e.stopPropagation(); startFromStanza(si); };
-    enDiv.appendChild(playBtnEn);
 
     wordElements.it[si] = [];
     wordElements.en[si] = [];
@@ -744,8 +745,9 @@ function buildStanzas() {
       enDiv.appendChild(lineDiv);
     });
 
-    italianScroll.appendChild(itDiv);
-    englishScroll.appendChild(enDiv);
+    row.appendChild(itDiv);
+    row.appendChild(enDiv);
+    mainScroll.appendChild(row);
   });
 
   // Build Italian->English word index maps
@@ -785,6 +787,18 @@ function buildStanzas() {
 
     itToEnMaps.push(itToEn);
   });
+
+  // Build reverse map: English word index -> Italian wordMap index
+  enToItMap = [];
+  itToEnMaps.forEach((itToEn, si) => {
+    const reverse = {};
+    for (const [itIdx, enIndices] of Object.entries(itToEn)) {
+      for (const ei of enIndices) {
+        reverse[ei] = parseInt(itIdx);
+      }
+    }
+    enToItMap.push(reverse);
+  });
 }
 
 function tokenizeLine(line) {
@@ -810,24 +824,16 @@ function tokenizeLine(line) {
   return tokens;
 }
 
-// Sync scrolling
-let syncingScroll = false;
-function syncScroll(source, target) {
-  if (syncingScroll) return;
-  syncingScroll = true;
-  const ratio = source.scrollTop / (source.scrollHeight - source.clientHeight || 1);
-  target.scrollTop = ratio * (target.scrollHeight - target.clientHeight || 1);
-  syncingScroll = false;
-}
-
-italianScroll.addEventListener('scroll', () => syncScroll(italianScroll, englishScroll));
-englishScroll.addEventListener('scroll', () => syncScroll(englishScroll, italianScroll));
-
 // Hover handling
-function getWordPairIndex(stanza, wordIdx, side) {
-  const map = STANZAS[stanza].wordMap;
-  const maxIdx = Math.min(wordIdx, map.length - 1);
-  return Math.max(0, maxIdx);
+function getMapIdx(si, wi, side) {
+  // For Italian words, DOM index = wordMap index (1:1)
+  // For English words, use reverse map to find the Italian wordMap index
+  if (side === 'it') {
+    return Math.min(wi, STANZAS[si].wordMap.length - 1);
+  } else {
+    const itIdx = enToItMap[si] && enToItMap[si][wi];
+    return itIdx !== undefined ? itIdx : -1;
+  }
 }
 
 function handleWordHover(e) {
@@ -839,11 +845,12 @@ function handleWordHover(e) {
   const side = el.dataset.side;
   const map = STANZAS[si].wordMap;
 
-  const pairIdx = Math.min(wi, map.length - 1);
+  const mapIdx = getMapIdx(si, wi, side);
+  if (mapIdx < 0) return;
 
   if (isPlaying) {
-    if (pairIdx < map.length) {
-      tooltip.innerHTML = `<span class="it-text">${map[pairIdx].it}</span><span class="en-text">${map[pairIdx].en}</span>`;
+    if (mapIdx < map.length) {
+      tooltip.innerHTML = `<span class="it-text">${map[mapIdx].it}</span><span class="en-text">${map[mapIdx].en}</span>`;
       tooltip.classList.add('visible');
       positionTooltip(e);
     }
@@ -851,9 +858,21 @@ function handleWordHover(e) {
     clearHighlights();
     el.classList.add('highlighted');
 
-    const otherSide = side === 'it' ? 'en' : 'it';
-    if (wordElements[otherSide][si] && wordElements[otherSide][si][pairIdx]) {
-      wordElements[otherSide][si][pairIdx].classList.add('pair-highlight');
+    if (side === 'it') {
+      // Highlight corresponding English word(s)
+      const enIndices = itToEnMaps[si] && itToEnMaps[si][mapIdx];
+      if (enIndices) {
+        enIndices.forEach(ei => {
+          if (wordElements.en[si] && wordElements.en[si][ei]) {
+            wordElements.en[si][ei].classList.add('pair-highlight');
+          }
+        });
+      }
+    } else {
+      // Highlight corresponding Italian word
+      if (wordElements.it[si] && wordElements.it[si][mapIdx]) {
+        wordElements.it[si][mapIdx].classList.add('pair-highlight');
+      }
     }
   }
 }
@@ -890,24 +909,37 @@ function handleWordClick(e) {
   const wi = parseInt(el.dataset.wordIdx);
   const side = el.dataset.side;
   const map = STANZAS[si].wordMap;
-  const pairIdx = Math.min(wi, map.length - 1);
+  const mapIdx = getMapIdx(si, wi, side);
+  if (mapIdx < 0 || mapIdx >= map.length) return;
 
-  if (pairIdx < map.length) {
-    const italianWord = map[pairIdx].it;
-    speakWord(italianWord);
+  const italianWord = map[mapIdx].it;
+  speakWord(italianWord);
 
-    el.classList.add('speaking');
-    const otherSide = side === 'it' ? 'en' : 'it';
-    if (wordElements[otherSide][si] && wordElements[otherSide][si][pairIdx]) {
-      wordElements[otherSide][si][pairIdx].classList.add('speaking');
+  el.classList.add('speaking');
+
+  // Highlight paired words on the other side
+  const pairedEls = [];
+  if (side === 'it') {
+    const enIndices = itToEnMaps[si] && itToEnMaps[si][mapIdx];
+    if (enIndices) {
+      enIndices.forEach(ei => {
+        if (wordElements.en[si] && wordElements.en[si][ei]) {
+          wordElements.en[si][ei].classList.add('speaking');
+          pairedEls.push(wordElements.en[si][ei]);
+        }
+      });
     }
-    setTimeout(() => {
-      el.classList.remove('speaking');
-      if (wordElements[otherSide][si] && wordElements[otherSide][si][pairIdx]) {
-        wordElements[otherSide][si][pairIdx].classList.remove('speaking');
-      }
-    }, 800);
+  } else {
+    if (wordElements.it[si] && wordElements.it[si][mapIdx]) {
+      wordElements.it[si][mapIdx].classList.add('speaking');
+      pairedEls.push(wordElements.it[si][mapIdx]);
+    }
   }
+
+  setTimeout(() => {
+    el.classList.remove('speaking');
+    pairedEls.forEach(p => p.classList.remove('speaking'));
+  }, 800);
 }
 
 function speakWord(word) {
@@ -930,20 +962,29 @@ function setItalianVoice(utt) {
 window.speechSynthesis.onvoiceschanged = () => {};
 
 // Event delegation
-italianScroll.addEventListener('mouseover', handleWordHover);
-italianScroll.addEventListener('mouseout', handleWordLeave);
-italianScroll.addEventListener('click', handleWordClick);
-englishScroll.addEventListener('mouseover', handleWordHover);
-englishScroll.addEventListener('mouseout', handleWordLeave);
-englishScroll.addEventListener('click', handleWordClick);
+mainScroll.addEventListener('mouseover', handleWordHover);
+mainScroll.addEventListener('mouseout', handleWordLeave);
+mainScroll.addEventListener('click', handleWordClick);
 
 // Playback - uses ElevenLabs audio if available, falls back to Web Speech API
+let audioPaused = false; // true when ElevenLabs audio is paused (not stopped)
+
 function togglePlay() {
   if (isPlaying) {
     pause();
   } else {
     if (audioLoaded && audioTimings) {
-      playWithAudio(currentStanza);
+      if (audioPaused) {
+        // Resume from where we left off
+        isPlaying = true;
+        audioPaused = false;
+        updatePlayButton();
+        audioElement.playbackRate = speechRate;
+        audioElement.play();
+        trackAudioWords();
+      } else {
+        playWithAudio(currentStanza);
+      }
     } else {
       if (window.speechSynthesis.paused) {
         window.speechSynthesis.resume();
@@ -960,6 +1001,7 @@ function pause() {
   isPlaying = false;
   if (audioElement && !audioElement.paused) {
     audioElement.pause();
+    audioPaused = true;
   }
   window.speechSynthesis.pause();
   updatePlayButton();
@@ -968,6 +1010,7 @@ function pause() {
 function startFromStanza(si) {
   window.speechSynthesis.cancel();
   if (audioElement) audioElement.pause();
+  audioPaused = false;
   currentStanza = si;
   currentWordIndex = -1;
   if (audioLoaded && audioTimings) {
@@ -1139,22 +1182,20 @@ function clearSpeakingHighlights() {
 }
 
 function highlightActiveStanza(si) {
-  document.querySelectorAll('.stanza.active').forEach(el => el.classList.remove('active'));
-  const itStanzas = italianScroll.querySelectorAll('.stanza');
-  const enStanzas = englishScroll.querySelectorAll('.stanza');
-  if (itStanzas[si]) itStanzas[si].classList.add('active');
-  if (enStanzas[si]) enStanzas[si].classList.add('active');
+  document.querySelectorAll('.stanza-row.active').forEach(el => el.classList.remove('active'));
+  const rows = mainScroll.querySelectorAll('.stanza-row');
+  if (rows[si]) rows[si].classList.add('active');
 }
 
 function scrollToStanza(si) {
-  const itStanzas = italianScroll.querySelectorAll('.stanza');
-  if (itStanzas[si]) {
-    const target = itStanzas[si];
-    const containerRect = italianScroll.getBoundingClientRect();
+  const rows = mainScroll.querySelectorAll('.stanza-row');
+  if (rows[si]) {
+    const target = rows[si];
+    const containerRect = mainScroll.getBoundingClientRect();
     const targetRect = target.getBoundingClientRect();
     const offset = targetRect.top - containerRect.top - containerRect.height / 3;
 
-    italianScroll.scrollBy({ top: offset, behavior: 'smooth' });
+    mainScroll.scrollBy({ top: offset, behavior: 'smooth' });
   }
 }
 
