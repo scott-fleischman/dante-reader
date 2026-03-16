@@ -486,17 +486,6 @@ const STANZAS = [
 // To add a new voice: generate audio with ElevenLabs, create timing JSON, add entry here
 const VOICES = [
   {
-    id: 'female-1x',
-    name: 'Bella',
-    audioFile: 'canto1.mp3',
-    timingFile: 'canto1_timing.json',
-    elevenLabs: {
-      voiceId: null,       // ElevenLabs voice ID used to generate
-      model: 'eleven_multilingual_v2',
-      speed: 1.0           // speed parameter sent to ElevenLabs API
-    }
-  },
-  {
     id: 'male-slow',
     name: 'George',
     audioFile: 'canto1_male_slow.mp3',
@@ -505,6 +494,17 @@ const VOICES = [
       voiceId: 'JBFqnCBsd6RMkjVDRZzb',
       model: 'eleven_multilingual_v2',
       speed: 0.7
+    }
+  },
+  {
+    id: 'female-1x',
+    name: 'Bella',
+    audioFile: 'canto1.mp3',
+    timingFile: 'canto1_timing.json',
+    elevenLabs: {
+      voiceId: null,       // ElevenLabs voice ID used to generate
+      model: 'eleven_multilingual_v2',
+      speed: 1.0           // speed parameter sent to ElevenLabs API
     }
   },
 ];
@@ -520,7 +520,7 @@ let itToEnMaps = []; // [stanza] -> { itWordIdx: [enWordIdx, ...] }
 let enToItMap = [];  // [stanza] -> { enWordIdx: itWordIdx }
 
 // Voice state
-let currentVoiceId = VOICES[0].id;
+let currentVoiceId = 'male-slow';
 const voiceCache = {}; // id -> { rawData, buffer, timings }
 
 // Audio playback state (Web Audio API)
