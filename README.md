@@ -2,6 +2,8 @@
 
 Parallel Italian/English reader with synchronized audio playback and word-level highlighting. Hover over any word to see its translation; click to hear it spoken.
 
+**[Try it online](https://scott-fleischman.github.io/dante-reader/)**
+
 ## Sources
 
 - **Italian text** — Dante Alighieri, *Commedia*, Canto I (c. 1308–1320). Text from the [Project Gutenberg edition](https://www.gutenberg.org/ebooks/1012) (`gutenberg_pg1012.txt`).
