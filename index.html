@@ -487,7 +487,7 @@ const STANZAS = [
 const VOICES = [
   {
     id: 'female-1x',
-    name: 'Female (1×)',
+    name: 'Bella',
     audioFile: 'canto1.mp3',
     timingFile: 'canto1_timing.json',
     elevenLabs: {
@@ -496,18 +496,17 @@ const VOICES = [
       speed: 1.0           // speed parameter sent to ElevenLabs API
     }
   },
-  // Example: uncomment and provide files to add a male slow voice
-  // {
-  //   id: 'male-slow',
-  //   name: 'Male (slow)',
-  //   audioFile: 'canto1_male_slow.mp3',
-  //   timingFile: 'canto1_male_slow_timing.json',
-  //   elevenLabs: {
-  //     voiceId: null,
-  //     model: 'eleven_multilingual_v2',
-  //     speed: 0.7
-  //   }
-  // },
+  {
+    id: 'male-slow',
+    name: 'George',
+    audioFile: 'canto1_male_slow.mp3',
+    timingFile: 'canto1_male_slow_timing.json',
+    elevenLabs: {
+      voiceId: 'JBFqnCBsd6RMkjVDRZzb',
+      model: 'eleven_multilingual_v2',
+      speed: 0.7
+    }
+  },
 ];
 
 // State
