@@ -133,24 +133,28 @@
 
   .column-headers {
     display: flex;
+    justify-content: center;
+    gap: 24px;
     border-bottom: 1px solid var(--border);
     background: var(--surface);
     z-index: 5;
     flex-shrink: 0;
+    padding: 0 32px;
   }
 
   .column-header {
-    flex: 1;
+    flex: 0 1 420px;
     font-family: 'Inter', sans-serif;
     font-size: 0.7rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     color: var(--text-muted);
-    padding: 12px 32px;
+    padding: 12px 0;
   }
 
   .column-header + .column-header {
+    padding-left: 24px;
     border-left: 1px solid var(--border);
   }
 
@@ -176,8 +180,11 @@
 
   .stanza-row {
     display: flex;
+    justify-content: center;
+    gap: 24px;
     border-bottom: 1px solid rgba(58, 50, 40, 0.5);
     transition: background 0.3s;
+    padding: 20px 32px;
   }
 
   .stanza-row.active {
@@ -185,13 +192,13 @@
   }
 
   .stanza {
-    flex: 1;
-    padding: 20px 32px;
+    flex: 0 1 420px;
     position: relative;
   }
 
   .stanza.english {
     border-left: 1px solid var(--border);
+    padding-left: 24px;
   }
 
   .stanza-number {
@@ -200,8 +207,8 @@
     color: var(--text-muted);
     opacity: 0.5;
     position: absolute;
-    left: 10px;
-    top: 22px;
+    left: -18px;
+    top: 2px;
   }
 
   .stanza-play {
@@ -246,7 +253,7 @@
   }
 
   .italian .line {
-    font-style: italic;
+    font-style: normal;
   }
 
   .word {
@@ -340,282 +347,52 @@
 
 <script>
 const STANZAS = [
-  {
-    "stanza": 1,
-    "italian": ["Nel mezzo del cammin di nostra vita", "mi ritrovai per una selva oscura,", "ch\u00e9 la diritta via era smarrita."],
-    "english": ["In the middle of the journey of our life,", "I found myself within a dark wood,", "for the straight way was lost."],
-    "wordMap": [{"it":"Nel","en":"In-the"},{"it":"mezzo","en":"middle"},{"it":"del","en":"of-the"},{"it":"cammin","en":"journey"},{"it":"di","en":"of"},{"it":"nostra","en":"our"},{"it":"vita","en":"life"},{"it":"mi","en":"myself"},{"it":"ritrovai","en":"found"},{"it":"per","en":"within"},{"it":"una","en":"a"},{"it":"selva","en":"wood"},{"it":"oscura","en":"dark"},{"it":"ch\u00e9","en":"for"},{"it":"la","en":"the"},{"it":"diritta","en":"straight"},{"it":"via","en":"way"},{"it":"era","en":"was"},{"it":"smarrita","en":"lost"}]
-  },
-  {
-    "stanza": 2,
-    "italian": ["Ahi quanto a dir qual era \u00e8 cosa dura", "esta selva selvaggia e aspra e forte", "che nel pensier rinova la paura!"],
-    "english": ["Ah, how hard it is to tell what it was,", "this wild wood, harsh and dense,", "that in thought renews the fear!"],
-    "wordMap": [{"it":"Ahi","en":"Ah"},{"it":"quanto","en":"how"},{"it":"a","en":"to"},{"it":"dir","en":"tell"},{"it":"qual","en":"what"},{"it":"era","en":"was"},{"it":"\u00e8","en":"is"},{"it":"cosa","en":"thing"},{"it":"dura","en":"hard"},{"it":"esta","en":"this"},{"it":"selva","en":"wood"},{"it":"selvaggia","en":"wild"},{"it":"e","en":"and"},{"it":"aspra","en":"harsh"},{"it":"e","en":"and"},{"it":"forte","en":"dense"},{"it":"che","en":"that"},{"it":"nel","en":"in"},{"it":"pensier","en":"thought"},{"it":"rinova","en":"renews"},{"it":"la","en":"the"},{"it":"paura","en":"fear"}]
-  },
-  {
-    "stanza": 3,
-    "italian": ["Tant' \u00e8 amara che poco \u00e8 pi\u00f9 morte;", "ma per trattar del ben ch'i' vi trovai,", "dir\u00f2 de l'altre cose ch'i' v'ho scorte."],
-    "english": ["So bitter is it that death is hardly more so;", "but to treat of the good I found there,", "I will tell of the other things I saw."],
-    "wordMap": [{"it":"Tant'","en":"So"},{"it":"\u00e8","en":"is"},{"it":"amara","en":"bitter"},{"it":"che","en":"that"},{"it":"poco","en":"hardly"},{"it":"\u00e8","en":"is"},{"it":"pi\u00f9","en":"more"},{"it":"morte","en":"death"},{"it":"ma","en":"but"},{"it":"per","en":"to"},{"it":"trattar","en":"treat"},{"it":"del","en":"of-the"},{"it":"ben","en":"good"},{"it":"ch'i'","en":"that-I"},{"it":"vi","en":"there"},{"it":"trovai","en":"found"},{"it":"dir\u00f2","en":"will-tell"},{"it":"de","en":"of"},{"it":"l'altre","en":"the-other"},{"it":"cose","en":"things"},{"it":"ch'i'","en":"that-I"},{"it":"v'ho","en":"have"},{"it":"scorte","en":"seen"}]
-  },
-  {
-    "stanza": 4,
-    "italian": ["Io non so ben ridir com' i' v'intrai,", "tant' era pien di sonno a quel punto", "che la verace via abbandonai."],
-    "english": ["I cannot rightly tell how I entered there,", "so full of sleep was I at that point", "when I abandoned the true way."],
-    "wordMap": [{"it":"Io","en":"I"},{"it":"non","en":"cannot"},{"it":"so","en":"tell"},{"it":"ben","en":"rightly"},{"it":"ridir","en":"tell"},{"it":"com'","en":"how"},{"it":"i'","en":"I"},{"it":"v'intrai","en":"entered"},{"it":"tant'","en":"so"},{"it":"era","en":"was"},{"it":"pien","en":"full"},{"it":"di","en":"of"},{"it":"sonno","en":"sleep"},{"it":"a","en":"at"},{"it":"quel","en":"that"},{"it":"punto","en":"point"},{"it":"che","en":"when"},{"it":"la","en":"the"},{"it":"verace","en":"true"},{"it":"via","en":"way"},{"it":"abbandonai","en":"abandoned"}]
-  },
-  {
-    "stanza": 5,
-    "italian": ["Ma poi ch'i' fui al pi\u00e8 d'un colle giunto,", "l\u00e0 dove terminava quella valle", "che m'avea di paura il cor compunto,"],
-    "english": ["But after I had reached the foot of a hill,", "there where that valley ended", "which had pierced my heart with fear,"],
-    "wordMap": [{"it":"Ma","en":"But"},{"it":"poi","en":"after"},{"it":"ch'i'","en":"I"},{"it":"fui","en":"had"},{"it":"al","en":"the"},{"it":"pi\u00e8","en":"foot"},{"it":"d'un","en":"of-a"},{"it":"colle","en":"hill"},{"it":"giunto","en":"reached"},{"it":"l\u00e0","en":"there"},{"it":"dove","en":"where"},{"it":"terminava","en":"ended"},{"it":"quella","en":"that"},{"it":"valle","en":"valley"},{"it":"che","en":"which"},{"it":"m'avea","en":"had"},{"it":"di","en":"with"},{"it":"paura","en":"fear"},{"it":"il","en":"my"},{"it":"cor","en":"heart"},{"it":"compunto","en":"pierced"}]
-  },
-  {
-    "stanza": 6,
-    "italian": ["guardai in alto e vidi le sue spalle", "vestite gi\u00e0 de' raggi del pianeta", "che mena dritto altrui per ogne calle."],
-    "english": ["I looked up and saw its shoulders", "already clothed with the rays of the planet", "that leads others straight along every path."],
-    "wordMap": [{"it":"guardai","en":"looked"},{"it":"in","en":"up"},{"it":"alto","en":"up"},{"it":"e","en":"and"},{"it":"vidi","en":"saw"},{"it":"le","en":"its"},{"it":"sue","en":"its"},{"it":"spalle","en":"shoulders"},{"it":"vestite","en":"clothed"},{"it":"gi\u00e0","en":"already"},{"it":"de'","en":"with-the"},{"it":"raggi","en":"rays"},{"it":"del","en":"of-the"},{"it":"pianeta","en":"planet"},{"it":"che","en":"that"},{"it":"mena","en":"leads"},{"it":"dritto","en":"straight"},{"it":"altrui","en":"others"},{"it":"per","en":"along"},{"it":"ogne","en":"every"},{"it":"calle","en":"path"}]
-  },
-  {
-    "stanza": 7,
-    "italian": ["Allor fu la paura un poco queta,", "che nel lago del cor m'era durata", "la notte ch'i' passai con tanta pi\u00e8ta."],
-    "english": ["Then the fear was somewhat calmed", "that in the lake of my heart had lasted", "the night I passed with such anguish."],
-    "wordMap": [{"it":"Allor","en":"Then"},{"it":"fu","en":"was"},{"it":"la","en":"the"},{"it":"paura","en":"fear"},{"it":"un","en":"somewhat"},{"it":"poco","en":"somewhat"},{"it":"queta","en":"calmed"},{"it":"che","en":"that"},{"it":"nel","en":"in-the"},{"it":"lago","en":"lake"},{"it":"del","en":"of"},{"it":"cor","en":"heart"},{"it":"m'era","en":"had"},{"it":"durata","en":"lasted"},{"it":"la","en":"the"},{"it":"notte","en":"night"},{"it":"ch'i'","en":"I"},{"it":"passai","en":"passed"},{"it":"con","en":"with"},{"it":"tanta","en":"such"},{"it":"pi\u00e8ta","en":"anguish"}]
-  },
-  {
-    "stanza": 8,
-    "italian": ["E come quei che con lena affannata,", "uscito fuor del pelago a la riva,", "si volge a l'acqua perigliosa e guata,"],
-    "english": ["And as one who, with laboring breath,", "having come forth from the deep to the shore,", "turns to the perilous water and gazes,"],
-    "wordMap": [{"it":"E","en":"And"},{"it":"come","en":"as"},{"it":"quei","en":"one"},{"it":"che","en":"who"},{"it":"con","en":"with"},{"it":"lena","en":"breath"},{"it":"affannata","en":"laboring"},{"it":"uscito","en":"come-forth"},{"it":"fuor","en":"from"},{"it":"del","en":"the"},{"it":"pelago","en":"deep"},{"it":"a","en":"to"},{"it":"la","en":"the"},{"it":"riva","en":"shore"},{"it":"si","en":"turns"},{"it":"volge","en":"turns"},{"it":"a","en":"to"},{"it":"l'acqua","en":"water"},{"it":"perigliosa","en":"perilous"},{"it":"e","en":"and"},{"it":"guata","en":"gazes"}]
-  },
-  {
-    "stanza": 9,
-    "italian": ["cos\u00ec l'animo mio, ch'ancor fuggiva,", "si volse a retro a rimirar lo passo", "che non lasci\u00f2 gi\u00e0 mai persona viva."],
-    "english": ["so my spirit, which was still fleeing,", "turned back to gaze upon the pass", "that never yet let any person leave alive."],
-    "wordMap": [{"it":"cos\u00ec","en":"so"},{"it":"l'animo","en":"spirit"},{"it":"mio","en":"my"},{"it":"ch'ancor","en":"still"},{"it":"fuggiva","en":"fleeing"},{"it":"si","en":"turned"},{"it":"volse","en":"turned"},{"it":"a","en":"back"},{"it":"retro","en":"back"},{"it":"a","en":"to"},{"it":"rimirar","en":"gaze"},{"it":"lo","en":"the"},{"it":"passo","en":"pass"},{"it":"che","en":"that"},{"it":"non","en":"never"},{"it":"lasci\u00f2","en":"let"},{"it":"gi\u00e0","en":"yet"},{"it":"mai","en":"ever"},{"it":"persona","en":"person"},{"it":"viva","en":"alive"}]
-  },
-  {
-    "stanza": 10,
-    "italian": ["Poi ch'\u00e8i posato un poco il corpo lasso,", "ripresi via per la piaggia diserta,", "s\u00ec che 'l pi\u00e8 fermo sempre era 'l pi\u00f9 basso."],
-    "english": ["After I had rested my weary body a little,", "I took up the way again along the desert slope,", "so that the firm foot was always the lower."],
-    "wordMap": [{"it":"Poi","en":"After"},{"it":"ch'\u00e8i","en":"I-had"},{"it":"posato","en":"rested"},{"it":"un","en":"a"},{"it":"poco","en":"little"},{"it":"il","en":"the"},{"it":"corpo","en":"body"},{"it":"lasso","en":"weary"},{"it":"ripresi","en":"took-up"},{"it":"via","en":"way"},{"it":"per","en":"along"},{"it":"la","en":"the"},{"it":"piaggia","en":"slope"},{"it":"diserta","en":"desert"},{"it":"s\u00ec","en":"so"},{"it":"che","en":"that"},{"it":"'l","en":"the"},{"it":"pi\u00e8","en":"foot"},{"it":"fermo","en":"firm"},{"it":"sempre","en":"always"},{"it":"era","en":"was"},{"it":"'l","en":"the"},{"it":"pi\u00f9","en":"lower"},{"it":"basso","en":"lower"}]
-  },
-  {
-    "stanza": 11,
-    "italian": ["Ed ecco, quasi al cominciar de l'erta,", "una lonza leggiera e presta molto,", "che di pel macolato era coverta;"],
-    "english": ["And behold, near the start of the steep,", "a leopard, light and very swift,", "that was covered with a spotted hide;"],
-    "wordMap": [{"it":"Ed","en":"And"},{"it":"ecco","en":"behold"},{"it":"quasi","en":"near"},{"it":"al","en":"the"},{"it":"cominciar","en":"start"},{"it":"de","en":"of"},{"it":"l'erta","en":"steep"},{"it":"una","en":"a"},{"it":"lonza","en":"leopard"},{"it":"leggiera","en":"light"},{"it":"e","en":"and"},{"it":"presta","en":"swift"},{"it":"molto","en":"very"},{"it":"che","en":"that"},{"it":"di","en":"with"},{"it":"pel","en":"hide"},{"it":"macolato","en":"spotted"},{"it":"era","en":"was"},{"it":"coverta","en":"covered"}]
-  },
-  {
-    "stanza": 12,
-    "italian": ["e non mi si partia dinanzi al volto,", "anzi 'mpediva tanto il mio cammino,", "ch'i' fui per ritornar pi\u00f9 volte v\u00f2lto."],
-    "english": ["and it did not leave from before my face,", "but so blocked my path,", "that I turned back many times."],
-    "wordMap": [{"it":"e","en":"and"},{"it":"non","en":"not"},{"it":"mi","en":"my"},{"it":"si","en":"it"},{"it":"partia","en":"leave"},{"it":"dinanzi","en":"before"},{"it":"al","en":"my"},{"it":"volto","en":"face"},{"it":"anzi","en":"but"},{"it":"'mpediva","en":"blocked"},{"it":"tanto","en":"so"},{"it":"il","en":"my"},{"it":"mio","en":"path"},{"it":"cammino","en":"path"},{"it":"ch'i'","en":"that-I"},{"it":"fui","en":"was"},{"it":"per","en":"to"},{"it":"ritornar","en":"turn-back"},{"it":"pi\u00f9","en":"many"},{"it":"volte","en":"times"},{"it":"v\u00f2lto","en":"turned"}]
-  },
-  {
-    "stanza": 13,
-    "italian": ["Temp' era dal principio del mattino,", "e 'l sol montava 'n su con quelle stelle", "ch'eran con lui quando l'amor divino"],
-    "english": ["It was the time of the beginning of the morning,", "and the sun was rising with those stars", "that were with it when divine love"],
-    "wordMap": [{"it":"Temp'","en":"time"},{"it":"era","en":"was"},{"it":"dal","en":"of-the"},{"it":"principio","en":"beginning"},{"it":"del","en":"of-the"},{"it":"mattino","en":"morning"},{"it":"e","en":"and"},{"it":"'l","en":"the"},{"it":"sol","en":"sun"},{"it":"montava","en":"rising"},{"it":"'n","en":"with"},{"it":"su","en":"up"},{"it":"con","en":"with"},{"it":"quelle","en":"those"},{"it":"stelle","en":"stars"},{"it":"ch'eran","en":"that-were"},{"it":"con","en":"with"},{"it":"lui","en":"it"},{"it":"quando","en":"when"},{"it":"l'amor","en":"love"},{"it":"divino","en":"divine"}]
-  },
-  {
-    "stanza": 14,
-    "italian": ["mosse di prima quelle cose belle;", "s\u00ec ch'a bene sperar m'era cagione", "di quella fiera a la gaetta pelle"],
-    "english": ["first set those beautiful things in motion;", "so that good cause for hoping came to me", "from that beast with the spotted hide,"],
-    "wordMap": [{"it":"mosse","en":"set"},{"it":"di","en":"in"},{"it":"prima","en":"first"},{"it":"quelle","en":"those"},{"it":"cose","en":"things"},{"it":"belle","en":"beautiful"},{"it":"s\u00ec","en":"so"},{"it":"ch'a","en":"that"},{"it":"bene","en":"good"},{"it":"sperar","en":"hoping"},{"it":"m'era","en":"came-to-me"},{"it":"cagione","en":"cause"},{"it":"di","en":"from"},{"it":"quella","en":"that"},{"it":"fiera","en":"beast"},{"it":"a","en":"with"},{"it":"la","en":"the"},{"it":"gaetta","en":"spotted"},{"it":"pelle","en":"hide"}]
-  },
-  {
-    "stanza": 15,
-    "italian": ["l'ora del tempo e la dolce stagione;", "ma non s\u00ec che paura non mi desse", "la vista che m'apparve d'un leone."],
-    "english": ["the hour of day and the sweet season;", "but not so much that fear did not strike me", "at the sight that appeared to me of a lion."],
-    "wordMap": [{"it":"l'ora","en":"hour"},{"it":"del","en":"of"},{"it":"tempo","en":"day"},{"it":"e","en":"and"},{"it":"la","en":"the"},{"it":"dolce","en":"sweet"},{"it":"stagione","en":"season"},{"it":"ma","en":"but"},{"it":"non","en":"not"},{"it":"s\u00ec","en":"so"},{"it":"che","en":"that"},{"it":"paura","en":"fear"},{"it":"non","en":"not"},{"it":"mi","en":"me"},{"it":"desse","en":"strike"},{"it":"la","en":"the"},{"it":"vista","en":"sight"},{"it":"che","en":"that"},{"it":"m'apparve","en":"appeared"},{"it":"d'un","en":"of-a"},{"it":"leone","en":"lion"}]
-  },
-  {
-    "stanza": 16,
-    "italian": ["Questi parea che contra me venisse", "con la test' alta e con rabbiosa fame,", "s\u00ec che parea che l'aere ne tremesse."],
-    "english": ["He seemed to be coming against me", "with head held high and ravenous hunger,", "so that it seemed the air trembled at him."],
-    "wordMap": [{"it":"Questi","en":"He"},{"it":"parea","en":"seemed"},{"it":"che","en":"to-be"},{"it":"contra","en":"against"},{"it":"me","en":"me"},{"it":"venisse","en":"coming"},{"it":"con","en":"with"},{"it":"la","en":"head"},{"it":"test'","en":"head"},{"it":"alta","en":"high"},{"it":"e","en":"and"},{"it":"con","en":"with"},{"it":"rabbiosa","en":"ravenous"},{"it":"fame","en":"hunger"},{"it":"s\u00ec","en":"so"},{"it":"che","en":"that"},{"it":"parea","en":"seemed"},{"it":"che","en":"the"},{"it":"l'aere","en":"air"},{"it":"ne","en":"at-him"},{"it":"tremesse","en":"trembled"}]
-  },
-  {
-    "stanza": 17,
-    "italian": ["Ed una lupa, che di tutte brame", "sembiava carca ne la sua magrezza,", "e molte genti f\u00e9' gi\u00e0 viver grame,"],
-    "english": ["And a she-wolf, who in all her cravings", "seemed laden in her leanness,", "and had already made many live in wretchedness,"],
-    "wordMap": [{"it":"Ed","en":"And"},{"it":"una","en":"a"},{"it":"lupa","en":"she-wolf"},{"it":"che","en":"who"},{"it":"di","en":"in"},{"it":"tutte","en":"all"},{"it":"brame","en":"cravings"},{"it":"sembiava","en":"seemed"},{"it":"carca","en":"laden"},{"it":"ne","en":"in"},{"it":"la","en":"her"},{"it":"sua","en":"her"},{"it":"magrezza","en":"leanness"},{"it":"e","en":"and"},{"it":"molte","en":"many"},{"it":"genti","en":"people"},{"it":"f\u00e9'","en":"made"},{"it":"gi\u00e0","en":"already"},{"it":"viver","en":"live"},{"it":"grame","en":"wretchedness"}]
-  },
-  {
-    "stanza": 18,
-    "italian": ["questa mi porse tanto di gravezza", "con la paura ch'uscia di sua vista,", "ch'io perdei la speranza de l'altezza."],
-    "english": ["she weighed upon me with such heaviness,", "with the fear that came from her sight,", "that I lost hope of reaching the height."],
-    "wordMap": [{"it":"questa","en":"she"},{"it":"mi","en":"me"},{"it":"porse","en":"weighed-upon"},{"it":"tanto","en":"such"},{"it":"di","en":"of"},{"it":"gravezza","en":"heaviness"},{"it":"con","en":"with"},{"it":"la","en":"the"},{"it":"paura","en":"fear"},{"it":"ch'uscia","en":"that-came"},{"it":"di","en":"from"},{"it":"sua","en":"her"},{"it":"vista","en":"sight"},{"it":"ch'io","en":"that-I"},{"it":"perdei","en":"lost"},{"it":"la","en":"the"},{"it":"speranza","en":"hope"},{"it":"de","en":"of"},{"it":"l'altezza","en":"height"}]
-  },
-  {
-    "stanza": 19,
-    "italian": ["E qual \u00e8 quei che volontieri acquista,", "e giugne 'l tempo che perder lo face,", "che 'n tutt' i suoi pensier piange e s'attrista;"],
-    "english": ["And like one who gladly gains,", "and when the time comes that makes him lose,", "in all his thoughts weeps and grows sad;"],
-    "wordMap": [{"it":"E","en":"And"},{"it":"qual","en":"like"},{"it":"\u00e8","en":"is"},{"it":"quei","en":"one"},{"it":"che","en":"who"},{"it":"volontieri","en":"gladly"},{"it":"acquista","en":"gains"},{"it":"e","en":"and"},{"it":"giugne","en":"comes"},{"it":"'l","en":"the"},{"it":"tempo","en":"time"},{"it":"che","en":"that"},{"it":"perder","en":"lose"},{"it":"lo","en":"him"},{"it":"face","en":"makes"},{"it":"che","en":"who"},{"it":"'n","en":"in"},{"it":"tutt'","en":"all"},{"it":"i","en":"his"},{"it":"suoi","en":"his"},{"it":"pensier","en":"thoughts"},{"it":"piange","en":"weeps"},{"it":"e","en":"and"},{"it":"s'attrista","en":"grows-sad"}]
-  },
-  {
-    "stanza": 20,
-    "italian": ["tal mi fece la bestia sanza pace,", "che, venendomi 'ncontro, a poco a poco", "mi ripigneva l\u00e0 dove 'l sol tace."],
-    "english": ["such did that restless beast make me,", "which, coming against me, step by step,", "drove me back to where the sun is silent."],
-    "wordMap": [{"it":"tal","en":"such"},{"it":"mi","en":"me"},{"it":"fece","en":"made"},{"it":"la","en":"the"},{"it":"bestia","en":"beast"},{"it":"sanza","en":"without"},{"it":"pace","en":"peace"},{"it":"che","en":"which"},{"it":"venendomi","en":"coming-against-me"},{"it":"'ncontro","en":"toward"},{"it":"a","en":"step"},{"it":"poco","en":"step"},{"it":"a","en":"by"},{"it":"poco","en":"step"},{"it":"mi","en":"me"},{"it":"ripigneva","en":"drove-back"},{"it":"l\u00e0","en":"to-where"},{"it":"dove","en":"where"},{"it":"'l","en":"the"},{"it":"sol","en":"sun"},{"it":"tace","en":"is-silent"}]
-  },
-  {
-    "stanza": 21,
-    "italian": ["Mentre ch'i' rovinava in basso loco,", "dinanzi a li occhi mi si fu offerto", "chi per lungo silenzio parea fioco."],
-    "english": ["While I was falling to the low place,", "before my eyes appeared one", "who through long silence seemed faint."],
-    "wordMap": [{"it":"Mentre","en":"While"},{"it":"ch'i'","en":"I"},{"it":"rovinava","en":"was-falling"},{"it":"in","en":"to"},{"it":"basso","en":"low"},{"it":"loco","en":"place"},{"it":"dinanzi","en":"before"},{"it":"a","en":"my"},{"it":"li","en":"my"},{"it":"occhi","en":"eyes"},{"it":"mi","en":"me"},{"it":"si","en":"appeared"},{"it":"fu","en":"was"},{"it":"offerto","en":"presented"},{"it":"chi","en":"one-who"},{"it":"per","en":"through"},{"it":"lungo","en":"long"},{"it":"silenzio","en":"silence"},{"it":"parea","en":"seemed"},{"it":"fioco","en":"faint"}]
-  },
-  {
-    "stanza": 22,
-    "italian": ["Quando vidi costui nel gran diserto,", "\u00abMiserere di me\u00bb, gridai a lui,", "\u00abqual che tu sii, od ombra od omo certo!\u00bb."],
-    "english": ["When I saw him in the great wasteland,", "'Have mercy on me,' I cried to him,", "'whatever you are, shade or living man!'"],
-    "wordMap": [{"it":"Quando","en":"When"},{"it":"vidi","en":"saw"},{"it":"costui","en":"him"},{"it":"nel","en":"in-the"},{"it":"gran","en":"great"},{"it":"diserto","en":"wasteland"},{"it":"Miserere","en":"Have-mercy"},{"it":"di","en":"on"},{"it":"me","en":"me"},{"it":"gridai","en":"cried"},{"it":"a","en":"to"},{"it":"lui","en":"him"},{"it":"qual","en":"whatever"},{"it":"che","en":"that"},{"it":"tu","en":"you"},{"it":"sii","en":"are"},{"it":"od","en":"or"},{"it":"ombra","en":"shade"},{"it":"od","en":"or"},{"it":"omo","en":"man"},{"it":"certo","en":"living"}]
-  },
-  {
-    "stanza": 23,
-    "italian": ["Rispuosemi: \u00abNon omo, omo gi\u00e0 fui,", "e li parenti miei furon lombardi,", "mantoani per patr\u00efa ambedui."],
-    "english": ["He answered me: 'Not a living man, though once I was,", "and my parents were Lombards,", "both Mantuans by homeland."],
-    "wordMap": [{"it":"Rispuosemi","en":"answered-me"},{"it":"Non","en":"Not"},{"it":"omo","en":"man"},{"it":"omo","en":"once"},{"it":"gi\u00e0","en":"once"},{"it":"fui","en":"was"},{"it":"e","en":"and"},{"it":"li","en":"my"},{"it":"parenti","en":"parents"},{"it":"miei","en":"my"},{"it":"furon","en":"were"},{"it":"lombardi","en":"Lombards"},{"it":"mantoani","en":"Mantuans"},{"it":"per","en":"by"},{"it":"patr\u00efa","en":"homeland"},{"it":"ambedui","en":"both"}]
-  },
-  {
-    "stanza": 24,
-    "italian": ["Nacqui sub Iulio, ancor che fosse tardi,", "e vissi a Roma sotto 'l buono Augusto", "nel tempo de li d\u00e8i falsi e bugiardi."],
-    "english": ["I was born under Julius, though it was late,", "and I lived in Rome under the good Augustus,", "in the time of the false and lying gods."],
-    "wordMap": [{"it":"Nacqui","en":"was-born"},{"it":"sub","en":"under"},{"it":"Iulio","en":"Julius"},{"it":"ancor","en":"though"},{"it":"che","en":"it"},{"it":"fosse","en":"was"},{"it":"tardi","en":"late"},{"it":"e","en":"and"},{"it":"vissi","en":"lived"},{"it":"a","en":"in"},{"it":"Roma","en":"Rome"},{"it":"sotto","en":"under"},{"it":"'l","en":"the"},{"it":"buono","en":"good"},{"it":"Augusto","en":"Augustus"},{"it":"nel","en":"in-the"},{"it":"tempo","en":"time"},{"it":"de","en":"of"},{"it":"li","en":"the"},{"it":"d\u00e8i","en":"gods"},{"it":"falsi","en":"false"},{"it":"e","en":"and"},{"it":"bugiardi","en":"lying"}]
-  },
-  {
-    "stanza": 25,
-    "italian": ["Poeta fui, e cantai di quel giusto", "figliuol d'Anchise che venne di Troia,", "poi che 'l superbo Il\u00efon fu combusto."],
-    "english": ["A poet I was, and I sang of that just", "son of Anchises who came from Troy,", "after proud Ilion was burned."],
-    "wordMap": [{"it":"Poeta","en":"poet"},{"it":"fui","en":"was"},{"it":"e","en":"and"},{"it":"cantai","en":"sang"},{"it":"di","en":"of"},{"it":"quel","en":"that"},{"it":"giusto","en":"just"},{"it":"figliuol","en":"son"},{"it":"d'Anchise","en":"of-Anchises"},{"it":"che","en":"who"},{"it":"venne","en":"came"},{"it":"di","en":"from"},{"it":"Troia","en":"Troy"},{"it":"poi","en":"after"},{"it":"che","en":"after"},{"it":"'l","en":"the"},{"it":"superbo","en":"proud"},{"it":"Il\u00efon","en":"Ilion"},{"it":"fu","en":"was"},{"it":"combusto","en":"burned"}]
-  },
-  {
-    "stanza": 26,
-    "italian": ["Ma tu perch\u00e9 ritorni a tanta noia?", "perch\u00e9 non sali il dilettoso monte", "ch'\u00e8 principio e cagion di tutta gioia?\u00bb."],
-    "english": ["But why do you return to so much woe?", "Why do you not climb the delightful mountain,", "the source and cause of all joy?'"],
-    "wordMap": [{"it":"Ma","en":"But"},{"it":"tu","en":"you"},{"it":"perch\u00e9","en":"why"},{"it":"ritorni","en":"return"},{"it":"a","en":"to"},{"it":"tanta","en":"so-much"},{"it":"noia","en":"woe"},{"it":"perch\u00e9","en":"why"},{"it":"non","en":"not"},{"it":"sali","en":"climb"},{"it":"il","en":"the"},{"it":"dilettoso","en":"delightful"},{"it":"monte","en":"mountain"},{"it":"ch'\u00e8","en":"that-is"},{"it":"principio","en":"source"},{"it":"e","en":"and"},{"it":"cagion","en":"cause"},{"it":"di","en":"of"},{"it":"tutta","en":"all"},{"it":"gioia","en":"joy"}]
-  },
-  {
-    "stanza": 27,
-    "italian": ["\u00abOr se' tu quel Virgilio e quella fonte", "che spandi di parlar s\u00ec largo fiume?\u00bb,", "rispuos' io lui con vergognosa fronte."],
-    "english": ["'Are you then that Virgil, that fountain", "which pours forth so broad a river of speech?'", "I answered him with bashful brow."],
-    "wordMap": [{"it":"Or","en":"then"},{"it":"se'","en":"Are"},{"it":"tu","en":"you"},{"it":"quel","en":"that"},{"it":"Virgilio","en":"Virgil"},{"it":"e","en":"and"},{"it":"quella","en":"that"},{"it":"fonte","en":"fountain"},{"it":"che","en":"which"},{"it":"spandi","en":"pours"},{"it":"di","en":"of"},{"it":"parlar","en":"speech"},{"it":"s\u00ec","en":"so"},{"it":"largo","en":"broad"},{"it":"fiume","en":"river"},{"it":"rispuos'","en":"answered"},{"it":"io","en":"I"},{"it":"lui","en":"him"},{"it":"con","en":"with"},{"it":"vergognosa","en":"bashful"},{"it":"fronte","en":"brow"}]
-  },
-  {
-    "stanza": 28,
-    "italian": ["\u00abO de li altri poeti onore e lume,", "vagliami 'l lungo studio e 'l grande amore", "che m'ha fatto cercar lo tuo volume."],
-    "english": ["'O honor and light of the other poets,", "may the long study and the great love avail me", "that made me search through your volume."],
-    "wordMap": [{"it":"O","en":"O"},{"it":"de","en":"of"},{"it":"li","en":"the"},{"it":"altri","en":"other"},{"it":"poeti","en":"poets"},{"it":"onore","en":"honor"},{"it":"e","en":"and"},{"it":"lume","en":"light"},{"it":"vagliami","en":"avail-me"},{"it":"'l","en":"the"},{"it":"lungo","en":"long"},{"it":"studio","en":"study"},{"it":"e","en":"and"},{"it":"'l","en":"the"},{"it":"grande","en":"great"},{"it":"amore","en":"love"},{"it":"che","en":"that"},{"it":"m'ha","en":"has-me"},{"it":"fatto","en":"made"},{"it":"cercar","en":"search"},{"it":"lo","en":"your"},{"it":"tuo","en":"your"},{"it":"volume","en":"volume"}]
-  },
-  {
-    "stanza": 29,
-    "italian": ["Tu se' lo mio maestro e 'l mio autore,", "tu se' solo colui da cu' io tolsi", "lo bello stilo che m'ha fatto onore."],
-    "english": ["You are my master and my author;", "you alone are the one from whom I took", "the beautiful style that has done me honor."],
-    "wordMap": [{"it":"Tu","en":"You"},{"it":"se'","en":"are"},{"it":"lo","en":"my"},{"it":"mio","en":"my"},{"it":"maestro","en":"master"},{"it":"e","en":"and"},{"it":"'l","en":"my"},{"it":"mio","en":"my"},{"it":"autore","en":"author"},{"it":"tu","en":"you"},{"it":"se'","en":"are"},{"it":"solo","en":"alone"},{"it":"colui","en":"one"},{"it":"da","en":"from"},{"it":"cu'","en":"whom"},{"it":"io","en":"I"},{"it":"tolsi","en":"took"},{"it":"lo","en":"the"},{"it":"bello","en":"beautiful"},{"it":"stilo","en":"style"},{"it":"che","en":"that"},{"it":"m'ha","en":"has"},{"it":"fatto","en":"done"},{"it":"onore","en":"honor"}]
-  },
-  {
-    "stanza": 30,
-    "italian": ["Vedi la bestia per cu' io mi volsi;", "aiutami da lei, famoso saggio,", "ch'ella mi fa tremar le vene e i polsi\u00bb."],
-    "english": ["See the beast from which I turned;", "help me against her, famous sage,", "for she makes my veins and pulses tremble.'"],
-    "wordMap": [{"it":"Vedi","en":"See"},{"it":"la","en":"the"},{"it":"bestia","en":"beast"},{"it":"per","en":"from"},{"it":"cu'","en":"which"},{"it":"io","en":"I"},{"it":"mi","en":"myself"},{"it":"volsi","en":"turned"},{"it":"aiutami","en":"help-me"},{"it":"da","en":"against"},{"it":"lei","en":"her"},{"it":"famoso","en":"famous"},{"it":"saggio","en":"sage"},{"it":"ch'ella","en":"for-she"},{"it":"mi","en":"my"},{"it":"fa","en":"makes"},{"it":"tremar","en":"tremble"},{"it":"le","en":"the"},{"it":"vene","en":"veins"},{"it":"e","en":"and"},{"it":"i","en":"the"},{"it":"polsi","en":"pulses"}]
-  },
-  {
-    "stanza": 31,
-    "italian": ["\u00abA te convien tenere altro v\u00efaggio\u00bb,", "rispuose, poi che lagrimar mi vide,", "\u00abse vuo' campar d'esto loco selvaggio;"],
-    "english": ["'You must take another way,' he replied,", "when he saw me weeping,", "'if you wish to escape this savage place;"],
-    "wordMap": [{"it":"A","en":"You"},{"it":"te","en":"you"},{"it":"convien","en":"must"},{"it":"tenere","en":"take"},{"it":"altro","en":"another"},{"it":"v\u00efaggio","en":"way"},{"it":"rispuose","en":"replied"},{"it":"poi","en":"when"},{"it":"che","en":"he"},{"it":"lagrimar","en":"weeping"},{"it":"mi","en":"me"},{"it":"vide","en":"saw"},{"it":"se","en":"if"},{"it":"vuo'","en":"wish"},{"it":"campar","en":"escape"},{"it":"d'esto","en":"this"},{"it":"loco","en":"place"},{"it":"selvaggio","en":"savage"}]
-  },
-  {
-    "stanza": 32,
-    "italian": ["ch\u00e9 questa bestia, per la qual tu gride,", "non lascia altrui passar per la sua via,", "ma tanto lo 'mpedisce che l'uccide;"],
-    "english": ["for this beast, at which you cry out,", "lets no one pass along her way,", "but so hinders him that she kills him;"],
-    "wordMap": [{"it":"ch\u00e9","en":"for"},{"it":"questa","en":"this"},{"it":"bestia","en":"beast"},{"it":"per","en":"at"},{"it":"la","en":"which"},{"it":"qual","en":"which"},{"it":"tu","en":"you"},{"it":"gride","en":"cry-out"},{"it":"non","en":"no"},{"it":"lascia","en":"lets"},{"it":"altrui","en":"one"},{"it":"passar","en":"pass"},{"it":"per","en":"along"},{"it":"la","en":"her"},{"it":"sua","en":"her"},{"it":"via","en":"way"},{"it":"ma","en":"but"},{"it":"tanto","en":"so"},{"it":"lo","en":"him"},{"it":"'mpedisce","en":"hinders"},{"it":"che","en":"that"},{"it":"l'uccide","en":"kills-him"}]
-  },
-  {
-    "stanza": 33,
-    "italian": ["e ha natura s\u00ec malvagia e ria,", "che mai non empie la bramosa voglia,", "e dopo 'l pasto ha pi\u00f9 fame che pria."],
-    "english": ["and has a nature so vicious and cruel", "that she never sates her greedy craving,", "and after feeding is hungrier than before."],
-    "wordMap": [{"it":"e","en":"and"},{"it":"ha","en":"has"},{"it":"natura","en":"nature"},{"it":"s\u00ec","en":"so"},{"it":"malvagia","en":"vicious"},{"it":"e","en":"and"},{"it":"ria","en":"cruel"},{"it":"che","en":"that"},{"it":"mai","en":"never"},{"it":"non","en":"never"},{"it":"empie","en":"sates"},{"it":"la","en":"her"},{"it":"bramosa","en":"greedy"},{"it":"voglia","en":"craving"},{"it":"e","en":"and"},{"it":"dopo","en":"after"},{"it":"'l","en":"the"},{"it":"pasto","en":"feeding"},{"it":"ha","en":"is"},{"it":"pi\u00f9","en":"more"},{"it":"fame","en":"hungry"},{"it":"che","en":"than"},{"it":"pria","en":"before"}]
-  },
-  {
-    "stanza": 34,
-    "italian": ["Molti son li animali a cui s'ammoglia,", "e pi\u00f9 saranno ancora, infin che 'l veltro", "verr\u00e0, che la far\u00e0 morir con doglia."],
-    "english": ["Many are the animals with which she mates,", "and more there will be yet, until the greyhound", "comes, who will make her die in grief."],
-    "wordMap": [{"it":"Molti","en":"Many"},{"it":"son","en":"are"},{"it":"li","en":"the"},{"it":"animali","en":"animals"},{"it":"a","en":"with"},{"it":"cui","en":"which"},{"it":"s'ammoglia","en":"mates"},{"it":"e","en":"and"},{"it":"pi\u00f9","en":"more"},{"it":"saranno","en":"will-be"},{"it":"ancora","en":"yet"},{"it":"infin","en":"until"},{"it":"che","en":"the"},{"it":"'l","en":"the"},{"it":"veltro","en":"greyhound"},{"it":"verr\u00e0","en":"comes"},{"it":"che","en":"who"},{"it":"la","en":"her"},{"it":"far\u00e0","en":"will-make"},{"it":"morir","en":"die"},{"it":"con","en":"in"},{"it":"doglia","en":"grief"}]
-  },
-  {
-    "stanza": 35,
-    "italian": ["Questi non ciber\u00e0 terra n\u00e9 peltro,", "ma sap\u00efenza, amore e virtute,", "e sua nazion sar\u00e0 tra feltro e feltro."],
-    "english": ["He will not feed on land or wealth,", "but on wisdom, love, and virtue,", "and his nation shall be between felt and felt."],
-    "wordMap": [{"it":"Questi","en":"He"},{"it":"non","en":"not"},{"it":"ciber\u00e0","en":"feed"},{"it":"terra","en":"land"},{"it":"n\u00e9","en":"nor"},{"it":"peltro","en":"wealth"},{"it":"ma","en":"but"},{"it":"sap\u00efenza","en":"wisdom"},{"it":"amore","en":"love"},{"it":"e","en":"and"},{"it":"virtute","en":"virtue"},{"it":"e","en":"and"},{"it":"sua","en":"his"},{"it":"nazion","en":"nation"},{"it":"sar\u00e0","en":"shall-be"},{"it":"tra","en":"between"},{"it":"feltro","en":"felt"},{"it":"e","en":"and"},{"it":"feltro","en":"felt"}]
-  },
-  {
-    "stanza": 36,
-    "italian": ["Di quella umile Italia fia salute", "per cui mor\u00ec la vergine Cammilla,", "Eurialo e Turno e Niso di ferute."],
-    "english": ["Of that humble Italy he shall be the salvation", "for which the maiden Camilla died,", "and Euryalus and Turnus and Nisus of their wounds."],
-    "wordMap": [{"it":"Di","en":"Of"},{"it":"quella","en":"that"},{"it":"umile","en":"humble"},{"it":"Italia","en":"Italy"},{"it":"fia","en":"shall-be"},{"it":"salute","en":"salvation"},{"it":"per","en":"for"},{"it":"cui","en":"which"},{"it":"mor\u00ec","en":"died"},{"it":"la","en":"the"},{"it":"vergine","en":"maiden"},{"it":"Cammilla","en":"Camilla"},{"it":"Eurialo","en":"Euryalus"},{"it":"e","en":"and"},{"it":"Turno","en":"Turnus"},{"it":"e","en":"and"},{"it":"Niso","en":"Nisus"},{"it":"di","en":"of"},{"it":"ferute","en":"wounds"}]
-  },
-  {
-    "stanza": 37,
-    "italian": ["Questi la caccer\u00e0 per ogne villa,", "fin che l'avr\u00e0 rimessa ne lo 'nferno,", "l\u00e0 onde 'nvidia prima dipartilla."],
-    "english": ["He shall hunt her through every town,", "until he has driven her back to Hell,", "whence envy first set her loose."],
-    "wordMap": [{"it":"Questi","en":"He"},{"it":"la","en":"her"},{"it":"caccer\u00e0","en":"hunt"},{"it":"per","en":"through"},{"it":"ogne","en":"every"},{"it":"villa","en":"town"},{"it":"fin","en":"until"},{"it":"che","en":"he"},{"it":"l'avr\u00e0","en":"has"},{"it":"rimessa","en":"driven-back"},{"it":"ne","en":"to"},{"it":"lo","en":"the"},{"it":"'nferno","en":"Hell"},{"it":"l\u00e0","en":"whence"},{"it":"onde","en":"whence"},{"it":"'nvidia","en":"envy"},{"it":"prima","en":"first"},{"it":"dipartilla","en":"set-loose"}]
-  },
-  {
-    "stanza": 38,
-    "italian": ["Ond' io per lo tuo me' penso e discerno", "che tu mi segui, e io sar\u00f2 tua guida,", "e trarrotti di qui per loco etterno;"],
-    "english": ["Therefore for your good I think and judge", "that you should follow me, and I will be your guide,", "and lead you hence through an eternal place;"],
-    "wordMap": [{"it":"Ond'","en":"Therefore"},{"it":"io","en":"I"},{"it":"per","en":"for"},{"it":"lo","en":"your"},{"it":"tuo","en":"your"},{"it":"me'","en":"good"},{"it":"penso","en":"think"},{"it":"e","en":"and"},{"it":"discerno","en":"judge"},{"it":"che","en":"that"},{"it":"tu","en":"you"},{"it":"mi","en":"me"},{"it":"segui","en":"follow"},{"it":"e","en":"and"},{"it":"io","en":"I"},{"it":"sar\u00f2","en":"will-be"},{"it":"tua","en":"your"},{"it":"guida","en":"guide"},{"it":"e","en":"and"},{"it":"trarrotti","en":"lead-you"},{"it":"di","en":"from"},{"it":"qui","en":"here"},{"it":"per","en":"through"},{"it":"loco","en":"place"},{"it":"etterno","en":"eternal"}]
-  },
-  {
-    "stanza": 39,
-    "italian": ["ove udirai le disperate strida,", "vedrai li antichi spiriti dolenti,", "ch'a la seconda morte ciascun grida;"],
-    "english": ["where you shall hear the desperate cries,", "shall see the ancient suffering spirits,", "as each one cries out for the second death;"],
-    "wordMap": [{"it":"ove","en":"where"},{"it":"udirai","en":"shall-hear"},{"it":"le","en":"the"},{"it":"disperate","en":"desperate"},{"it":"strida","en":"cries"},{"it":"vedrai","en":"shall-see"},{"it":"li","en":"the"},{"it":"antichi","en":"ancient"},{"it":"spiriti","en":"spirits"},{"it":"dolenti","en":"suffering"},{"it":"ch'a","en":"for"},{"it":"la","en":"the"},{"it":"seconda","en":"second"},{"it":"morte","en":"death"},{"it":"ciascun","en":"each"},{"it":"grida","en":"cries-out"}]
-  },
-  {
-    "stanza": 40,
-    "italian": ["e vederai color che son contenti", "nel foco, perch\u00e9 speran di venire", "quando che sia a le beate genti."],
-    "english": ["and you shall see those who are content", "within the fire, for they hope to come", "whenever it may be among the blessed."],
-    "wordMap": [{"it":"e","en":"and"},{"it":"vederai","en":"shall-see"},{"it":"color","en":"those"},{"it":"che","en":"who"},{"it":"son","en":"are"},{"it":"contenti","en":"content"},{"it":"nel","en":"within"},{"it":"foco","en":"fire"},{"it":"perch\u00e9","en":"for"},{"it":"speran","en":"hope"},{"it":"di","en":"to"},{"it":"venire","en":"come"},{"it":"quando","en":"whenever"},{"it":"che","en":"it"},{"it":"sia","en":"may-be"},{"it":"a","en":"among"},{"it":"le","en":"the"},{"it":"beate","en":"blessed"},{"it":"genti","en":"people"}]
-  },
-  {
-    "stanza": 41,
-    "italian": ["A le quai poi se tu vorrai salire,", "anima fia a ci\u00f2 pi\u00f9 di me degna:", "con lei ti lascer\u00f2 nel mio partire;"],
-    "english": ["To these, if you then wish to ascend,", "a soul worthier than I shall be for that:", "with her I shall leave you at my departing;"],
-    "wordMap": [{"it":"A","en":"To"},{"it":"le","en":"these"},{"it":"quai","en":"these"},{"it":"poi","en":"then"},{"it":"se","en":"if"},{"it":"tu","en":"you"},{"it":"vorrai","en":"wish"},{"it":"salire","en":"ascend"},{"it":"anima","en":"soul"},{"it":"fia","en":"shall-be"},{"it":"a","en":"for"},{"it":"ci\u00f2","en":"that"},{"it":"pi\u00f9","en":"more"},{"it":"di","en":"than"},{"it":"me","en":"I"},{"it":"degna","en":"worthier"},{"it":"con","en":"with"},{"it":"lei","en":"her"},{"it":"ti","en":"you"},{"it":"lascer\u00f2","en":"shall-leave"},{"it":"nel","en":"at"},{"it":"mio","en":"my"},{"it":"partire","en":"departing"}]
-  },
-  {
-    "stanza": 42,
-    "italian": ["ch\u00e9 quello imperador che l\u00e0 s\u00f9 regna,", "perch' i' fu' ribellante a la sua legge,", "non vuol che 'n sua citt\u00e0 per me si vegna."],
-    "english": ["for that Emperor who reigns above,", "because I was rebellious to His law,", "wills not that through me one enter His city."],
-    "wordMap": [{"it":"ch\u00e9","en":"for"},{"it":"quello","en":"that"},{"it":"imperador","en":"Emperor"},{"it":"che","en":"who"},{"it":"l\u00e0","en":"above"},{"it":"s\u00f9","en":"above"},{"it":"regna","en":"reigns"},{"it":"perch'","en":"because"},{"it":"i'","en":"I"},{"it":"fu'","en":"was"},{"it":"ribellante","en":"rebellious"},{"it":"a","en":"to"},{"it":"la","en":"His"},{"it":"sua","en":"His"},{"it":"legge","en":"law"},{"it":"non","en":"not"},{"it":"vuol","en":"wills"},{"it":"che","en":"that"},{"it":"'n","en":"through"},{"it":"sua","en":"His"},{"it":"citt\u00e0","en":"city"},{"it":"per","en":"through"},{"it":"me","en":"me"},{"it":"si","en":"one"},{"it":"vegna","en":"enter"}]
-  },
-  {
-    "stanza": 43,
-    "italian": ["In tutte parti impera e quivi regge;", "quivi \u00e8 la sua citt\u00e0 e l'alto seggio:", "oh felice colui cu' ivi elegge!\u00bb."],
-    "english": ["In all parts He rules and there He governs;", "there is His city and His lofty throne:", "oh happy the one whom He chooses!'"],
-    "wordMap": [{"it":"In","en":"In"},{"it":"tutte","en":"all"},{"it":"parti","en":"parts"},{"it":"impera","en":"rules"},{"it":"e","en":"and"},{"it":"quivi","en":"there"},{"it":"regge","en":"governs"},{"it":"quivi","en":"there"},{"it":"\u00e8","en":"is"},{"it":"la","en":"His"},{"it":"sua","en":"His"},{"it":"citt\u00e0","en":"city"},{"it":"e","en":"and"},{"it":"l'alto","en":"lofty"},{"it":"seggio","en":"throne"},{"it":"oh","en":"oh"},{"it":"felice","en":"happy"},{"it":"colui","en":"one"},{"it":"cu'","en":"whom"},{"it":"ivi","en":"there"},{"it":"elegge","en":"chooses"}]
-  },
-  {
-    "stanza": 44,
-    "italian": ["E io a lui: \u00abPoeta, io ti richeggio", "per quello Dio che tu non conoscesti,", "acci\u00f2 ch'io fugga questo male e peggio,"],
-    "english": ["And I to him: 'Poet, I beg you,", "by that God whom you did not know,", "so that I may flee this evil and worse,"],
-    "wordMap": [{"it":"E","en":"And"},{"it":"io","en":"I"},{"it":"a","en":"to"},{"it":"lui","en":"him"},{"it":"Poeta","en":"Poet"},{"it":"io","en":"I"},{"it":"ti","en":"you"},{"it":"richeggio","en":"beg"},{"it":"per","en":"by"},{"it":"quello","en":"that"},{"it":"Dio","en":"God"},{"it":"che","en":"whom"},{"it":"tu","en":"you"},{"it":"non","en":"not"},{"it":"conoscesti","en":"know"},{"it":"acci\u00f2","en":"so-that"},{"it":"ch'io","en":"I-may"},{"it":"fugga","en":"flee"},{"it":"questo","en":"this"},{"it":"male","en":"evil"},{"it":"e","en":"and"},{"it":"peggio","en":"worse"}]
-  },
-  {
-    "stanza": 45,
-    "italian": ["che tu mi meni l\u00e0 dov' or dicesti,", "s\u00ec ch'io veggia la porta di san Pietro", "e color cui tu fai cotanto mesti\u00bb."],
-    "english": ["that you lead me where you just spoke of,", "so that I may see the gate of Saint Peter", "and those whom you describe as so wretched.'"],
-    "wordMap": [{"it":"che","en":"that"},{"it":"tu","en":"you"},{"it":"mi","en":"me"},{"it":"meni","en":"lead"},{"it":"l\u00e0","en":"where"},{"it":"dov'","en":"where"},{"it":"or","en":"just"},{"it":"dicesti","en":"spoke"},{"it":"s\u00ec","en":"so"},{"it":"ch'io","en":"that-I"},{"it":"veggia","en":"may-see"},{"it":"la","en":"the"},{"it":"porta","en":"gate"},{"it":"di","en":"of"},{"it":"san","en":"Saint"},{"it":"Pietro","en":"Peter"},{"it":"e","en":"and"},{"it":"color","en":"those"},{"it":"cui","en":"whom"},{"it":"tu","en":"you"},{"it":"fai","en":"describe"},{"it":"cotanto","en":"so"},{"it":"mesti","en":"wretched"}]
-  },
-  {
-    "stanza": 46,
-    "italian": ["Allor si mosse, e io li tenni dietro."],
-    "english": ["Then he moved on, and I followed behind."],
-    "wordMap": [{"it":"Allor","en":"Then"},{"it":"si","en":"he"},{"it":"mosse","en":"moved"},{"it":"e","en":"and"},{"it":"io","en":"I"},{"it":"li","en":"him"},{"it":"tenni","en":"followed"},{"it":"dietro","en":"behind"}]
-  }
+  {"stanza":1,"italian":["Nel mezzo del cammin di nostra vita","mi ritrovai per una selva oscura,","ché la diritta via era smarrita."],"english":["In the middle of the journey of our life,","I found myself in a wood dark,","for the straight way was lost."],"wordMap":[{"it":"Nel","en":"In-the"},{"it":"mezzo","en":"middle"},{"it":"del","en":"of-the"},{"it":"cammin","en":"journey"},{"it":"di","en":"of"},{"it":"nostra","en":"our"},{"it":"vita","en":"life"},{"it":"mi","en":"I"},{"it":"ritrovai","en":"found-myself"},{"it":"per","en":"in"},{"it":"una","en":"a"},{"it":"selva","en":"wood"},{"it":"oscura","en":"dark"},{"it":"ché","en":"for"},{"it":"la","en":"the"},{"it":"diritta","en":"straight"},{"it":"via","en":"way"},{"it":"era","en":"was"},{"it":"smarrita","en":"lost"}]},
+  {"stanza":2,"italian":["Ahi quanto a dir qual era è cosa dura","esta selva selvaggia e aspra e forte","che nel pensier rinova la paura!"],"english":["Ah, how much to tell what it was is a thing hard,","this wood wild and harsh and dense,","that in the thought renews the fear!"],"wordMap":[{"it":"Ahi","en":"Ah"},{"it":"quanto","en":"how-much"},{"it":"a","en":"to"},{"it":"dir","en":"tell"},{"it":"qual","en":"what"},{"it":"era","en":"it-was"},{"it":"è","en":"is"},{"it":"cosa","en":"a-thing"},{"it":"dura","en":"hard"},{"it":"esta","en":"this"},{"it":"selva","en":"wood"},{"it":"selvaggia","en":"wild"},{"it":"e","en":"and"},{"it":"aspra","en":"harsh"},{"it":"e","en":"and"},{"it":"forte","en":"dense"},{"it":"che","en":"that"},{"it":"nel","en":"in-the"},{"it":"pensier","en":"thought"},{"it":"rinova","en":"renews"},{"it":"la","en":"the"},{"it":"paura","en":"fear"}]},
+  {"stanza":3,"italian":["Tant' è amara che poco è più morte;","ma per trattar del ben ch'i' vi trovai,","dirò de l'altre cose ch'i' v'ho scorte."],"english":["So much is bitter that little is more death;","but to treat of the good that I there found,","I will tell of the other things that I there have seen."],"wordMap":[{"it":"Tant'","en":"So-much"},{"it":"è","en":"is"},{"it":"amara","en":"bitter"},{"it":"che","en":"that"},{"it":"poco","en":"little"},{"it":"è","en":"is"},{"it":"più","en":"more"},{"it":"morte","en":"death"},{"it":"ma","en":"but"},{"it":"per","en":"to"},{"it":"trattar","en":"treat"},{"it":"del","en":"of-the"},{"it":"ben","en":"good"},{"it":"ch'i'","en":"that-I"},{"it":"vi","en":"there"},{"it":"trovai","en":"found"},{"it":"dirò","en":"I-will-tell"},{"it":"de","en":"of"},{"it":"l'altre","en":"the-other"},{"it":"cose","en":"things"},{"it":"ch'i'","en":"that-I"},{"it":"v'ho","en":"there-have"},{"it":"scorte","en":"seen"}]},
+  {"stanza":4,"italian":["Io non so ben ridir com' i' v'intrai,","tant' era pien di sonno a quel punto","che la verace via abbandonai."],"english":["I not know well to retell how I there entered,","so much was full of sleep at that point","that the true way I abandoned."],"wordMap":[{"it":"Io","en":"I"},{"it":"non","en":"not"},{"it":"so","en":"know"},{"it":"ben","en":"well"},{"it":"ridir","en":"to-retell"},{"it":"com'","en":"how"},{"it":"i'","en":"I"},{"it":"v'intrai","en":"there-entered"},{"it":"tant'","en":"so-much"},{"it":"era","en":"was"},{"it":"pien","en":"full"},{"it":"di","en":"of"},{"it":"sonno","en":"sleep"},{"it":"a","en":"at"},{"it":"quel","en":"that"},{"it":"punto","en":"point"},{"it":"che","en":"that"},{"it":"la","en":"the"},{"it":"verace","en":"true"},{"it":"via","en":"way"},{"it":"abbandonai","en":"I-abandoned"}]},
+  {"stanza":5,"italian":["Ma poi ch'i' fui al piè d'un colle giunto,","là dove terminava quella valle","che m'avea di paura il cor compunto,"],"english":["But then when I was at the foot of a hill arrived,","there where ended that valley","that me had with fear the heart pierced,"],"wordMap":[{"it":"Ma","en":"But"},{"it":"poi","en":"then"},{"it":"ch'i'","en":"when-I"},{"it":"fui","en":"was"},{"it":"al","en":"at-the"},{"it":"piè","en":"foot"},{"it":"d'un","en":"of-a"},{"it":"colle","en":"hill"},{"it":"giunto","en":"arrived"},{"it":"là","en":"there"},{"it":"dove","en":"where"},{"it":"terminava","en":"ended"},{"it":"quella","en":"that"},{"it":"valle","en":"valley"},{"it":"che","en":"that"},{"it":"m'avea","en":"me-had"},{"it":"di","en":"with"},{"it":"paura","en":"fear"},{"it":"il","en":"the"},{"it":"cor","en":"heart"},{"it":"compunto","en":"pierced"}]},
+  {"stanza":6,"italian":["guardai in alto e vidi le sue spalle","vestite già de' raggi del pianeta","che mena dritto altrui per ogne calle."],"english":["I looked up high and saw the its shoulders","clothed already with the rays of the planet","that leads straight others along every path."],"wordMap":[{"it":"guardai","en":"I-looked"},{"it":"in","en":"up"},{"it":"alto","en":"high"},{"it":"e","en":"and"},{"it":"vidi","en":"saw"},{"it":"le","en":"the"},{"it":"sue","en":"its"},{"it":"spalle","en":"shoulders"},{"it":"vestite","en":"clothed"},{"it":"già","en":"already"},{"it":"de'","en":"with-the"},{"it":"raggi","en":"rays"},{"it":"del","en":"of-the"},{"it":"pianeta","en":"planet"},{"it":"che","en":"that"},{"it":"mena","en":"leads"},{"it":"dritto","en":"straight"},{"it":"altrui","en":"others"},{"it":"per","en":"along"},{"it":"ogne","en":"every"},{"it":"calle","en":"path"}]},
+  {"stanza":7,"italian":["Allor fu la paura un poco queta,","che nel lago del cor m'era durata","la notte ch'i' passai con tanta pièta."],"english":["Then was the fear a little quieted,","that in the lake of the heart in me had lasted","the night that I passed with such anguish."],"wordMap":[{"it":"Allor","en":"Then"},{"it":"fu","en":"was"},{"it":"la","en":"the"},{"it":"paura","en":"fear"},{"it":"un","en":"a"},{"it":"poco","en":"little"},{"it":"queta","en":"quieted"},{"it":"che","en":"that"},{"it":"nel","en":"in-the"},{"it":"lago","en":"lake"},{"it":"del","en":"of-the"},{"it":"cor","en":"heart"},{"it":"m'era","en":"in-me-had"},{"it":"durata","en":"lasted"},{"it":"la","en":"the"},{"it":"notte","en":"night"},{"it":"ch'i'","en":"that-I"},{"it":"passai","en":"passed"},{"it":"con","en":"with"},{"it":"tanta","en":"such"},{"it":"pièta","en":"anguish"}]},
+  {"stanza":8,"italian":["E come quei che con lena affannata,","uscito fuor del pelago a la riva,","si volge a l'acqua perigliosa e guata,"],"english":["And as one who with breath laboring,","come forth from the deep to the shore,","himself turns to the water perilous and gazes,"],"wordMap":[{"it":"E","en":"And"},{"it":"come","en":"as"},{"it":"quei","en":"one"},{"it":"che","en":"who"},{"it":"con","en":"with"},{"it":"lena","en":"breath"},{"it":"affannata","en":"laboring"},{"it":"uscito","en":"come-forth"},{"it":"fuor","en":"from"},{"it":"del","en":"the"},{"it":"pelago","en":"deep"},{"it":"a","en":"to"},{"it":"la","en":"the"},{"it":"riva","en":"shore"},{"it":"si","en":"himself"},{"it":"volge","en":"turns"},{"it":"a","en":"to"},{"it":"l'acqua","en":"the-water"},{"it":"perigliosa","en":"perilous"},{"it":"e","en":"and"},{"it":"guata","en":"gazes"}]},
+  {"stanza":9,"italian":["così l'animo mio, ch'ancor fuggiva,","si volse a retro a rimirar lo passo","che non lasciò già mai persona viva."],"english":["so the spirit my, that still was fleeing,","itself turned to behind to gaze upon the pass","that not let ever yet person alive."],"wordMap":[{"it":"così","en":"so"},{"it":"l'animo","en":"the-spirit"},{"it":"mio","en":"my"},{"it":"ch'ancor","en":"that-still"},{"it":"fuggiva","en":"was-fleeing"},{"it":"si","en":"itself"},{"it":"volse","en":"turned"},{"it":"a","en":"to"},{"it":"retro","en":"behind"},{"it":"a","en":"to"},{"it":"rimirar","en":"gaze-upon"},{"it":"lo","en":"the"},{"it":"passo","en":"pass"},{"it":"che","en":"that"},{"it":"non","en":"not"},{"it":"lasciò","en":"let"},{"it":"già","en":"ever"},{"it":"mai","en":"yet"},{"it":"persona","en":"person"},{"it":"viva","en":"alive"}]},
+  {"stanza":10,"italian":["Poi ch'èi posato un poco il corpo lasso,","ripresi via per la piaggia diserta,","sì che 'l piè fermo sempre era 'l più basso."],"english":["After I had rested a little the body weary,","I resumed way along the slope deserted,","so that the foot firm always was the more low."],"wordMap":[{"it":"Poi","en":"After"},{"it":"ch'èi","en":"I-had"},{"it":"posato","en":"rested"},{"it":"un","en":"a"},{"it":"poco","en":"little"},{"it":"il","en":"the"},{"it":"corpo","en":"body"},{"it":"lasso","en":"weary"},{"it":"ripresi","en":"I-resumed"},{"it":"via","en":"way"},{"it":"per","en":"along"},{"it":"la","en":"the"},{"it":"piaggia","en":"slope"},{"it":"diserta","en":"deserted"},{"it":"sì","en":"so"},{"it":"che","en":"that"},{"it":"'l","en":"the"},{"it":"piè","en":"foot"},{"it":"fermo","en":"firm"},{"it":"sempre","en":"always"},{"it":"era","en":"was"},{"it":"'l","en":"the"},{"it":"più","en":"more"},{"it":"basso","en":"low"}]},
+  {"stanza":11,"italian":["Ed ecco, quasi al cominciar de l'erta,","una lonza leggiera e presta molto,","che di pel macolato era coverta;"],"english":["And behold, nearly at the beginning of the steep,","a leopard light and swift very,","that with hide spotted was covered;"],"wordMap":[{"it":"Ed","en":"And"},{"it":"ecco","en":"behold"},{"it":"quasi","en":"nearly"},{"it":"al","en":"at-the"},{"it":"cominciar","en":"beginning"},{"it":"de","en":"of"},{"it":"l'erta","en":"the-steep"},{"it":"una","en":"a"},{"it":"lonza","en":"leopard"},{"it":"leggiera","en":"light"},{"it":"e","en":"and"},{"it":"presta","en":"swift"},{"it":"molto","en":"very"},{"it":"che","en":"that"},{"it":"di","en":"with"},{"it":"pel","en":"hide"},{"it":"macolato","en":"spotted"},{"it":"era","en":"was"},{"it":"coverta","en":"covered"}]},
+  {"stanza":12,"italian":["e non mi si partia dinanzi al volto,","anzi 'mpediva tanto il mio cammino,","ch'i' fui per ritornar più volte vòlto."],"english":["and not from me did depart before the face,","rather impeded so much the my path,","that I was about to turn back many times turned."],"wordMap":[{"it":"e","en":"and"},{"it":"non","en":"not"},{"it":"mi","en":"from-me"},{"it":"si","en":"did"},{"it":"partia","en":"depart"},{"it":"dinanzi","en":"before"},{"it":"al","en":"the"},{"it":"volto","en":"face"},{"it":"anzi","en":"rather"},{"it":"'mpediva","en":"impeded"},{"it":"tanto","en":"so-much"},{"it":"il","en":"the"},{"it":"mio","en":"my"},{"it":"cammino","en":"path"},{"it":"ch'i'","en":"that-I"},{"it":"fui","en":"was"},{"it":"per","en":"about"},{"it":"ritornar","en":"to-turn-back"},{"it":"più","en":"many"},{"it":"volte","en":"times"},{"it":"vòlto","en":"turned"}]},
+  {"stanza":13,"italian":["Temp' era dal principio del mattino,","e 'l sol montava 'n su con quelle stelle","ch'eran con lui quando l'amor divino"],"english":["The time was from the beginning of the morning,","and the sun was mounting on upward with those stars","that were with it when the love divine"],"wordMap":[{"it":"Temp'","en":"The-time"},{"it":"era","en":"was"},{"it":"dal","en":"from-the"},{"it":"principio","en":"beginning"},{"it":"del","en":"of-the"},{"it":"mattino","en":"morning"},{"it":"e","en":"and"},{"it":"'l","en":"the"},{"it":"sol","en":"sun"},{"it":"montava","en":"was-mounting"},{"it":"'n","en":"on"},{"it":"su","en":"upward"},{"it":"con","en":"with"},{"it":"quelle","en":"those"},{"it":"stelle","en":"stars"},{"it":"ch'eran","en":"that-were"},{"it":"con","en":"with"},{"it":"lui","en":"it"},{"it":"quando","en":"when"},{"it":"l'amor","en":"the-love"},{"it":"divino","en":"divine"}]},
+  {"stanza":14,"italian":["mosse di prima quelle cose belle;","sì ch'a bene sperar m'era cagione","di quella fiera a la gaetta pelle"],"english":["moved at first those things beautiful;","so that to good hoping to me was cause","of that beast with the gay hide"],"wordMap":[{"it":"mosse","en":"moved"},{"it":"di","en":"at"},{"it":"prima","en":"first"},{"it":"quelle","en":"those"},{"it":"cose","en":"things"},{"it":"belle","en":"beautiful"},{"it":"sì","en":"so"},{"it":"ch'a","en":"that-to"},{"it":"bene","en":"good"},{"it":"sperar","en":"hoping"},{"it":"m'era","en":"to-me-was"},{"it":"cagione","en":"cause"},{"it":"di","en":"of"},{"it":"quella","en":"that"},{"it":"fiera","en":"beast"},{"it":"a","en":"with"},{"it":"la","en":"the"},{"it":"gaetta","en":"gay"},{"it":"pelle","en":"hide"}]},
+  {"stanza":15,"italian":["l'ora del tempo e la dolce stagione;","ma non sì che paura non mi desse","la vista che m'apparve d'un leone."],"english":["the hour of the time and the sweet season;","but not so that fear not to me gave","the sight that to me appeared of a lion."],"wordMap":[{"it":"l'ora","en":"the-hour"},{"it":"del","en":"of-the"},{"it":"tempo","en":"time"},{"it":"e","en":"and"},{"it":"la","en":"the"},{"it":"dolce","en":"sweet"},{"it":"stagione","en":"season"},{"it":"ma","en":"but"},{"it":"non","en":"not"},{"it":"sì","en":"so"},{"it":"che","en":"that"},{"it":"paura","en":"fear"},{"it":"non","en":"not"},{"it":"mi","en":"to-me"},{"it":"desse","en":"gave"},{"it":"la","en":"the"},{"it":"vista","en":"sight"},{"it":"che","en":"that"},{"it":"m'apparve","en":"to-me-appeared"},{"it":"d'un","en":"of-a"},{"it":"leone","en":"lion"}]},
+  {"stanza":16,"italian":["Questi parea che contra me venisse","con la test' alta e con rabbiosa fame,","sì che parea che l'aere ne tremesse."],"english":["He seemed that against me came","with the head high and with ravenous hunger,","so that it seemed that the air at him trembled."],"wordMap":[{"it":"Questi","en":"He"},{"it":"parea","en":"seemed"},{"it":"che","en":"that"},{"it":"contra","en":"against"},{"it":"me","en":"me"},{"it":"venisse","en":"came"},{"it":"con","en":"with"},{"it":"la","en":"the"},{"it":"test'","en":"head"},{"it":"alta","en":"high"},{"it":"e","en":"and"},{"it":"con","en":"with"},{"it":"rabbiosa","en":"ravenous"},{"it":"fame","en":"hunger"},{"it":"sì","en":"so"},{"it":"che","en":"that"},{"it":"parea","en":"it-seemed"},{"it":"che","en":"that"},{"it":"l'aere","en":"the-air"},{"it":"ne","en":"at-him"},{"it":"tremesse","en":"trembled"}]},
+  {"stanza":17,"italian":["Ed una lupa, che di tutte brame","sembiava carca ne la sua magrezza,","e molte genti fé' già viver grame,"],"english":["And a she wolf, that with all cravings","seemed laden in the her leanness,","and many people made already live wretched,"],"wordMap":[{"it":"Ed","en":"And"},{"it":"una","en":"a"},{"it":"lupa","en":"she-wolf"},{"it":"che","en":"that"},{"it":"di","en":"with"},{"it":"tutte","en":"all"},{"it":"brame","en":"cravings"},{"it":"sembiava","en":"seemed"},{"it":"carca","en":"laden"},{"it":"ne","en":"in"},{"it":"la","en":"the"},{"it":"sua","en":"her"},{"it":"magrezza","en":"leanness"},{"it":"e","en":"and"},{"it":"molte","en":"many"},{"it":"genti","en":"people"},{"it":"fé'","en":"made"},{"it":"già","en":"already"},{"it":"viver","en":"live"},{"it":"grame","en":"wretched"}]},
+  {"stanza":18,"italian":["questa mi porse tanto di gravezza","con la paura ch'uscia di sua vista,","ch'io perdei la speranza de l'altezza."],"english":["this one to me brought so much of heaviness","with the fear that came from her sight,","that I lost the hope of the height."],"wordMap":[{"it":"questa","en":"this-one"},{"it":"mi","en":"to-me"},{"it":"porse","en":"brought"},{"it":"tanto","en":"so-much"},{"it":"di","en":"of"},{"it":"gravezza","en":"heaviness"},{"it":"con","en":"with"},{"it":"la","en":"the"},{"it":"paura","en":"fear"},{"it":"ch'uscia","en":"that-came"},{"it":"di","en":"from"},{"it":"sua","en":"her"},{"it":"vista","en":"sight"},{"it":"ch'io","en":"that-I"},{"it":"perdei","en":"lost"},{"it":"la","en":"the"},{"it":"speranza","en":"hope"},{"it":"de","en":"of"},{"it":"l'altezza","en":"the-height"}]},
+  {"stanza":19,"italian":["E qual è quei che volontieri acquista,","e giugne 'l tempo che perder lo face,","che 'n tutt' i suoi pensier piange e s'attrista;"],"english":["And as is one who willingly gains,","and comes the time that to lose him makes,","who in all the his thoughts weeps and grows sad;"],"wordMap":[{"it":"E","en":"And"},{"it":"qual","en":"as"},{"it":"è","en":"is"},{"it":"quei","en":"one"},{"it":"che","en":"who"},{"it":"volontieri","en":"willingly"},{"it":"acquista","en":"gains"},{"it":"e","en":"and"},{"it":"giugne","en":"comes"},{"it":"'l","en":"the"},{"it":"tempo","en":"time"},{"it":"che","en":"that"},{"it":"perder","en":"to-lose"},{"it":"lo","en":"him"},{"it":"face","en":"makes"},{"it":"che","en":"who"},{"it":"'n","en":"in"},{"it":"tutt'","en":"all"},{"it":"i","en":"the"},{"it":"suoi","en":"his"},{"it":"pensier","en":"thoughts"},{"it":"piange","en":"weeps"},{"it":"e","en":"and"},{"it":"s'attrista","en":"grows-sad"}]},
+  {"stanza":20,"italian":["tal mi fece la bestia sanza pace,","che, venendomi 'ncontro, a poco a poco","mi ripigneva là dove 'l sol tace."],"english":["such me made the beast without peace,","that, coming toward me onward, a little a little","me drove back there where the sun is silent."],"wordMap":[{"it":"tal","en":"such"},{"it":"mi","en":"me"},{"it":"fece","en":"made"},{"it":"la","en":"the"},{"it":"bestia","en":"beast"},{"it":"sanza","en":"without"},{"it":"pace","en":"peace"},{"it":"che","en":"that"},{"it":"venendomi","en":"coming-toward-me"},{"it":"'ncontro","en":"onward"},{"it":"a","en":"a"},{"it":"poco","en":"little"},{"it":"a","en":"a"},{"it":"poco","en":"little"},{"it":"mi","en":"me"},{"it":"ripigneva","en":"drove-back"},{"it":"là","en":"there"},{"it":"dove","en":"where"},{"it":"'l","en":"the"},{"it":"sol","en":"sun"},{"it":"tace","en":"is-silent"}]},
+  {"stanza":21,"italian":["Mentre ch'i' rovinava in basso loco,","dinanzi a li occhi mi si fu offerto","chi per lungo silenzio parea fioco."],"english":["While I was-falling to the-low place,","before to the eyes to-me there was offered","one-who through long silence seemed faint."],"wordMap":[{"it":"Mentre","en":"While"},{"it":"ch'i'","en":"I"},{"it":"rovinava","en":"was-falling"},{"it":"in","en":"to"},{"it":"basso","en":"the-low"},{"it":"loco","en":"place"},{"it":"dinanzi","en":"before"},{"it":"a","en":"to"},{"it":"li","en":"the"},{"it":"occhi","en":"eyes"},{"it":"mi","en":"to-me"},{"it":"si","en":"there"},{"it":"fu","en":"was"},{"it":"offerto","en":"offered"},{"it":"chi","en":"one-who"},{"it":"per","en":"through"},{"it":"lungo","en":"long"},{"it":"silenzio","en":"silence"},{"it":"parea","en":"seemed"},{"it":"fioco","en":"faint"}]},
+  {"stanza":22,"italian":["Quando vidi costui nel gran diserto,","«Miserere di me», gridai a lui,","«qual che tu sii, od ombra od omo certo!»."],"english":["When I saw him in the great wasteland,","«Have mercy on me,» I cried to him,","«whatever that you be, or shade or man living!»"],"wordMap":[{"it":"Quando","en":"When"},{"it":"vidi","en":"I-saw"},{"it":"costui","en":"him"},{"it":"nel","en":"in-the"},{"it":"gran","en":"great"},{"it":"diserto","en":"wasteland"},{"it":"Miserere","en":"Have-mercy"},{"it":"di","en":"on"},{"it":"me","en":"me"},{"it":"gridai","en":"I-cried"},{"it":"a","en":"to"},{"it":"lui","en":"him"},{"it":"qual","en":"whatever"},{"it":"che","en":"that"},{"it":"tu","en":"you"},{"it":"sii","en":"be"},{"it":"od","en":"or"},{"it":"ombra","en":"shade"},{"it":"od","en":"or"},{"it":"omo","en":"man"},{"it":"certo","en":"living"}]},
+  {"stanza":23,"italian":["Rispuosemi: «Non omo, omo già fui,","e li parenti miei furon lombardi,","mantoani per patrïa ambedui."],"english":["He answered me: «Not a man, a man once I was,","and my parents my were Lombards,","Mantuans by homeland both."],"wordMap":[{"it":"Rispuosemi","en":"He-answered-me"},{"it":"Non","en":"Not"},{"it":"omo","en":"a-man"},{"it":"omo","en":"a-man"},{"it":"già","en":"once"},{"it":"fui","en":"I-was"},{"it":"e","en":"and"},{"it":"li","en":"my"},{"it":"parenti","en":"parents"},{"it":"miei","en":"my"},{"it":"furon","en":"were"},{"it":"lombardi","en":"Lombards"},{"it":"mantoani","en":"Mantuans"},{"it":"per","en":"by"},{"it":"patrïa","en":"homeland"},{"it":"ambedui","en":"both"}]},
+  {"stanza":24,"italian":["Nacqui sub Iulio, ancor che fosse tardi,","e vissi a Roma sotto 'l buono Augusto","nel tempo de li dèi falsi e bugiardi."],"english":["I was born under Julius, although it was late,","and I lived in Rome under the good Augustus","in the time of the gods false and lying."],"wordMap":[{"it":"Nacqui","en":"I-was-born"},{"it":"sub","en":"under"},{"it":"Iulio","en":"Julius"},{"it":"ancor","en":"although"},{"it":"che","en":"it"},{"it":"fosse","en":"was"},{"it":"tardi","en":"late"},{"it":"e","en":"and"},{"it":"vissi","en":"I-lived"},{"it":"a","en":"in"},{"it":"Roma","en":"Rome"},{"it":"sotto","en":"under"},{"it":"'l","en":"the"},{"it":"buono","en":"good"},{"it":"Augusto","en":"Augustus"},{"it":"nel","en":"in-the"},{"it":"tempo","en":"time"},{"it":"de","en":"of"},{"it":"li","en":"the"},{"it":"dèi","en":"gods"},{"it":"falsi","en":"false"},{"it":"e","en":"and"},{"it":"bugiardi","en":"lying"}]},
+  {"stanza":25,"italian":["Poeta fui, e cantai di quel giusto","figliuol d'Anchise che venne di Troia,","poi che 'l superbo Ilïon fu combusto."],"english":["A poet I was, and I sang of that just","son of Anchises who came from Troy,","after that the proud Ilion was burned."],"wordMap":[{"it":"Poeta","en":"A-poet"},{"it":"fui","en":"I-was"},{"it":"e","en":"and"},{"it":"cantai","en":"I-sang"},{"it":"di","en":"of"},{"it":"quel","en":"that"},{"it":"giusto","en":"just"},{"it":"figliuol","en":"son"},{"it":"d'Anchise","en":"of-Anchises"},{"it":"che","en":"who"},{"it":"venne","en":"came"},{"it":"di","en":"from"},{"it":"Troia","en":"Troy"},{"it":"poi","en":"after"},{"it":"che","en":"that"},{"it":"'l","en":"the"},{"it":"superbo","en":"proud"},{"it":"Ilïon","en":"Ilion"},{"it":"fu","en":"was"},{"it":"combusto","en":"burned"}]},
+  {"stanza":26,"italian":["Ma tu perché ritorni a tanta noia?","perché non sali il dilettoso monte","ch'è principio e cagion di tutta gioia?»."],"english":["But you why return to such woe?","Why not climb the delightful mountain","that is the source and cause of all joy?»"],"wordMap":[{"it":"Ma","en":"But"},{"it":"tu","en":"you"},{"it":"perché","en":"why"},{"it":"ritorni","en":"return"},{"it":"a","en":"to"},{"it":"tanta","en":"such"},{"it":"noia","en":"woe"},{"it":"perché","en":"Why"},{"it":"non","en":"not"},{"it":"sali","en":"climb"},{"it":"il","en":"the"},{"it":"dilettoso","en":"delightful"},{"it":"monte","en":"mountain"},{"it":"ch'è","en":"that-is"},{"it":"principio","en":"the-source"},{"it":"e","en":"and"},{"it":"cagion","en":"cause"},{"it":"di","en":"of"},{"it":"tutta","en":"all"},{"it":"gioia","en":"joy"}]},
+  {"stanza":27,"italian":["«Or se' tu quel Virgilio e quella fonte","che spandi di parlar sì largo fiume?»,","rispuos' io lui con vergognosa fronte."],"english":["«Now are you that Virgil and that fountain","that pours of speech so broad a river?»","replied I to him with bashful brow."],"wordMap":[{"it":"Or","en":"Now"},{"it":"se'","en":"are"},{"it":"tu","en":"you"},{"it":"quel","en":"that"},{"it":"Virgilio","en":"Virgil"},{"it":"e","en":"and"},{"it":"quella","en":"that"},{"it":"fonte","en":"fountain"},{"it":"che","en":"that"},{"it":"spandi","en":"pours"},{"it":"di","en":"of"},{"it":"parlar","en":"speech"},{"it":"sì","en":"so"},{"it":"largo","en":"broad"},{"it":"fiume","en":"a-river"},{"it":"rispuos'","en":"replied"},{"it":"io","en":"I"},{"it":"lui","en":"to-him"},{"it":"con","en":"with"},{"it":"vergognosa","en":"bashful"},{"it":"fronte","en":"brow"}]},
+  {"stanza":28,"italian":["«O de li altri poeti onore e lume,","vagliami 'l lungo studio e 'l grande amore","che m'ha fatto cercar lo tuo volume."],"english":["«O of the other poets honor and light,","may avail me the long study and the great love","that me has made search the your volume."],"wordMap":[{"it":"O","en":"O"},{"it":"de","en":"of"},{"it":"li","en":"the"},{"it":"altri","en":"other"},{"it":"poeti","en":"poets"},{"it":"onore","en":"honor"},{"it":"e","en":"and"},{"it":"lume","en":"light"},{"it":"vagliami","en":"may-avail-me"},{"it":"'l","en":"the"},{"it":"lungo","en":"long"},{"it":"studio","en":"study"},{"it":"e","en":"and"},{"it":"'l","en":"the"},{"it":"grande","en":"great"},{"it":"amore","en":"love"},{"it":"che","en":"that"},{"it":"m'ha","en":"me-has"},{"it":"fatto","en":"made"},{"it":"cercar","en":"search"},{"it":"lo","en":"the"},{"it":"tuo","en":"your"},{"it":"volume","en":"volume"}]},
+  {"stanza":29,"italian":["Tu se' lo mio maestro e 'l mio autore,","tu se' solo colui da cu' io tolsi","lo bello stilo che m'ha fatto onore."],"english":["You are the my master and the my author;","you are alone the one from whom I took","the beautiful style that me has done honor."],"wordMap":[{"it":"Tu","en":"You"},{"it":"se'","en":"are"},{"it":"lo","en":"the"},{"it":"mio","en":"my"},{"it":"maestro","en":"master"},{"it":"e","en":"and"},{"it":"'l","en":"the"},{"it":"mio","en":"my"},{"it":"autore","en":"author"},{"it":"tu","en":"you"},{"it":"se'","en":"are"},{"it":"solo","en":"alone"},{"it":"colui","en":"the-one"},{"it":"da","en":"from"},{"it":"cu'","en":"whom"},{"it":"io","en":"I"},{"it":"tolsi","en":"took"},{"it":"lo","en":"the"},{"it":"bello","en":"beautiful"},{"it":"stilo","en":"style"},{"it":"che","en":"that"},{"it":"m'ha","en":"me-has"},{"it":"fatto","en":"done"},{"it":"onore","en":"honor"}]},
+  {"stanza":30,"italian":["Vedi la bestia per cu' io mi volsi;","aiutami da lei, famoso saggio,","ch'ella mi fa tremar le vene e i polsi»."],"english":["See the beast for which I myself turned;","help me from her, famous sage,","for she me makes tremble the veins and the pulses.»"],"wordMap":[{"it":"Vedi","en":"See"},{"it":"la","en":"the"},{"it":"bestia","en":"beast"},{"it":"per","en":"for"},{"it":"cu'","en":"which"},{"it":"io","en":"I"},{"it":"mi","en":"myself"},{"it":"volsi","en":"turned"},{"it":"aiutami","en":"help-me"},{"it":"da","en":"from"},{"it":"lei","en":"her"},{"it":"famoso","en":"famous"},{"it":"saggio","en":"sage"},{"it":"ch'ella","en":"for-she"},{"it":"mi","en":"me"},{"it":"fa","en":"makes"},{"it":"tremar","en":"tremble"},{"it":"le","en":"the"},{"it":"vene","en":"veins"},{"it":"e","en":"and"},{"it":"i","en":"the"},{"it":"polsi","en":"pulses"}]},
+  {"stanza":31,"italian":["«A te convien tenere altro vïaggio»,","rispuose, poi che lagrimar mi vide,","«se vuo' campar d'esto loco selvaggio;"],"english":["«To you it behooves to take another way,»","he replied, after that to weep me saw,","«if you wish to escape from this place savage;"],"wordMap":[{"it":"A","en":"To"},{"it":"te","en":"you"},{"it":"convien","en":"it-behooves"},{"it":"tenere","en":"to-take"},{"it":"altro","en":"another"},{"it":"vïaggio","en":"way"},{"it":"rispuose","en":"he-replied"},{"it":"poi","en":"after"},{"it":"che","en":"that"},{"it":"lagrimar","en":"to-weep"},{"it":"mi","en":"me"},{"it":"vide","en":"saw"},{"it":"se","en":"if"},{"it":"vuo'","en":"you-wish"},{"it":"campar","en":"to-escape"},{"it":"d'esto","en":"from-this"},{"it":"loco","en":"place"},{"it":"selvaggio","en":"savage"}]},
+  {"stanza":32,"italian":["ché questa bestia, per la qual tu gride,","non lascia altrui passar per la sua via,","ma tanto lo 'mpedisce che l'uccide;"],"english":["for this beast, at the which you cry out,","not lets anyone pass along the her path,","but so much him hinders that she kills him;"],"wordMap":[{"it":"ché","en":"for"},{"it":"questa","en":"this"},{"it":"bestia","en":"beast"},{"it":"per","en":"at"},{"it":"la","en":"the"},{"it":"qual","en":"which"},{"it":"tu","en":"you"},{"it":"gride","en":"cry-out"},{"it":"non","en":"not"},{"it":"lascia","en":"lets"},{"it":"altrui","en":"anyone"},{"it":"passar","en":"pass"},{"it":"per","en":"along"},{"it":"la","en":"the"},{"it":"sua","en":"her"},{"it":"via","en":"path"},{"it":"ma","en":"but"},{"it":"tanto","en":"so-much"},{"it":"lo","en":"him"},{"it":"'mpedisce","en":"hinders"},{"it":"che","en":"that"},{"it":"l'uccide","en":"she-kills-him"}]},
+  {"stanza":33,"italian":["e ha natura sì malvagia e ria,","che mai non empie la bramosa voglia,","e dopo 'l pasto ha più fame che pria."],"english":["and has a nature so wicked and cruel,","that never not fills the greedy craving,","and after the feeding has more hunger than before."],"wordMap":[{"it":"e","en":"and"},{"it":"ha","en":"has"},{"it":"natura","en":"a-nature"},{"it":"sì","en":"so"},{"it":"malvagia","en":"wicked"},{"it":"e","en":"and"},{"it":"ria","en":"cruel"},{"it":"che","en":"that"},{"it":"mai","en":"never"},{"it":"non","en":"not"},{"it":"empie","en":"fills"},{"it":"la","en":"the"},{"it":"bramosa","en":"greedy"},{"it":"voglia","en":"craving"},{"it":"e","en":"and"},{"it":"dopo","en":"after"},{"it":"'l","en":"the"},{"it":"pasto","en":"feeding"},{"it":"ha","en":"has"},{"it":"più","en":"more"},{"it":"fame","en":"hunger"},{"it":"che","en":"than"},{"it":"pria","en":"before"}]},
+  {"stanza":34,"italian":["Molti son li animali a cui s'ammoglia,","e più saranno ancora, infin che 'l veltro","verrà, che la farà morir con doglia."],"english":["Many are the animals to which she mates,","and more will be yet, up until the greyhound","comes, who her will make die with grief."],"wordMap":[{"it":"Molti","en":"Many"},{"it":"son","en":"are"},{"it":"li","en":"the"},{"it":"animali","en":"animals"},{"it":"a","en":"to"},{"it":"cui","en":"which"},{"it":"s'ammoglia","en":"she-mates"},{"it":"e","en":"and"},{"it":"più","en":"more"},{"it":"saranno","en":"will-be"},{"it":"ancora","en":"yet"},{"it":"infin","en":"up"},{"it":"che","en":"until"},{"it":"'l","en":"the"},{"it":"veltro","en":"greyhound"},{"it":"verrà","en":"comes"},{"it":"che","en":"who"},{"it":"la","en":"her"},{"it":"farà","en":"will-make"},{"it":"morir","en":"die"},{"it":"con","en":"with"},{"it":"doglia","en":"grief"}]},
+  {"stanza":35,"italian":["Questi non ciberà terra né peltro,","ma sapïenza, amore e virtute,","e sua nazion sarà tra feltro e feltro."],"english":["He not will feed on land nor wealth,","but wisdom, love and virtue,","and his nation shall be between felt and felt."],"wordMap":[{"it":"Questi","en":"He"},{"it":"non","en":"not"},{"it":"ciberà","en":"will-feed-on"},{"it":"terra","en":"land"},{"it":"né","en":"nor"},{"it":"peltro","en":"wealth"},{"it":"ma","en":"but"},{"it":"sapïenza","en":"wisdom"},{"it":"amore","en":"love"},{"it":"e","en":"and"},{"it":"virtute","en":"virtue"},{"it":"e","en":"and"},{"it":"sua","en":"his"},{"it":"nazion","en":"nation"},{"it":"sarà","en":"shall-be"},{"it":"tra","en":"between"},{"it":"feltro","en":"felt"},{"it":"e","en":"and"},{"it":"feltro","en":"felt"}]},
+  {"stanza":36,"italian":["Di quella umile Italia fia salute","per cui morì la vergine Cammilla,","Eurialo e Turno e Niso di ferute."],"english":["Of that humble Italy shall be salvation","for which died the maiden Camilla,","Euryalus and Turnus and Nisus of wounds."],"wordMap":[{"it":"Di","en":"Of"},{"it":"quella","en":"that"},{"it":"umile","en":"humble"},{"it":"Italia","en":"Italy"},{"it":"fia","en":"shall-be"},{"it":"salute","en":"salvation"},{"it":"per","en":"for"},{"it":"cui","en":"which"},{"it":"morì","en":"died"},{"it":"la","en":"the"},{"it":"vergine","en":"maiden"},{"it":"Cammilla","en":"Camilla"},{"it":"Eurialo","en":"Euryalus"},{"it":"e","en":"and"},{"it":"Turno","en":"Turnus"},{"it":"e","en":"and"},{"it":"Niso","en":"Nisus"},{"it":"di","en":"of"},{"it":"ferute","en":"wounds"}]},
+  {"stanza":37,"italian":["Questi la caccerà per ogne villa,","fin che l'avrà rimessa ne lo 'nferno,","là onde 'nvidia prima dipartilla."],"english":["He her will hunt through every town,","until he will have driven back into the Hell,","there whence envy first released her."],"wordMap":[{"it":"Questi","en":"He"},{"it":"la","en":"her"},{"it":"caccerà","en":"will-hunt"},{"it":"per","en":"through"},{"it":"ogne","en":"every"},{"it":"villa","en":"town"},{"it":"fin","en":"until"},{"it":"che","en":"he"},{"it":"l'avrà","en":"will-have"},{"it":"rimessa","en":"driven-back"},{"it":"ne","en":"into"},{"it":"lo","en":"the"},{"it":"'nferno","en":"Hell"},{"it":"là","en":"there"},{"it":"onde","en":"whence"},{"it":"'nvidia","en":"envy"},{"it":"prima","en":"first"},{"it":"dipartilla","en":"released-her"}]},
+  {"stanza":38,"italian":["Ond' io per lo tuo me' penso e discerno","che tu mi segui, e io sarò tua guida,","e trarrotti di qui per loco etterno;"],"english":["Whence I for the your good think and judge","that you me follow, and I shall be your guide,","and I will lead you from here through a place eternal;"],"wordMap":[{"it":"Ond'","en":"Whence"},{"it":"io","en":"I"},{"it":"per","en":"for"},{"it":"lo","en":"the"},{"it":"tuo","en":"your"},{"it":"me'","en":"good"},{"it":"penso","en":"think"},{"it":"e","en":"and"},{"it":"discerno","en":"judge"},{"it":"che","en":"that"},{"it":"tu","en":"you"},{"it":"mi","en":"me"},{"it":"segui","en":"follow"},{"it":"e","en":"and"},{"it":"io","en":"I"},{"it":"sarò","en":"shall-be"},{"it":"tua","en":"your"},{"it":"guida","en":"guide"},{"it":"e","en":"and"},{"it":"trarrotti","en":"I-will-lead-you"},{"it":"di","en":"from"},{"it":"qui","en":"here"},{"it":"per","en":"through"},{"it":"loco","en":"a-place"},{"it":"etterno","en":"eternal"}]},
+  {"stanza":39,"italian":["ove udirai le disperate strida,","vedrai li antichi spiriti dolenti,","ch'a la seconda morte ciascun grida;"],"english":["where you will hear the desperate cries,","you will see the ancient spirits suffering,","that to the second death each cries out;"],"wordMap":[{"it":"ove","en":"where"},{"it":"udirai","en":"you-will-hear"},{"it":"le","en":"the"},{"it":"disperate","en":"desperate"},{"it":"strida","en":"cries"},{"it":"vedrai","en":"you-will-see"},{"it":"li","en":"the"},{"it":"antichi","en":"ancient"},{"it":"spiriti","en":"spirits"},{"it":"dolenti","en":"suffering"},{"it":"ch'a","en":"that-to"},{"it":"la","en":"the"},{"it":"seconda","en":"second"},{"it":"morte","en":"death"},{"it":"ciascun","en":"each"},{"it":"grida","en":"cries-out"}]},
+  {"stanza":40,"italian":["e vederai color che son contenti","nel foco, perché speran di venire","quando che sia a le beate genti."],"english":["and you will see those who are content","in the fire, because they hope to come","whenever it may be to the blessed people."],"wordMap":[{"it":"e","en":"and"},{"it":"vederai","en":"you-will-see"},{"it":"color","en":"those"},{"it":"che","en":"who"},{"it":"son","en":"are"},{"it":"contenti","en":"content"},{"it":"nel","en":"in-the"},{"it":"foco","en":"fire"},{"it":"perché","en":"because"},{"it":"speran","en":"they-hope"},{"it":"di","en":"to"},{"it":"venire","en":"come"},{"it":"quando","en":"whenever"},{"it":"che","en":"it"},{"it":"sia","en":"may-be"},{"it":"a","en":"to"},{"it":"le","en":"the"},{"it":"beate","en":"blessed"},{"it":"genti","en":"people"}]},
+  {"stanza":41,"italian":["A le quai poi se tu vorrai salire,","anima fia a ciò più di me degna:","con lei ti lascerò nel mio partire;"],"english":["To the which then if you will wish to ascend,","a soul shall be for that more than me worthy:","with her you I will leave upon my departing;"],"wordMap":[{"it":"A","en":"To"},{"it":"le","en":"the"},{"it":"quai","en":"which"},{"it":"poi","en":"then"},{"it":"se","en":"if"},{"it":"tu","en":"you"},{"it":"vorrai","en":"will-wish"},{"it":"salire","en":"to-ascend"},{"it":"anima","en":"a-soul"},{"it":"fia","en":"shall-be"},{"it":"a","en":"for"},{"it":"ciò","en":"that"},{"it":"più","en":"more"},{"it":"di","en":"than"},{"it":"me","en":"me"},{"it":"degna","en":"worthy"},{"it":"con","en":"with"},{"it":"lei","en":"her"},{"it":"ti","en":"you"},{"it":"lascerò","en":"I-will-leave"},{"it":"nel","en":"upon"},{"it":"mio","en":"my"},{"it":"partire","en":"departing"}]},
+  {"stanza":42,"italian":["ché quello imperador che là sù regna,","perch' i' fu' ribellante a la sua legge,","non vuol che 'n sua città per me si vegna."],"english":["for that Emperor who there above reigns,","because I was rebellious to the His law,","not wills that in His city through me one come."],"wordMap":[{"it":"ché","en":"for"},{"it":"quello","en":"that"},{"it":"imperador","en":"Emperor"},{"it":"che","en":"who"},{"it":"là","en":"there"},{"it":"sù","en":"above"},{"it":"regna","en":"reigns"},{"it":"perch'","en":"because"},{"it":"i'","en":"I"},{"it":"fu'","en":"was"},{"it":"ribellante","en":"rebellious"},{"it":"a","en":"to"},{"it":"la","en":"the"},{"it":"sua","en":"His"},{"it":"legge","en":"law"},{"it":"non","en":"not"},{"it":"vuol","en":"wills"},{"it":"che","en":"that"},{"it":"'n","en":"in"},{"it":"sua","en":"His"},{"it":"città","en":"city"},{"it":"per","en":"through"},{"it":"me","en":"me"},{"it":"si","en":"one"},{"it":"vegna","en":"come"}]},
+  {"stanza":43,"italian":["In tutte parti impera e quivi regge;","quivi è la sua città e l'alto seggio:","oh felice colui cu' ivi elegge!»."],"english":["In all parts He rules and there He governs;","there is the His city and the lofty throne:","oh happy the one whom there He chooses!»"],"wordMap":[{"it":"In","en":"In"},{"it":"tutte","en":"all"},{"it":"parti","en":"parts"},{"it":"impera","en":"He-rules"},{"it":"e","en":"and"},{"it":"quivi","en":"there"},{"it":"regge","en":"He-governs"},{"it":"quivi","en":"there"},{"it":"è","en":"is"},{"it":"la","en":"the"},{"it":"sua","en":"His"},{"it":"città","en":"city"},{"it":"e","en":"and"},{"it":"l'alto","en":"the-lofty"},{"it":"seggio","en":"throne"},{"it":"oh","en":"oh"},{"it":"felice","en":"happy"},{"it":"colui","en":"the-one"},{"it":"cu'","en":"whom"},{"it":"ivi","en":"there"},{"it":"elegge","en":"He-chooses"}]},
+  {"stanza":44,"italian":["E io a lui: «Poeta, io ti richeggio","per quello Dio che tu non conoscesti,","acciò ch'io fugga questo male e peggio,"],"english":["And I to him: «Poet, I you beg,","by that God whom you not knew,","so that I may flee this evil and worse,"],"wordMap":[{"it":"E","en":"And"},{"it":"io","en":"I"},{"it":"a","en":"to"},{"it":"lui","en":"him"},{"it":"Poeta","en":"Poet"},{"it":"io","en":"I"},{"it":"ti","en":"you"},{"it":"richeggio","en":"beg"},{"it":"per","en":"by"},{"it":"quello","en":"that"},{"it":"Dio","en":"God"},{"it":"che","en":"whom"},{"it":"tu","en":"you"},{"it":"non","en":"not"},{"it":"conoscesti","en":"knew"},{"it":"acciò","en":"so-that"},{"it":"ch'io","en":"I-may"},{"it":"fugga","en":"flee"},{"it":"questo","en":"this"},{"it":"male","en":"evil"},{"it":"e","en":"and"},{"it":"peggio","en":"worse"}]},
+  {"stanza":45,"italian":["che tu mi meni là dov' or dicesti,","sì ch'io veggia la porta di san Pietro","e color cui tu fai cotanto mesti»."],"english":["that you me lead there where just you spoke,","so that I may see the gate of Saint Peter","and those whom you make so wretched.»"],"wordMap":[{"it":"che","en":"that"},{"it":"tu","en":"you"},{"it":"mi","en":"me"},{"it":"meni","en":"lead"},{"it":"là","en":"there"},{"it":"dov'","en":"where"},{"it":"or","en":"just"},{"it":"dicesti","en":"you-spoke"},{"it":"sì","en":"so"},{"it":"ch'io","en":"that-I"},{"it":"veggia","en":"may-see"},{"it":"la","en":"the"},{"it":"porta","en":"gate"},{"it":"di","en":"of"},{"it":"san","en":"Saint"},{"it":"Pietro","en":"Peter"},{"it":"e","en":"and"},{"it":"color","en":"those"},{"it":"cui","en":"whom"},{"it":"tu","en":"you"},{"it":"fai","en":"make"},{"it":"cotanto","en":"so"},{"it":"mesti","en":"wretched"}]},
+  {"stanza":46,"italian":["Allor si mosse, e io li tenni dietro."],"english":["Then he moved, and I him followed behind."],"wordMap":[{"it":"Allor","en":"Then"},{"it":"si","en":"he"},{"it":"mosse","en":"moved"},{"it":"e","en":"and"},{"it":"io","en":"I"},{"it":"li","en":"him"},{"it":"tenni","en":"followed"},{"it":"dietro","en":"behind"}]}
 ];
 
 // State
@@ -628,11 +405,16 @@ let wordElements = { it: [], en: [] }; // [stanza][wordIndex]
 let itToEnMaps = []; // [stanza] -> { itWordIdx: [enWordIdx, ...] }
 let enToItMap = [];  // [stanza] -> { enWordIdx: itWordIdx }
 
-// Audio state for ElevenLabs
-let audioElement = null;
+// Audio state for ElevenLabs (Web Audio API for precise timing)
+let audioCtx = null;
+let audioBuffer = null; // decoded AudioBuffer
+let audioSource = null; // current BufferSourceNode
 let audioTimings = null; // word-level timing data
 let audioLoaded = false;
 let trackingGen = 0; // generation counter to cancel stale tracking loops
+let audioStartCtxTime = 0; // audioCtx.currentTime when playback started
+let audioStartOffset = 0; // offset into buffer when playback started
+let audioPausedAt = -1; // buffer offset where we paused (-1 = not paused)
 
 const playBtn = document.getElementById('playBtn');
 const playIcon = playBtn.querySelector('.play-icon');
@@ -641,12 +423,22 @@ const progressBar = document.getElementById('progressBar');
 const tooltip = document.getElementById('tooltip');
 const mainScroll = document.getElementById('mainScroll');
 
-// Try to load ElevenLabs audio (fetch entire file so seeking always works)
+function getAudioTime() {
+  if (audioPausedAt >= 0) return audioPausedAt;
+  if (!audioCtx || !audioSource) return 0;
+  return audioStartOffset + (audioCtx.currentTime - audioStartCtxTime) * speechRate;
+}
+
+// Try to load ElevenLabs audio via Web Audio API
 function initAudio() {
   fetch('canto1.mp3')
-    .then(r => r.ok ? r.blob() : Promise.reject())
-    .then(blob => {
-      audioElement = new Audio(URL.createObjectURL(blob));
+    .then(r => r.ok ? r.arrayBuffer() : Promise.reject())
+    .then(data => {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      return audioCtx.decodeAudioData(data);
+    })
+    .then(buffer => {
+      audioBuffer = buffer;
       audioLoaded = true;
     })
     .catch(() => { audioLoaded = false; });
@@ -763,26 +555,47 @@ function buildStanzas() {
     const itToEn = {};
 
     for (let itIdx = 0; itIdx < map.length; itIdx++) {
-      const parts = map[itIdx].en.split('-').map(p => p.toLowerCase());
+      const enVal = map[itIdx].en.toLowerCase();
       const enIndices = [];
       const expectedPos = (itIdx / map.length) * enWords.length;
 
-      for (const part of parts) {
-        let bestIdx = -1;
-        let bestDist = Infinity;
-        for (let ei = 0; ei < enWords.length; ei++) {
-          if (claimed.has(ei)) continue;
-          if (enWords[ei] === part) {
-            const dist = Math.abs(ei - expectedPos);
-            if (dist < bestDist) {
-              bestDist = dist;
-              bestIdx = ei;
-            }
+      // Try exact match first (for hyphenated compounds like 'in-the')
+      let exactIdx = -1;
+      let exactDist = Infinity;
+      for (let ei = 0; ei < enWords.length; ei++) {
+        if (claimed.has(ei)) continue;
+        if (enWords[ei] === enVal) {
+          const dist = Math.abs(ei - expectedPos);
+          if (dist < exactDist) {
+            exactDist = dist;
+            exactIdx = ei;
           }
         }
-        if (bestIdx >= 0) {
-          enIndices.push(bestIdx);
-          claimed.add(bestIdx);
+      }
+
+      if (exactIdx >= 0) {
+        enIndices.push(exactIdx);
+        claimed.add(exactIdx);
+      } else {
+        // Fall back to splitting on hyphens
+        const parts = enVal.split('-');
+        for (const part of parts) {
+          let bestIdx = -1;
+          let bestDist = Infinity;
+          for (let ei = 0; ei < enWords.length; ei++) {
+            if (claimed.has(ei)) continue;
+            if (enWords[ei] === part) {
+              const dist = Math.abs(ei - expectedPos);
+              if (dist < bestDist) {
+                bestDist = dist;
+                bestIdx = ei;
+              }
+            }
+          }
+          if (bestIdx >= 0) {
+            enIndices.push(bestIdx);
+            claimed.add(bestIdx);
+          }
         }
       }
 
@@ -809,15 +622,15 @@ function tokenizeLine(line) {
   const tokens = [];
   let i = 0;
   while (i < line.length) {
-    if (/[\s,;:.!?\u2018\u2019\u201c\u201d]/.test(line[i]) && !/['\u2019]/.test(line[i])) {
+    if (/[\s,;:.!?\u00ab\u00bb\u2018\u2019\u201c\u201d]/.test(line[i]) && !/['\u2019]/.test(line[i])) {
       let punct = '';
-      while (i < line.length && /[\s,;:.!?\u2018\u2019\u201c\u201d]/.test(line[i]) && !/['\u2019]/.test(line[i])) {
+      while (i < line.length && /[\s,;:.!?\u00ab\u00bb\u2018\u2019\u201c\u201d]/.test(line[i]) && !/['\u2019]/.test(line[i])) {
         punct += line[i]; i++;
       }
       tokens.push({ text: punct, isWord: false });
     } else {
       let word = '';
-      while (i < line.length && !/[\s,;:.!?\u2018\u2019\u201c\u201d]/.test(line[i]) || (i < line.length && /['\u2019]/.test(line[i]))) {
+      while (i < line.length && !/[\s,;:.!?\u00ab\u00bb\u2018\u2019\u201c\u201d]/.test(line[i]) || (i < line.length && /['\u2019]/.test(line[i]))) {
         // Include apostrophes as part of words
         if (/[,;:.!?]/.test(line[i])) break;
         word += line[i]; i++;
@@ -971,21 +784,46 @@ mainScroll.addEventListener('mouseout', handleWordLeave);
 mainScroll.addEventListener('click', handleWordClick);
 
 // Playback - uses ElevenLabs audio if available, falls back to Web Speech API
-let audioPaused = false; // true when ElevenLabs audio is paused (not stopped)
+function startAudioFrom(offset) {
+  // Stop any existing source
+  if (audioSource) {
+    try { audioSource.stop(); } catch(e) {}
+    audioSource = null;
+  }
+
+  // Resume AudioContext if suspended (browser autoplay policy)
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+
+  audioSource = audioCtx.createBufferSource();
+  audioSource.buffer = audioBuffer;
+  audioSource.playbackRate.value = speechRate;
+  audioSource.connect(audioCtx.destination);
+  audioStartCtxTime = audioCtx.currentTime;
+  audioStartOffset = offset;
+  audioPausedAt = -1;
+  audioSource.start(0, offset);
+
+  audioSource.onended = () => {
+    if (isPlaying && audioPausedAt < 0) {
+      isPlaying = false;
+      currentStanza = 0;
+      updatePlayButton();
+      clearSpeakingHighlights();
+    }
+  };
+}
 
 function togglePlay() {
   if (isPlaying) {
     pause();
   } else {
     if (audioLoaded && audioTimings) {
-      if (audioPaused) {
-        // Resume from where we left off
+      if (audioPausedAt >= 0) {
+        // Resume from where we paused
         isPlaying = true;
-        audioPaused = false;
         updatePlayButton();
-        audioElement.playbackRate = speechRate;
+        startAudioFrom(audioPausedAt);
         const gen = ++trackingGen;
-        audioElement.play();
         trackAudioWords(gen);
       } else {
         playWithAudio(currentStanza);
@@ -1004,9 +842,10 @@ function togglePlay() {
 
 function pause() {
   isPlaying = false;
-  if (audioElement && !audioElement.paused) {
-    audioElement.pause();
-    audioPaused = true;
+  if (audioSource && audioPausedAt < 0) {
+    audioPausedAt = getAudioTime();
+    try { audioSource.stop(); } catch(e) {}
+    audioSource = null;
   }
   window.speechSynthesis.pause();
   updatePlayButton();
@@ -1014,8 +853,11 @@ function pause() {
 
 function startFromStanza(si) {
   window.speechSynthesis.cancel();
-  if (audioElement) audioElement.pause();
-  audioPaused = false;
+  if (audioSource) {
+    try { audioSource.stop(); } catch(e) {}
+    audioSource = null;
+  }
+  audioPausedAt = -1;
   currentStanza = si;
   currentWordIndex = -1;
   if (audioLoaded && audioTimings) {
@@ -1033,31 +875,20 @@ function playWithAudio(fromStanza) {
   scrollToStanza(fromStanza);
   highlightActiveStanza(fromStanza);
 
-  audioElement.playbackRate = speechRate;
-  audioElement.onended = () => {
-    isPlaying = false;
-    currentStanza = 0;
-    updatePlayButton();
-    clearSpeakingHighlights();
-  };
-
   // Seek to the stanza start time
   const stanzaStart = audioTimings.stanzas[fromStanza];
-  if (stanzaStart) {
-    audioElement.currentTime = stanzaStart.startTime;
-  }
+  const offset = stanzaStart ? stanzaStart.startTime : 0;
+  startAudioFrom(offset);
 
   // Cancel any stale tracking loop and start a new one
   const gen = ++trackingGen;
-  audioElement.play().then(() => {
-    if (isPlaying && gen === trackingGen) trackAudioWords(gen);
-  }).catch(() => {});
+  trackAudioWords(gen);
 }
 
 function trackAudioWords(gen) {
   if (!isPlaying || !audioTimings || gen !== trackingGen) return;
 
-  const currentTime = audioElement.currentTime;
+  const currentTime = getAudioTime();
   const words = audioTimings.words;
 
   // Find current word
@@ -1233,7 +1064,11 @@ document.querySelectorAll('.speed-btn').forEach(btn => {
     document.querySelectorAll('.speed-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     speechRate = parseFloat(btn.dataset.speed);
-    if (audioElement) audioElement.playbackRate = speechRate;
+    if (audioSource && isPlaying) {
+      // Recalculate position and restart with new rate
+      const pos = getAudioTime();
+      startAudioFrom(pos);
+    }
   });
 });
 
