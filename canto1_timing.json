@@ -1,0 +1,6808 @@
+{
+  "stanzas": {
+    "0": {
+      "startTime": 0.0475
+    },
+    "1": {
+      "startTime": 6.9843
+    },
+    "2": {
+      "startTime": 14.0612
+    },
+    "3": {
+      "startTime": 21.5767
+    },
+    "4": {
+      "startTime": 29.918
+    },
+    "5": {
+      "startTime": 37.3544
+    },
+    "6": {
+      "startTime": 44.4181
+    },
+    "7": {
+      "startTime": 50.9016
+    },
+    "8": {
+      "startTime": 57.9434
+    },
+    "9": {
+      "startTime": 64.9603
+    },
+    "10": {
+      "startTime": 72.8714
+    },
+    "11": {
+      "startTime": 80.7844
+    },
+    "12": {
+      "startTime": 88.1398
+    },
+    "13": {
+      "startTime": 95.7016
+    },
+    "14": {
+      "startTime": 104.2293
+    },
+    "15": {
+      "startTime": 111.4789
+    },
+    "16": {
+      "startTime": 118.4955
+    },
+    "17": {
+      "startTime": 126.2697
+    },
+    "18": {
+      "startTime": 132.9025
+    },
+    "19": {
+      "startTime": 141.2447
+    },
+    "20": {
+      "startTime": 149.4234
+    },
+    "21": {
+      "startTime": 156.9746
+    },
+    "22": {
+      "startTime": 164.6417
+    },
+    "23": {
+      "startTime": 173.494
+    },
+    "24": {
+      "startTime": 181.3944
+    },
+    "25": {
+      "startTime": 189.3177
+    },
+    "26": {
+      "startTime": 195.8584
+    },
+    "27": {
+      "startTime": 203.4101
+    },
+    "28": {
+      "startTime": 210.9517
+    },
+    "29": {
+      "startTime": 218.4226
+    },
+    "30": {
+      "startTime": 226.2974
+    },
+    "31": {
+      "startTime": 234.7803
+    },
+    "32": {
+      "startTime": 242.3194
+    },
+    "33": {
+      "startTime": 250.4049
+    },
+    "34": {
+      "startTime": 258.6767
+    },
+    "35": {
+      "startTime": 268.0398
+    },
+    "36": {
+      "startTime": 276.161
+    },
+    "37": {
+      "startTime": 283.816
+    },
+    "38": {
+      "startTime": 292.8072
+    },
+    "39": {
+      "startTime": 300.6158
+    },
+    "40": {
+      "startTime": 306.5291
+    },
+    "41": {
+      "startTime": 313.8147
+    },
+    "42": {
+      "startTime": 321.9462
+    },
+    "43": {
+      "startTime": 330.2411
+    },
+    "44": {
+      "startTime": 338.8042
+    },
+    "45": {
+      "startTime": 346.335
+    }
+  },
+  "words": [
+    {
+      "stanza": 0,
+      "wordIdx": 0,
+      "word": "Nel",
+      "start": 0.0475,
+      "end": 0.2159
+    },
+    {
+      "stanza": 0,
+      "wordIdx": 1,
+      "word": "mezzo",
+      "start": 0.2758,
+      "end": 0.5516
+    },
+    {
+      "stanza": 0,
+      "wordIdx": 2,
+      "word": "del",
+      "start": 0.5878,
+      "end": 0.7076
+    },
+    {
+      "stanza": 0,
+      "wordIdx": 3,
+      "word": "cammin",
+      "start": 0.7675,
+      "end": 1.1518
+    },
+    {
+      "stanza": 0,
+      "wordIdx": 4,
+      "word": "di",
+      "start": 1.1993,
+      "end": 1.2592
+    },
+    {
+      "stanza": 0,
+      "wordIdx": 5,
+      "word": "nostra",
+      "start": 1.3067,
+      "end": 1.6311
+    },
+    {
+      "stanza": 0,
+      "wordIdx": 6,
+      "word": "vita",
+      "start": 1.6786,
+      "end": 2.0629
+    },
+    {
+      "stanza": 0,
+      "wordIdx": 7,
+      "word": "mi",
+      "start": 2.2426,
+      "end": 2.3624
+    },
+    {
+      "stanza": 0,
+      "wordIdx": 8,
+      "word": "ritrovai",
+      "start": 2.411,
+      "end": 2.8665
+    },
+    {
+      "stanza": 0,
+      "wordIdx": 9,
+      "word": "per",
+      "start": 2.914,
+      "end": 3.0225
+    },
+    {
+      "stanza": 0,
+      "wordIdx": 10,
+      "word": "una",
+      "start": 3.0824,
+      "end": 3.2136
+    },
+    {
+      "stanza": 0,
+      "wordIdx": 11,
+      "word": "selva",
+      "start": 3.2621,
+      "end": 3.5617
+    },
+    {
+      "stanza": 0,
+      "wordIdx": 12,
+      "word": "oscura,",
+      "start": 3.5979,
+      "end": 4.2455
+    },
+    {
+      "stanza": 0,
+      "wordIdx": 13,
+      "word": "ché",
+      "start": 4.4015,
+      "end": 4.5337
+    },
+    {
+      "stanza": 0,
+      "wordIdx": 14,
+      "word": "la",
+      "start": 4.5812,
+      "end": 4.6536
+    },
+    {
+      "stanza": 0,
+      "wordIdx": 15,
+      "word": "diritta",
+      "start": 4.7011,
+      "end": 5.0729
+    },
+    {
+      "stanza": 0,
+      "wordIdx": 16,
+      "word": "via",
+      "start": 5.1205,
+      "end": 5.4087
+    },
+    {
+      "stanza": 0,
+      "wordIdx": 17,
+      "word": "era",
+      "start": 5.5285,
+      "end": 5.7444
+    },
+    {
+      "stanza": 0,
+      "wordIdx": 18,
+      "word": "smarrita.",
+      "start": 5.7805,
+      "end": 6.548
+    },
+    {
+      "stanza": 1,
+      "wordIdx": 0,
+      "word": "Ahi",
+      "start": 6.9843,
+      "end": 7.2485
+    },
+    {
+      "stanza": 1,
+      "wordIdx": 1,
+      "word": "quanto",
+      "start": 7.3335,
+      "end": 7.6578
+    },
+    {
+      "stanza": 1,
+      "wordIdx": 2,
+      "word": "a",
+      "start": 7.7055,
+      "end": 7.7303
+    },
+    {
+      "stanza": 1,
+      "wordIdx": 3,
+      "word": "dir",
+      "start": 7.7904,
+      "end": 8.0184
+    },
+    {
+      "stanza": 1,
+      "wordIdx": 4,
+      "word": "qual",
+      "start": 8.0785,
+      "end": 8.2588
+    },
+    {
+      "stanza": 1,
+      "wordIdx": 5,
+      "word": "era",
+      "start": 8.3313,
+      "end": 8.4878
+    },
+    {
+      "stanza": 1,
+      "wordIdx": 6,
+      "word": "è",
+      "start": 8.5116,
+      "end": 8.5365
+    },
+    {
+      "stanza": 1,
+      "wordIdx": 7,
+      "word": "cosa",
+      "start": 8.608,
+      "end": 8.8733
+    },
+    {
+      "stanza": 1,
+      "wordIdx": 8,
+      "word": "dura",
+      "start": 8.9209,
+      "end": 9.1738
+    },
+    {
+      "stanza": 1,
+      "wordIdx": 9,
+      "word": "esta",
+      "start": 9.21,
+      "end": 9.4017
+    },
+    {
+      "stanza": 1,
+      "wordIdx": 10,
+      "word": "selva",
+      "start": 9.4504,
+      "end": 9.7395
+    },
+    {
+      "stanza": 1,
+      "wordIdx": 11,
+      "word": "selvaggia",
+      "start": 9.7872,
+      "end": 10.3281
+    },
+    {
+      "stanza": 1,
+      "wordIdx": 12,
+      "word": "e",
+      "start": 10.3768,
+      "end": 10.413
+    },
+    {
+      "stanza": 1,
+      "wordIdx": 13,
+      "word": "aspra",
+      "start": 10.4607,
+      "end": 10.8337
+    },
+    {
+      "stanza": 1,
+      "wordIdx": 14,
+      "word": "e",
+      "start": 10.8576,
+      "end": 10.8814
+    },
+    {
+      "stanza": 1,
+      "wordIdx": 15,
+      "word": "forte",
+      "start": 10.9539,
+      "end": 11.5311
+    },
+    {
+      "stanza": 1,
+      "wordIdx": 16,
+      "word": "che",
+      "start": 11.7124,
+      "end": 11.844
+    },
+    {
+      "stanza": 1,
+      "wordIdx": 17,
+      "word": "nel",
+      "start": 11.9041,
+      "end": 12.0367
+    },
+    {
+      "stanza": 1,
+      "wordIdx": 18,
+      "word": "pensier",
+      "start": 12.0844,
+      "end": 12.4823
+    },
+    {
+      "stanza": 1,
+      "wordIdx": 19,
+      "word": "rinova",
+      "start": 12.5061,
+      "end": 12.8429
+    },
+    {
+      "stanza": 1,
+      "wordIdx": 20,
+      "word": "la",
+      "start": 12.8791,
+      "end": 12.9506
+    },
+    {
+      "stanza": 1,
+      "wordIdx": 21,
+      "word": "paura!",
+      "start": 12.9993,
+      "end": 13.5889
+    },
+    {
+      "stanza": 2,
+      "wordIdx": 0,
+      "word": "Tant'",
+      "start": 14.0612,
+      "end": 14.4079
+    },
+    {
+      "stanza": 2,
+      "wordIdx": 1,
+      "word": "è",
+      "start": 14.444,
+      "end": 14.4677
+    },
+    {
+      "stanza": 2,
+      "wordIdx": 2,
+      "word": "amara",
+      "start": 14.5162,
+      "end": 14.9238
+    },
+    {
+      "stanza": 2,
+      "wordIdx": 3,
+      "word": "che",
+      "start": 14.9713,
+      "end": 15.0796
+    },
+    {
+      "stanza": 2,
+      "wordIdx": 4,
+      "word": "poco",
+      "start": 15.1508,
+      "end": 15.4624
+    },
+    {
+      "stanza": 2,
+      "wordIdx": 5,
+      "word": "è",
+      "start": 15.4861,
+      "end": 15.5099
+    },
+    {
+      "stanza": 2,
+      "wordIdx": 6,
+      "word": "più",
+      "start": 15.5584,
+      "end": 15.7142
+    },
+    {
+      "stanza": 2,
+      "wordIdx": 7,
+      "word": "morte;",
+      "start": 15.7978,
+      "end": 16.3849
+    },
+    {
+      "stanza": 2,
+      "wordIdx": 8,
+      "word": "ma",
+      "start": 16.6005,
+      "end": 16.7079
+    },
+    {
+      "stanza": 2,
+      "wordIdx": 9,
+      "word": "per",
+      "start": 16.7564,
+      "end": 16.876
+    },
+    {
+      "stanza": 2,
+      "wordIdx": 10,
+      "word": "trattar",
+      "start": 16.9359,
+      "end": 17.3311
+    },
+    {
+      "stanza": 2,
+      "wordIdx": 11,
+      "word": "del",
+      "start": 17.3909,
+      "end": 17.5106
+    },
+    {
+      "stanza": 2,
+      "wordIdx": 12,
+      "word": "ben",
+      "start": 17.5705,
+      "end": 17.7511
+    },
+    {
+      "stanza": 2,
+      "wordIdx": 13,
+      "word": "ch'i'",
+      "start": 17.7985,
+      "end": 17.9419
+    },
+    {
+      "stanza": 2,
+      "wordIdx": 14,
+      "word": "vi",
+      "start": 17.9781,
+      "end": 18.0616
+    },
+    {
+      "stanza": 2,
+      "wordIdx": 15,
+      "word": "trovai,",
+      "start": 18.0978,
+      "end": 18.721
+    },
+    {
+      "stanza": 2,
+      "wordIdx": 16,
+      "word": "dirò",
+      "start": 18.9367,
+      "end": 19.1884
+    },
+    {
+      "stanza": 2,
+      "wordIdx": 17,
+      "word": "de",
+      "start": 19.2596,
+      "end": 19.3195
+    },
+    {
+      "stanza": 2,
+      "wordIdx": 18,
+      "word": "l'altre",
+      "start": 19.368,
+      "end": 19.6672
+    },
+    {
+      "stanza": 2,
+      "wordIdx": 19,
+      "word": "cose",
+      "start": 19.7157,
+      "end": 20.051
+    },
+    {
+      "stanza": 2,
+      "wordIdx": 20,
+      "word": "ch'i'",
+      "start": 20.0985,
+      "end": 20.2419
+    },
+    {
+      "stanza": 2,
+      "wordIdx": 21,
+      "word": "v'ho",
+      "start": 20.2781,
+      "end": 20.3864
+    },
+    {
+      "stanza": 2,
+      "wordIdx": 22,
+      "word": "scorte.",
+      "start": 20.4462,
+      "end": 21.1407
+    },
+    {
+      "stanza": 3,
+      "wordIdx": 0,
+      "word": "Io",
+      "start": 21.5767,
+      "end": 21.8153
+    },
+    {
+      "stanza": 3,
+      "wordIdx": 1,
+      "word": "non",
+      "start": 21.8749,
+      "end": 22.0066
+    },
+    {
+      "stanza": 3,
+      "wordIdx": 2,
+      "word": "so",
+      "start": 22.1023,
+      "end": 22.2925
+    },
+    {
+      "stanza": 3,
+      "wordIdx": 3,
+      "word": "ben",
+      "start": 22.3645,
+      "end": 22.5671
+    },
+    {
+      "stanza": 3,
+      "wordIdx": 4,
+      "word": "ridir",
+      "start": 22.6875,
+      "end": 23.1411
+    },
+    {
+      "stanza": 3,
+      "wordIdx": 5,
+      "word": "com'",
+      "start": 23.2244,
+      "end": 23.4866
+    },
+    {
+      "stanza": 3,
+      "wordIdx": 6,
+      "word": "i'",
+      "start": 23.5113,
+      "end": 23.5586
+    },
+    {
+      "stanza": 3,
+      "wordIdx": 7,
+      "word": "v'intrai,",
+      "start": 23.5946,
+      "end": 24.4308
+    },
+    {
+      "stanza": 3,
+      "wordIdx": 8,
+      "word": "tant'",
+      "start": 24.7651,
+      "end": 25.159
+    },
+    {
+      "stanza": 3,
+      "wordIdx": 9,
+      "word": "era",
+      "start": 25.1827,
+      "end": 25.3143
+    },
+    {
+      "stanza": 3,
+      "wordIdx": 10,
+      "word": "pien",
+      "start": 25.3616,
+      "end": 25.5766
+    },
+    {
+      "stanza": 3,
+      "wordIdx": 11,
+      "word": "di",
+      "start": 25.6363,
+      "end": 25.7196
+    },
+    {
+      "stanza": 3,
+      "wordIdx": 12,
+      "word": "sonno",
+      "start": 25.7803,
+      "end": 26.3295
+    },
+    {
+      "stanza": 3,
+      "wordIdx": 13,
+      "word": "a",
+      "start": 26.5794,
+      "end": 26.6638
+    },
+    {
+      "stanza": 3,
+      "wordIdx": 14,
+      "word": "quel",
+      "start": 26.7471,
+      "end": 26.926
+    },
+    {
+      "stanza": 3,
+      "wordIdx": 15,
+      "word": "punto",
+      "start": 26.998,
+      "end": 27.3559
+    },
+    {
+      "stanza": 3,
+      "wordIdx": 16,
+      "word": "che",
+      "start": 27.3919,
+      "end": 27.4639
+    },
+    {
+      "stanza": 3,
+      "wordIdx": 17,
+      "word": "la",
+      "start": 27.5113,
+      "end": 27.5709
+    },
+    {
+      "stanza": 3,
+      "wordIdx": 18,
+      "word": "verace",
+      "start": 27.6182,
+      "end": 27.9648
+    },
+    {
+      "stanza": 3,
+      "wordIdx": 19,
+      "word": "via",
+      "start": 28.0245,
+      "end": 28.3351
+    },
+    {
+      "stanza": 3,
+      "wordIdx": 20,
+      "word": "abbandonai.",
+      "start": 28.4544,
+      "end": 29.4819
+    },
+    {
+      "stanza": 4,
+      "wordIdx": 0,
+      "word": "Ma",
+      "start": 29.918,
+      "end": 30.0739
+    },
+    {
+      "stanza": 4,
+      "wordIdx": 1,
+      "word": "poi",
+      "start": 30.1338,
+      "end": 30.4095
+    },
+    {
+      "stanza": 4,
+      "wordIdx": 2,
+      "word": "ch'i'",
+      "start": 30.4332,
+      "end": 30.5891
+    },
+    {
+      "stanza": 4,
+      "wordIdx": 3,
+      "word": "fui",
+      "start": 30.6366,
+      "end": 30.8648
+    },
+    {
+      "stanza": 4,
+      "wordIdx": 4,
+      "word": "al",
+      "start": 30.9123,
+      "end": 30.9846
+    },
+    {
+      "stanza": 4,
+      "wordIdx": 5,
+      "word": "piè",
+      "start": 31.0568,
+      "end": 31.2489
+    },
+    {
+      "stanza": 4,
+      "wordIdx": 6,
+      "word": "d'un",
+      "start": 31.3088,
+      "end": 31.4647
+    },
+    {
+      "stanza": 4,
+      "wordIdx": 7,
+      "word": "colle",
+      "start": 31.5483,
+      "end": 31.8477
+    },
+    {
+      "stanza": 4,
+      "wordIdx": 8,
+      "word": "giunto,",
+      "start": 31.9076,
+      "end": 32.5549
+    },
+    {
+      "stanza": 4,
+      "wordIdx": 9,
+      "word": "là",
+      "start": 32.7707,
+      "end": 32.9029
+    },
+    {
+      "stanza": 4,
+      "wordIdx": 10,
+      "word": "dove",
+      "start": 32.9504,
+      "end": 33.1186
+    },
+    {
+      "stanza": 4,
+      "wordIdx": 11,
+      "word": "terminava",
+      "start": 33.1661,
+      "end": 33.7175
+    },
+    {
+      "stanza": 4,
+      "wordIdx": 12,
+      "word": "quella",
+      "start": 33.766,
+      "end": 33.9818
+    },
+    {
+      "stanza": 4,
+      "wordIdx": 13,
+      "word": "valle",
+      "start": 34.0293,
+      "end": 34.4133
+    },
+    {
+      "stanza": 4,
+      "wordIdx": 14,
+      "word": "che",
+      "start": 34.4608,
+      "end": 34.5569
+    },
+    {
+      "stanza": 4,
+      "wordIdx": 15,
+      "word": "m'avea",
+      "start": 34.6167,
+      "end": 34.9884
+    },
+    {
+      "stanza": 4,
+      "wordIdx": 16,
+      "word": "di",
+      "start": 35.0483,
+      "end": 35.1206
+    },
+    {
+      "stanza": 4,
+      "wordIdx": 17,
+      "word": "paura",
+      "start": 35.1681,
+      "end": 35.5996
+    },
+    {
+      "stanza": 4,
+      "wordIdx": 18,
+      "word": "il",
+      "start": 35.6234,
+      "end": 35.6833
+    },
+    {
+      "stanza": 4,
+      "wordIdx": 19,
+      "word": "cor",
+      "start": 35.7669,
+      "end": 35.9228
+    },
+    {
+      "stanza": 4,
+      "wordIdx": 20,
+      "word": "compunto,",
+      "start": 36.0075,
+      "end": 36.8943
+    },
+    {
+      "stanza": 5,
+      "wordIdx": 0,
+      "word": "guardai",
+      "start": 37.3544,
+      "end": 37.7512
+    },
+    {
+      "stanza": 5,
+      "wordIdx": 1,
+      "word": "in",
+      "start": 37.7875,
+      "end": 37.8714
+    },
+    {
+      "stanza": 5,
+      "wordIdx": 2,
+      "word": "alto",
+      "start": 37.9563,
+      "end": 38.3769
+    },
+    {
+      "stanza": 5,
+      "wordIdx": 3,
+      "word": "e",
+      "start": 38.7136,
+      "end": 38.8338
+    },
+    {
+      "stanza": 5,
+      "wordIdx": 4,
+      "word": "vidi",
+      "start": 38.9063,
+      "end": 39.1343
+    },
+    {
+      "stanza": 5,
+      "wordIdx": 5,
+      "word": "le",
+      "start": 39.1705,
+      "end": 39.243
+    },
+    {
+      "stanza": 5,
+      "wordIdx": 6,
+      "word": "sue",
+      "start": 39.2793,
+      "end": 39.4109
+    },
+    {
+      "stanza": 5,
+      "wordIdx": 7,
+      "word": "spalle",
+      "start": 39.4471,
+      "end": 39.8325
+    },
+    {
+      "stanza": 5,
+      "wordIdx": 8,
+      "word": "vestite",
+      "start": 39.8802,
+      "end": 40.3008
+    },
+    {
+      "stanza": 5,
+      "wordIdx": 9,
+      "word": "già",
+      "start": 40.3733,
+      "end": 40.5536
+    },
+    {
+      "stanza": 5,
+      "wordIdx": 10,
+      "word": "de'",
+      "start": 40.6137,
+      "end": 40.71
+    },
+    {
+      "stanza": 5,
+      "wordIdx": 11,
+      "word": "raggi",
+      "start": 40.7338,
+      "end": 41.0104
+    },
+    {
+      "stanza": 5,
+      "wordIdx": 12,
+      "word": "del",
+      "start": 41.0591,
+      "end": 41.1669
+    },
+    {
+      "stanza": 5,
+      "wordIdx": 13,
+      "word": "pianeta",
+      "start": 41.227,
+      "end": 41.6362
+    },
+    {
+      "stanza": 5,
+      "wordIdx": 14,
+      "word": "che",
+      "start": 41.6724,
+      "end": 41.7688
+    },
+    {
+      "stanza": 5,
+      "wordIdx": 15,
+      "word": "mena",
+      "start": 41.889,
+      "end": 42.1418
+    },
+    {
+      "stanza": 5,
+      "wordIdx": 16,
+      "word": "dritto",
+      "start": 42.178,
+      "end": 42.4909
+    },
+    {
+      "stanza": 5,
+      "wordIdx": 17,
+      "word": "altrui",
+      "start": 42.5261,
+      "end": 42.9229
+    },
+    {
+      "stanza": 5,
+      "wordIdx": 18,
+      "word": "per",
+      "start": 42.9716,
+      "end": 43.0918
+    },
+    {
+      "stanza": 5,
+      "wordIdx": 19,
+      "word": "ogne",
+      "start": 43.1518,
+      "end": 43.3684
+    },
+    {
+      "stanza": 5,
+      "wordIdx": 20,
+      "word": "calle.",
+      "start": 43.416,
+      "end": 43.9817
+    },
+    {
+      "stanza": 6,
+      "wordIdx": 0,
+      "word": "Allor",
+      "start": 44.4181,
+      "end": 44.6838
+    },
+    {
+      "stanza": 6,
+      "wordIdx": 1,
+      "word": "fu",
+      "start": 44.7327,
+      "end": 44.8411
+    },
+    {
+      "stanza": 6,
+      "wordIdx": 2,
+      "word": "la",
+      "start": 44.89,
+      "end": 44.9505
+    },
+    {
+      "stanza": 6,
+      "wordIdx": 3,
+      "word": "paura",
+      "start": 44.9984,
+      "end": 45.3369
+    },
+    {
+      "stanza": 6,
+      "wordIdx": 4,
+      "word": "un",
+      "start": 45.3734,
+      "end": 45.4213
+    },
+    {
+      "stanza": 6,
+      "wordIdx": 5,
+      "word": "poco",
+      "start": 45.4828,
+      "end": 45.6994
+    },
+    {
+      "stanza": 6,
+      "wordIdx": 6,
+      "word": "queta,",
+      "start": 45.7484,
+      "end": 46.2443
+    },
+    {
+      "stanza": 6,
+      "wordIdx": 7,
+      "word": "che",
+      "start": 46.4016,
+      "end": 46.5224
+    },
+    {
+      "stanza": 6,
+      "wordIdx": 8,
+      "word": "nel",
+      "start": 46.5953,
+      "end": 46.7276
+    },
+    {
+      "stanza": 6,
+      "wordIdx": 9,
+      "word": "lago",
+      "start": 46.7641,
+      "end": 46.9818
+    },
+    {
+      "stanza": 6,
+      "wordIdx": 10,
+      "word": "del",
+      "start": 47.0183,
+      "end": 47.1516
+    },
+    {
+      "stanza": 6,
+      "wordIdx": 11,
+      "word": "cor",
+      "start": 47.2235,
+      "end": 47.4902
+    },
+    {
+      "stanza": 6,
+      "wordIdx": 12,
+      "word": "m'era",
+      "start": 47.5506,
+      "end": 47.7318
+    },
+    {
+      "stanza": 6,
+      "wordIdx": 13,
+      "word": "durata",
+      "start": 47.7683,
+      "end": 48.1069
+    },
+    {
+      "stanza": 6,
+      "wordIdx": 14,
+      "word": "la",
+      "start": 48.1433,
+      "end": 48.2037
+    },
+    {
+      "stanza": 6,
+      "wordIdx": 15,
+      "word": "notte",
+      "start": 48.2517,
+      "end": 48.5538
+    },
+    {
+      "stanza": 6,
+      "wordIdx": 16,
+      "word": "ch'i'",
+      "start": 48.5902,
+      "end": 48.7236
+    },
+    {
+      "stanza": 6,
+      "wordIdx": 17,
+      "word": "passai",
+      "start": 48.7475,
+      "end": 49.2559
+    },
+    {
+      "stanza": 6,
+      "wordIdx": 18,
+      "word": "con",
+      "start": 49.3163,
+      "end": 49.4736
+    },
+    {
+      "stanza": 6,
+      "wordIdx": 19,
+      "word": "tanta",
+      "start": 49.5455,
+      "end": 49.8726
+    },
+    {
+      "stanza": 6,
+      "wordIdx": 20,
+      "word": "pièta.",
+      "start": 49.909,
+      "end": 50.4653
+    },
+    {
+      "stanza": 7,
+      "wordIdx": 0,
+      "word": "E",
+      "start": 50.9016,
+      "end": 50.9493
+    },
+    {
+      "stanza": 7,
+      "wordIdx": 1,
+      "word": "come",
+      "start": 51.0695,
+      "end": 51.3587
+    },
+    {
+      "stanza": 7,
+      "wordIdx": 2,
+      "word": "quei",
+      "start": 51.4313,
+      "end": 51.708
+    },
+    {
+      "stanza": 7,
+      "wordIdx": 3,
+      "word": "che",
+      "start": 51.7443,
+      "end": 51.8397
+    },
+    {
+      "stanza": 7,
+      "wordIdx": 4,
+      "word": "con",
+      "start": 51.8998,
+      "end": 52.0449
+    },
+    {
+      "stanza": 7,
+      "wordIdx": 5,
+      "word": "lena",
+      "start": 52.1164,
+      "end": 52.3455
+    },
+    {
+      "stanza": 7,
+      "wordIdx": 6,
+      "word": "affannata,",
+      "start": 52.3693,
+      "end": 53.1519
+    },
+    {
+      "stanza": 7,
+      "wordIdx": 7,
+      "word": "uscito",
+      "start": 53.3084,
+      "end": 53.7293
+    },
+    {
+      "stanza": 7,
+      "wordIdx": 8,
+      "word": "fuor",
+      "start": 53.7894,
+      "end": 53.9221
+    },
+    {
+      "stanza": 7,
+      "wordIdx": 9,
+      "word": "del",
+      "start": 53.9822,
+      "end": 54.09
+    },
+    {
+      "stanza": 7,
+      "wordIdx": 10,
+      "word": "pelago",
+      "start": 54.1511,
+      "end": 54.4756
+    },
+    {
+      "stanza": 7,
+      "wordIdx": 11,
+      "word": "a",
+      "start": 54.4994,
+      "end": 54.5233
+    },
+    {
+      "stanza": 7,
+      "wordIdx": 12,
+      "word": "la",
+      "start": 54.5595,
+      "end": 54.6321
+    },
+    {
+      "stanza": 7,
+      "wordIdx": 13,
+      "word": "riva,",
+      "start": 54.6684,
+      "end": 55.0415
+    },
+    {
+      "stanza": 7,
+      "wordIdx": 14,
+      "word": "si",
+      "start": 55.2219,
+      "end": 55.366
+    },
+    {
+      "stanza": 7,
+      "wordIdx": 15,
+      "word": "volge",
+      "start": 55.4261,
+      "end": 55.7754
+    },
+    {
+      "stanza": 7,
+      "wordIdx": 16,
+      "word": "a",
+      "start": 55.7992,
+      "end": 55.8231
+    },
+    {
+      "stanza": 7,
+      "wordIdx": 17,
+      "word": "l'acqua",
+      "start": 55.8956,
+      "end": 56.2201
+    },
+    {
+      "stanza": 7,
+      "wordIdx": 18,
+      "word": "perigliosa",
+      "start": 56.2563,
+      "end": 56.7985
+    },
+    {
+      "stanza": 7,
+      "wordIdx": 19,
+      "word": "e",
+      "start": 56.8223,
+      "end": 56.8461
+    },
+    {
+      "stanza": 7,
+      "wordIdx": 20,
+      "word": "guata,",
+      "start": 56.9187,
+      "end": 57.4598
+    },
+    {
+      "stanza": 8,
+      "wordIdx": 0,
+      "word": "così",
+      "start": 57.9434,
+      "end": 58.2191
+    },
+    {
+      "stanza": 8,
+      "wordIdx": 1,
+      "word": "l'animo",
+      "start": 58.2913,
+      "end": 58.6032
+    },
+    {
+      "stanza": 8,
+      "wordIdx": 2,
+      "word": "mio,",
+      "start": 58.663,
+      "end": 58.9748
+    },
+    {
+      "stanza": 8,
+      "wordIdx": 3,
+      "word": "ch'ancor",
+      "start": 58.9986,
+      "end": 59.298
+    },
+    {
+      "stanza": 8,
+      "wordIdx": 4,
+      "word": "fuggiva,",
+      "start": 59.3579,
+      "end": 59.9578
+    },
+    {
+      "stanza": 8,
+      "wordIdx": 5,
+      "word": "si",
+      "start": 60.1137,
+      "end": 60.2334
+    },
+    {
+      "stanza": 8,
+      "wordIdx": 6,
+      "word": "volse",
+      "start": 60.2809,
+      "end": 60.569
+    },
+    {
+      "stanza": 8,
+      "wordIdx": 7,
+      "word": "a",
+      "start": 60.6165,
+      "end": 60.6413
+    },
+    {
+      "stanza": 8,
+      "wordIdx": 8,
+      "word": "retro",
+      "start": 60.7363,
+      "end": 61.1802
+    },
+    {
+      "stanza": 8,
+      "wordIdx": 9,
+      "word": "a",
+      "start": 61.3361,
+      "end": 61.4084
+    },
+    {
+      "stanza": 8,
+      "wordIdx": 10,
+      "word": "rimirar",
+      "start": 61.4683,
+      "end": 61.8637
+    },
+    {
+      "stanza": 8,
+      "wordIdx": 11,
+      "word": "lo",
+      "start": 61.9236,
+      "end": 61.9949
+    },
+    {
+      "stanza": 8,
+      "wordIdx": 12,
+      "word": "passo",
+      "start": 62.0434,
+      "end": 62.3665
+    },
+    {
+      "stanza": 8,
+      "wordIdx": 13,
+      "word": "che",
+      "start": 62.4027,
+      "end": 62.475
+    },
+    {
+      "stanza": 8,
+      "wordIdx": 14,
+      "word": "non",
+      "start": 62.5224,
+      "end": 62.6309
+    },
+    {
+      "stanza": 8,
+      "wordIdx": 15,
+      "word": "lasciò",
+      "start": 62.667,
+      "end": 62.9778
+    },
+    {
+      "stanza": 8,
+      "wordIdx": 16,
+      "word": "già",
+      "start": 63.0624,
+      "end": 63.1698
+    },
+    {
+      "stanza": 8,
+      "wordIdx": 17,
+      "word": "mai",
+      "start": 63.2896,
+      "end": 63.5539
+    },
+    {
+      "stanza": 8,
+      "wordIdx": 18,
+      "word": "persona",
+      "start": 63.6251,
+      "end": 64.0691
+    },
+    {
+      "stanza": 8,
+      "wordIdx": 19,
+      "word": "viva.",
+      "start": 64.1166,
+      "end": 64.5007
+    },
+    {
+      "stanza": 9,
+      "wordIdx": 0,
+      "word": "Poi",
+      "start": 64.9603,
+      "end": 65.2226
+    },
+    {
+      "stanza": 9,
+      "wordIdx": 1,
+      "word": "ch'èi",
+      "start": 65.2833,
+      "end": 65.4263
+    },
+    {
+      "stanza": 9,
+      "wordIdx": 2,
+      "word": "posato",
+      "start": 65.4736,
+      "end": 65.8203
+    },
+    {
+      "stanza": 9,
+      "wordIdx": 3,
+      "word": "un",
+      "start": 65.8563,
+      "end": 65.9036
+    },
+    {
+      "stanza": 9,
+      "wordIdx": 4,
+      "word": "poco",
+      "start": 65.9632,
+      "end": 66.1906
+    },
+    {
+      "stanza": 9,
+      "wordIdx": 5,
+      "word": "il",
+      "start": 66.2142,
+      "end": 66.2626
+    },
+    {
+      "stanza": 9,
+      "wordIdx": 6,
+      "word": "corpo",
+      "start": 66.3459,
+      "end": 66.6565
+    },
+    {
+      "stanza": 9,
+      "wordIdx": 7,
+      "word": "lasso,",
+      "start": 66.7038,
+      "end": 67.0741
+    },
+    {
+      "stanza": 9,
+      "wordIdx": 8,
+      "word": "ripresi",
+      "start": 67.0978,
+      "end": 67.4918
+    },
+    {
+      "stanza": 9,
+      "wordIdx": 9,
+      "word": "via",
+      "start": 67.5514,
+      "end": 67.8147
+    },
+    {
+      "stanza": 9,
+      "wordIdx": 10,
+      "word": "per",
+      "start": 67.8744,
+      "end": 67.9937
+    },
+    {
+      "stanza": 9,
+      "wordIdx": 11,
+      "word": "la",
+      "start": 68.0534,
+      "end": 68.1254
+    },
+    {
+      "stanza": 9,
+      "wordIdx": 12,
+      "word": "piaggia",
+      "start": 68.1614,
+      "end": 68.507
+    },
+    {
+      "stanza": 9,
+      "wordIdx": 13,
+      "word": "diserta,",
+      "start": 68.5553,
+      "end": 69.2116
+    },
+    {
+      "stanza": 9,
+      "wordIdx": 14,
+      "word": "sì",
+      "start": 69.4266,
+      "end": 69.6179
+    },
+    {
+      "stanza": 9,
+      "wordIdx": 15,
+      "word": "che",
+      "start": 69.6899,
+      "end": 69.7732
+    },
+    {
+      "stanza": 9,
+      "wordIdx": 16,
+      "word": "'l",
+      "start": 69.7969,
+      "end": 69.8565
+    },
+    {
+      "stanza": 9,
+      "wordIdx": 17,
+      "word": "piè",
+      "start": 69.9285,
+      "end": 70.1199
+    },
+    {
+      "stanza": 9,
+      "wordIdx": 18,
+      "word": "fermo",
+      "start": 70.2145,
+      "end": 70.6444
+    },
+    {
+      "stanza": 9,
+      "wordIdx": 19,
+      "word": "sempre",
+      "start": 70.7164,
+      "end": 71.1701
+    },
+    {
+      "stanza": 9,
+      "wordIdx": 20,
+      "word": "era",
+      "start": 71.2061,
+      "end": 71.4447
+    },
+    {
+      "stanza": 9,
+      "wordIdx": 21,
+      "word": "'l",
+      "start": 71.4684,
+      "end": 71.5404
+    },
+    {
+      "stanza": 9,
+      "wordIdx": 22,
+      "word": "più",
+      "start": 71.6237,
+      "end": 71.779
+    },
+    {
+      "stanza": 9,
+      "wordIdx": 23,
+      "word": "basso.",
+      "start": 71.851,
+      "end": 72.4239
+    },
+    {
+      "stanza": 10,
+      "wordIdx": 0,
+      "word": "Ed",
+      "start": 72.8714,
+      "end": 73.0396
+    },
+    {
+      "stanza": 10,
+      "wordIdx": 1,
+      "word": "ecco,",
+      "start": 73.1119,
+      "end": 73.5546
+    },
+    {
+      "stanza": 10,
+      "wordIdx": 2,
+      "word": "quasi",
+      "start": 73.7342,
+      "end": 74.0819
+    },
+    {
+      "stanza": 10,
+      "wordIdx": 3,
+      "word": "al",
+      "start": 74.1181,
+      "end": 74.1779
+    },
+    {
+      "stanza": 10,
+      "wordIdx": 4,
+      "word": "cominciar",
+      "start": 74.2378,
+      "end": 74.7527
+    },
+    {
+      "stanza": 10,
+      "wordIdx": 5,
+      "word": "de",
+      "start": 74.8363,
+      "end": 74.8972
+    },
+    {
+      "stanza": 10,
+      "wordIdx": 6,
+      "word": "l'erta,",
+      "start": 74.9447,
+      "end": 75.5082
+    },
+    {
+      "stanza": 10,
+      "wordIdx": 7,
+      "word": "una",
+      "start": 75.7239,
+      "end": 75.9395
+    },
+    {
+      "stanza": 10,
+      "wordIdx": 8,
+      "word": "lonza",
+      "start": 75.987,
+      "end": 76.3709
+    },
+    {
+      "stanza": 10,
+      "wordIdx": 9,
+      "word": "leggiera",
+      "start": 76.4184,
+      "end": 76.9457
+    },
+    {
+      "stanza": 10,
+      "wordIdx": 10,
+      "word": "e",
+      "start": 76.9819,
+      "end": 77.0056
+    },
+    {
+      "stanza": 10,
+      "wordIdx": 11,
+      "word": "presta",
+      "start": 77.0655,
+      "end": 77.4607
+    },
+    {
+      "stanza": 10,
+      "wordIdx": 12,
+      "word": "molto,",
+      "start": 77.5206,
+      "end": 78.1202
+    },
+    {
+      "stanza": 10,
+      "wordIdx": 13,
+      "word": "che",
+      "start": 78.276,
+      "end": 78.4071
+    },
+    {
+      "stanza": 10,
+      "wordIdx": 14,
+      "word": "di",
+      "start": 78.4669,
+      "end": 78.5391
+    },
+    {
+      "stanza": 10,
+      "wordIdx": 15,
+      "word": "pel",
+      "start": 78.5866,
+      "end": 78.7187
+    },
+    {
+      "stanza": 10,
+      "wordIdx": 16,
+      "word": "macolato",
+      "start": 78.791,
+      "end": 79.3534
+    },
+    {
+      "stanza": 10,
+      "wordIdx": 17,
+      "word": "era",
+      "start": 79.4019,
+      "end": 79.534
+    },
+    {
+      "stanza": 10,
+      "wordIdx": 18,
+      "word": "coverta;",
+      "start": 79.5815,
+      "end": 80.3008
+    },
+    {
+      "stanza": 11,
+      "wordIdx": 0,
+      "word": "e",
+      "start": 80.7844,
+      "end": 80.8082
+    },
+    {
+      "stanza": 11,
+      "wordIdx": 1,
+      "word": "non",
+      "start": 80.8691,
+      "end": 80.9765
+    },
+    {
+      "stanza": 11,
+      "wordIdx": 2,
+      "word": "mi",
+      "start": 81.0127,
+      "end": 81.085
+    },
+    {
+      "stanza": 11,
+      "wordIdx": 3,
+      "word": "si",
+      "start": 81.1325,
+      "end": 81.2161
+    },
+    {
+      "stanza": 11,
+      "wordIdx": 4,
+      "word": "partia",
+      "start": 81.276,
+      "end": 81.6241
+    },
+    {
+      "stanza": 11,
+      "wordIdx": 5,
+      "word": "dinanzi",
+      "start": 81.6716,
+      "end": 82.032
+    },
+    {
+      "stanza": 11,
+      "wordIdx": 6,
+      "word": "al",
+      "start": 82.0681,
+      "end": 82.128
+    },
+    {
+      "stanza": 11,
+      "wordIdx": 7,
+      "word": "volto,",
+      "start": 82.1879,
+      "end": 82.5597
+    },
+    {
+      "stanza": 11,
+      "wordIdx": 8,
+      "word": "anzi",
+      "start": 82.6072,
+      "end": 83.0865
+    },
+    {
+      "stanza": 11,
+      "wordIdx": 9,
+      "word": "'mpediva",
+      "start": 83.2424,
+      "end": 83.83
+    },
+    {
+      "stanza": 11,
+      "wordIdx": 10,
+      "word": "tanto",
+      "start": 83.8786,
+      "end": 84.2018
+    },
+    {
+      "stanza": 11,
+      "wordIdx": 11,
+      "word": "il",
+      "start": 84.238,
+      "end": 84.2855
+    },
+    {
+      "stanza": 11,
+      "wordIdx": 12,
+      "word": "mio",
+      "start": 84.334,
+      "end": 84.4538
+    },
+    {
+      "stanza": 11,
+      "wordIdx": 13,
+      "word": "cammino,",
+      "start": 84.49,
+      "end": 85.1375
+    },
+    {
+      "stanza": 11,
+      "wordIdx": 14,
+      "word": "ch'i'",
+      "start": 85.3172,
+      "end": 85.4845
+    },
+    {
+      "stanza": 11,
+      "wordIdx": 15,
+      "word": "fui",
+      "start": 85.5331,
+      "end": 85.8202
+    },
+    {
+      "stanza": 11,
+      "wordIdx": 16,
+      "word": "per",
+      "start": 85.8687,
+      "end": 86.0009
+    },
+    {
+      "stanza": 11,
+      "wordIdx": 17,
+      "word": "ritornar",
+      "start": 86.0247,
+      "end": 86.4925
+    },
+    {
+      "stanza": 11,
+      "wordIdx": 18,
+      "word": "più",
+      "start": 86.5524,
+      "end": 86.6836
+    },
+    {
+      "stanza": 11,
+      "wordIdx": 19,
+      "word": "volte",
+      "start": 86.7435,
+      "end": 87.0554
+    },
+    {
+      "stanza": 11,
+      "wordIdx": 20,
+      "word": "vòlto.",
+      "start": 87.1039,
+      "end": 87.6668
+    },
+    {
+      "stanza": 12,
+      "wordIdx": 0,
+      "word": "Temp'",
+      "start": 88.1398,
+      "end": 88.5396
+    },
+    {
+      "stanza": 12,
+      "wordIdx": 1,
+      "word": "era",
+      "start": 88.5761,
+      "end": 88.7692
+    },
+    {
+      "stanza": 12,
+      "wordIdx": 2,
+      "word": "dal",
+      "start": 88.8183,
+      "end": 88.9519
+    },
+    {
+      "stanza": 12,
+      "wordIdx": 3,
+      "word": "principio",
+      "start": 88.9999,
+      "end": 89.4968
+    },
+    {
+      "stanza": 12,
+      "wordIdx": 4,
+      "word": "del",
+      "start": 89.5333,
+      "end": 89.6544
+    },
+    {
+      "stanza": 12,
+      "wordIdx": 5,
+      "word": "mattino,",
+      "start": 89.7149,
+      "end": 90.406
+    },
+    {
+      "stanza": 12,
+      "wordIdx": 6,
+      "word": "e",
+      "start": 90.5876,
+      "end": 90.6606
+    },
+    {
+      "stanza": 12,
+      "wordIdx": 7,
+      "word": "'l",
+      "start": 90.6961,
+      "end": 90.7567
+    },
+    {
+      "stanza": 12,
+      "wordIdx": 8,
+      "word": "sol",
+      "start": 90.8538,
+      "end": 91.0719
+    },
+    {
+      "stanza": 12,
+      "wordIdx": 9,
+      "word": "montava",
+      "start": 91.1325,
+      "end": 91.5208
+    },
+    {
+      "stanza": 12,
+      "wordIdx": 10,
+      "word": "'n",
+      "start": 91.5448,
+      "end": 91.5938
+    },
+    {
+      "stanza": 12,
+      "wordIdx": 11,
+      "word": "su",
+      "start": 91.6784,
+      "end": 91.908
+    },
+    {
+      "stanza": 12,
+      "wordIdx": 12,
+      "word": "con",
+      "start": 91.9811,
+      "end": 92.1147
+    },
+    {
+      "stanza": 12,
+      "wordIdx": 13,
+      "word": "quelle",
+      "start": 92.1752,
+      "end": 92.4049
+    },
+    {
+      "stanza": 12,
+      "wordIdx": 14,
+      "word": "stelle",
+      "start": 92.4539,
+      "end": 92.8537
+    },
+    {
+      "stanza": 12,
+      "wordIdx": 15,
+      "word": "ch'eran",
+      "start": 92.9017,
+      "end": 93.193
+    },
+    {
+      "stanza": 12,
+      "wordIdx": 16,
+      "word": "con",
+      "start": 93.2535,
+      "end": 93.3986
+    },
+    {
+      "stanza": 12,
+      "wordIdx": 17,
+      "word": "lui",
+      "start": 93.4717,
+      "end": 93.8109
+    },
+    {
+      "stanza": 12,
+      "wordIdx": 18,
+      "word": "quando",
+      "start": 94.0656,
+      "end": 94.3923
+    },
+    {
+      "stanza": 12,
+      "wordIdx": 19,
+      "word": "l'amor",
+      "start": 94.4414,
+      "end": 94.7075
+    },
+    {
+      "stanza": 12,
+      "wordIdx": 20,
+      "word": "divino",
+      "start": 94.7806,
+      "end": 95.2649
+    },
+    {
+      "stanza": 13,
+      "wordIdx": 0,
+      "word": "mosse",
+      "start": 95.7016,
+      "end": 96.1505
+    },
+    {
+      "stanza": 13,
+      "wordIdx": 1,
+      "word": "di",
+      "start": 96.1997,
+      "end": 96.2971
+    },
+    {
+      "stanza": 13,
+      "wordIdx": 2,
+      "word": "prima",
+      "start": 96.3578,
+      "end": 96.6979
+    },
+    {
+      "stanza": 13,
+      "wordIdx": 3,
+      "word": "quelle",
+      "start": 96.746,
+      "end": 97.0255
+    },
+    {
+      "stanza": 13,
+      "wordIdx": 4,
+      "word": "cose",
+      "start": 97.0862,
+      "end": 97.4148
+    },
+    {
+      "stanza": 13,
+      "wordIdx": 5,
+      "word": "belle;",
+      "start": 97.4996,
+      "end": 98.1076
+    },
+    {
+      "stanza": 13,
+      "wordIdx": 6,
+      "word": "sì",
+      "start": 98.3986,
+      "end": 98.6414
+    },
+    {
+      "stanza": 13,
+      "wordIdx": 7,
+      "word": "ch'a",
+      "start": 98.7387,
+      "end": 98.8727
+    },
+    {
+      "stanza": 13,
+      "wordIdx": 8,
+      "word": "bene",
+      "start": 98.97,
+      "end": 99.3708
+    },
+    {
+      "stanza": 13,
+      "wordIdx": 9,
+      "word": "sperar",
+      "start": 99.4075,
+      "end": 99.8816
+    },
+    {
+      "stanza": 13,
+      "wordIdx": 10,
+      "word": "m'era",
+      "start": 99.9663,
+      "end": 100.161
+    },
+    {
+      "stanza": 13,
+      "wordIdx": 11,
+      "word": "cagione",
+      "start": 100.2091,
+      "end": 100.902
+    },
+    {
+      "stanza": 13,
+      "wordIdx": 12,
+      "word": "di",
+      "start": 101.1207,
+      "end": 101.2547
+    },
+    {
+      "stanza": 13,
+      "wordIdx": 13,
+      "word": "quella",
+      "start": 101.3154,
+      "end": 101.5822
+    },
+    {
+      "stanza": 13,
+      "wordIdx": 14,
+      "word": "fiera",
+      "start": 101.667,
+      "end": 102.1537
+    },
+    {
+      "stanza": 13,
+      "wordIdx": 15,
+      "word": "a",
+      "start": 102.3724,
+      "end": 102.4572
+    },
+    {
+      "stanza": 13,
+      "wordIdx": 16,
+      "word": "la",
+      "start": 102.5304,
+      "end": 102.6152
+    },
+    {
+      "stanza": 13,
+      "wordIdx": 17,
+      "word": "gaetta",
+      "start": 102.6885,
+      "end": 103.2473
+    },
+    {
+      "stanza": 13,
+      "wordIdx": 18,
+      "word": "pelle",
+      "start": 103.2955,
+      "end": 103.7455
+    },
+    {
+      "stanza": 14,
+      "wordIdx": 0,
+      "word": "l'ora",
+      "start": 104.2293,
+      "end": 104.4342
+    },
+    {
+      "stanza": 14,
+      "wordIdx": 1,
+      "word": "del",
+      "start": 104.4818,
+      "end": 104.6143
+    },
+    {
+      "stanza": 14,
+      "wordIdx": 2,
+      "word": "tempo",
+      "start": 104.6981,
+      "end": 105.1784
+    },
+    {
+      "stanza": 14,
+      "wordIdx": 3,
+      "word": "e",
+      "start": 105.3947,
+      "end": 105.5158
+    },
+    {
+      "stanza": 14,
+      "wordIdx": 4,
+      "word": "la",
+      "start": 105.5758,
+      "end": 105.6472
+    },
+    {
+      "stanza": 14,
+      "wordIdx": 5,
+      "word": "dolce",
+      "start": 105.6958,
+      "end": 105.9836
+    },
+    {
+      "stanza": 14,
+      "wordIdx": 6,
+      "word": "stagione;",
+      "start": 106.0198,
+      "end": 106.6811
+    },
+    {
+      "stanza": 14,
+      "wordIdx": 7,
+      "word": "ma",
+      "start": 107.0175,
+      "end": 107.1251
+    },
+    {
+      "stanza": 14,
+      "wordIdx": 8,
+      "word": "non",
+      "start": 107.1851,
+      "end": 107.3052
+    },
+    {
+      "stanza": 14,
+      "wordIdx": 9,
+      "word": "sì",
+      "start": 107.3652,
+      "end": 107.5339
+    },
+    {
+      "stanza": 14,
+      "wordIdx": 10,
+      "word": "che",
+      "start": 107.5939,
+      "end": 107.6902
+    },
+    {
+      "stanza": 14,
+      "wordIdx": 11,
+      "word": "paura",
+      "start": 107.7502,
+      "end": 108.1466
+    },
+    {
+      "stanza": 14,
+      "wordIdx": 12,
+      "word": "non",
+      "start": 108.1952,
+      "end": 108.3029
+    },
+    {
+      "stanza": 14,
+      "wordIdx": 13,
+      "word": "mi",
+      "start": 108.3267,
+      "end": 108.4116
+    },
+    {
+      "stanza": 14,
+      "wordIdx": 14,
+      "word": "desse",
+      "start": 108.4592,
+      "end": 108.7231
+    },
+    {
+      "stanza": 14,
+      "wordIdx": 15,
+      "word": "la",
+      "start": 108.7717,
+      "end": 108.8317
+    },
+    {
+      "stanza": 14,
+      "wordIdx": 16,
+      "word": "vista",
+      "start": 108.8793,
+      "end": 109.372
+    },
+    {
+      "stanza": 14,
+      "wordIdx": 17,
+      "word": "che",
+      "start": 109.5521,
+      "end": 109.697
+    },
+    {
+      "stanza": 14,
+      "wordIdx": 18,
+      "word": "m'apparve",
+      "start": 109.757,
+      "end": 110.2734
+    },
+    {
+      "stanza": 14,
+      "wordIdx": 19,
+      "word": "d'un",
+      "start": 110.3097,
+      "end": 110.4421
+    },
+    {
+      "stanza": 14,
+      "wordIdx": 20,
+      "word": "leone.",
+      "start": 110.5022,
+      "end": 111.0186
+    },
+    {
+      "stanza": 15,
+      "wordIdx": 0,
+      "word": "Questi",
+      "start": 111.4789,
+      "end": 111.793
+    },
+    {
+      "stanza": 15,
+      "wordIdx": 1,
+      "word": "parea",
+      "start": 111.8533,
+      "end": 112.1186
+    },
+    {
+      "stanza": 15,
+      "wordIdx": 2,
+      "word": "che",
+      "start": 112.155,
+      "end": 112.2517
+    },
+    {
+      "stanza": 15,
+      "wordIdx": 3,
+      "word": "contra",
+      "start": 112.312,
+      "end": 112.65
+    },
+    {
+      "stanza": 15,
+      "wordIdx": 4,
+      "word": "me",
+      "start": 112.6989,
+      "end": 112.9277
+    },
+    {
+      "stanza": 15,
+      "wordIdx": 5,
+      "word": "venisse",
+      "start": 113.1451,
+      "end": 113.5684
+    },
+    {
+      "stanza": 15,
+      "wordIdx": 6,
+      "word": "con",
+      "start": 113.6163,
+      "end": 113.713
+    },
+    {
+      "stanza": 15,
+      "wordIdx": 7,
+      "word": "la",
+      "start": 113.7494,
+      "end": 113.8212
+    },
+    {
+      "stanza": 15,
+      "wordIdx": 8,
+      "word": "test'",
+      "start": 113.8701,
+      "end": 114.2081
+    },
+    {
+      "stanza": 15,
+      "wordIdx": 9,
+      "word": "alta",
+      "start": 114.232,
+      "end": 114.5336
+    },
+    {
+      "stanza": 15,
+      "wordIdx": 10,
+      "word": "e",
+      "start": 114.57,
+      "end": 114.594
+    },
+    {
+      "stanza": 15,
+      "wordIdx": 11,
+      "word": "con",
+      "start": 114.6428,
+      "end": 114.776
+    },
+    {
+      "stanza": 15,
+      "wordIdx": 12,
+      "word": "rabbiosa",
+      "start": 114.8363,
+      "end": 115.2586
+    },
+    {
+      "stanza": 15,
+      "wordIdx": 13,
+      "word": "fame,",
+      "start": 115.3189,
+      "end": 115.7776
+    },
+    {
+      "stanza": 15,
+      "wordIdx": 14,
+      "word": "sì",
+      "start": 115.9346,
+      "end": 116.1281
+    },
+    {
+      "stanza": 15,
+      "wordIdx": 15,
+      "word": "che",
+      "start": 116.2009,
+      "end": 116.2851
+    },
+    {
+      "stanza": 15,
+      "wordIdx": 16,
+      "word": "parea",
+      "start": 116.333,
+      "end": 116.6231
+    },
+    {
+      "stanza": 15,
+      "wordIdx": 17,
+      "word": "che",
+      "start": 116.671,
+      "end": 116.7802
+    },
+    {
+      "stanza": 15,
+      "wordIdx": 18,
+      "word": "l'aere",
+      "start": 116.852,
+      "end": 117.2025
+    },
+    {
+      "stanza": 15,
+      "wordIdx": 19,
+      "word": "ne",
+      "start": 117.2514,
+      "end": 117.3356
+    },
+    {
+      "stanza": 15,
+      "wordIdx": 20,
+      "word": "tremesse.",
+      "start": 117.372,
+      "end": 118.0595
+    },
+    {
+      "stanza": 16,
+      "wordIdx": 0,
+      "word": "Ed",
+      "start": 118.4955,
+      "end": 118.6509
+    },
+    {
+      "stanza": 16,
+      "wordIdx": 1,
+      "word": "una",
+      "start": 118.722,
+      "end": 118.8661
+    },
+    {
+      "stanza": 16,
+      "wordIdx": 2,
+      "word": "lupa,",
+      "start": 118.9134,
+      "end": 119.4393
+    },
+    {
+      "stanza": 16,
+      "wordIdx": 3,
+      "word": "che",
+      "start": 119.7265,
+      "end": 119.8572
+    },
+    {
+      "stanza": 16,
+      "wordIdx": 4,
+      "word": "di",
+      "start": 119.9169,
+      "end": 120.0013
+    },
+    {
+      "stanza": 16,
+      "wordIdx": 5,
+      "word": "tutte",
+      "start": 120.0487,
+      "end": 120.3955
+    },
+    {
+      "stanza": 16,
+      "wordIdx": 6,
+      "word": "brame",
+      "start": 120.4429,
+      "end": 120.7897
+    },
+    {
+      "stanza": 16,
+      "wordIdx": 7,
+      "word": "sembiava",
+      "start": 120.8371,
+      "end": 121.3033
+    },
+    {
+      "stanza": 16,
+      "wordIdx": 8,
+      "word": "carca",
+      "start": 121.3517,
+      "end": 121.7819
+    },
+    {
+      "stanza": 16,
+      "wordIdx": 9,
+      "word": "ne",
+      "start": 121.8293,
+      "end": 121.9013
+    },
+    {
+      "stanza": 16,
+      "wordIdx": 10,
+      "word": "la",
+      "start": 121.9373,
+      "end": 122.0083
+    },
+    {
+      "stanza": 16,
+      "wordIdx": 11,
+      "word": "sua",
+      "start": 122.0567,
+      "end": 122.2471
+    },
+    {
+      "stanza": 16,
+      "wordIdx": 12,
+      "word": "magrezza,",
+      "start": 122.2955,
+      "end": 123.0366
+    },
+    {
+      "stanza": 16,
+      "wordIdx": 13,
+      "word": "e",
+      "start": 123.3227,
+      "end": 123.4184
+    },
+    {
+      "stanza": 16,
+      "wordIdx": 14,
+      "word": "molte",
+      "start": 123.5378,
+      "end": 123.9083
+    },
+    {
+      "stanza": 16,
+      "wordIdx": 15,
+      "word": "genti",
+      "start": 123.968,
+      "end": 124.3386
+    },
+    {
+      "stanza": 16,
+      "wordIdx": 16,
+      "word": "fé'",
+      "start": 124.3983,
+      "end": 124.637
+    },
+    {
+      "stanza": 16,
+      "wordIdx": 17,
+      "word": "già",
+      "start": 124.6617,
+      "end": 124.8285
+    },
+    {
+      "stanza": 16,
+      "wordIdx": 18,
+      "word": "viver",
+      "start": 124.9242,
+      "end": 125.1867
+    },
+    {
+      "stanza": 16,
+      "wordIdx": 19,
+      "word": "grame,",
+      "start": 125.2587,
+      "end": 125.797
+    },
+    {
+      "stanza": 17,
+      "wordIdx": 0,
+      "word": "questa",
+      "start": 126.2697,
+      "end": 126.6186
+    },
+    {
+      "stanza": 17,
+      "wordIdx": 1,
+      "word": "mi",
+      "start": 126.6674,
+      "end": 126.7516
+    },
+    {
+      "stanza": 17,
+      "wordIdx": 2,
+      "word": "porse",
+      "start": 126.7993,
+      "end": 127.0891
+    },
+    {
+      "stanza": 17,
+      "wordIdx": 3,
+      "word": "tanto",
+      "start": 127.1379,
+      "end": 127.3902
+    },
+    {
+      "stanza": 17,
+      "wordIdx": 4,
+      "word": "di",
+      "start": 127.439,
+      "end": 127.4993
+    },
+    {
+      "stanza": 17,
+      "wordIdx": 5,
+      "word": "gravezza",
+      "start": 127.5356,
+      "end": 128.0414
+    },
+    {
+      "stanza": 17,
+      "wordIdx": 6,
+      "word": "con",
+      "start": 128.0902,
+      "end": 128.1982
+    },
+    {
+      "stanza": 17,
+      "wordIdx": 7,
+      "word": "la",
+      "start": 128.2345,
+      "end": 128.2948
+    },
+    {
+      "stanza": 17,
+      "wordIdx": 8,
+      "word": "paura",
+      "start": 128.3436,
+      "end": 128.705
+    },
+    {
+      "stanza": 17,
+      "wordIdx": 9,
+      "word": "ch'uscia",
+      "start": 128.7527,
+      "end": 129.0664
+    },
+    {
+      "stanza": 17,
+      "wordIdx": 10,
+      "word": "di",
+      "start": 129.1152,
+      "end": 129.1868
+    },
+    {
+      "stanza": 17,
+      "wordIdx": 11,
+      "word": "sua",
+      "start": 129.2356,
+      "end": 129.3675
+    },
+    {
+      "stanza": 17,
+      "wordIdx": 12,
+      "word": "vista,",
+      "start": 129.4039,
+      "end": 129.9107
+    },
+    {
+      "stanza": 17,
+      "wordIdx": 13,
+      "word": "ch'io",
+      "start": 130.1277,
+      "end": 130.4289
+    },
+    {
+      "stanza": 17,
+      "wordIdx": 14,
+      "word": "perdei",
+      "start": 130.4777,
+      "end": 130.8391
+    },
+    {
+      "stanza": 17,
+      "wordIdx": 15,
+      "word": "la",
+      "start": 130.8754,
+      "end": 130.9471
+    },
+    {
+      "stanza": 17,
+      "wordIdx": 16,
+      "word": "speranza",
+      "start": 130.9959,
+      "end": 131.5266
+    },
+    {
+      "stanza": 17,
+      "wordIdx": 17,
+      "word": "de",
+      "start": 131.5743,
+      "end": 131.6346
+    },
+    {
+      "stanza": 17,
+      "wordIdx": 18,
+      "word": "l'altezza.",
+      "start": 131.6834,
+      "end": 132.4664
+    },
+    {
+      "stanza": 18,
+      "wordIdx": 0,
+      "word": "E",
+      "start": 132.9025,
+      "end": 132.9498
+    },
+    {
+      "stanza": 18,
+      "wordIdx": 1,
+      "word": "qual",
+      "start": 133.0457,
+      "end": 133.2249
+    },
+    {
+      "stanza": 18,
+      "wordIdx": 2,
+      "word": "è",
+      "start": 133.297,
+      "end": 133.3207
+    },
+    {
+      "stanza": 18,
+      "wordIdx": 3,
+      "word": "quei",
+      "start": 133.4042,
+      "end": 133.6195
+    },
+    {
+      "stanza": 18,
+      "wordIdx": 4,
+      "word": "che",
+      "start": 133.6556,
+      "end": 133.74
+    },
+    {
+      "stanza": 18,
+      "wordIdx": 5,
+      "word": "volontieri",
+      "start": 133.7874,
+      "end": 134.3015
+    },
+    {
+      "stanza": 18,
+      "wordIdx": 6,
+      "word": "acquista,",
+      "start": 134.3376,
+      "end": 135.0309
+    },
+    {
+      "stanza": 18,
+      "wordIdx": 7,
+      "word": "e",
+      "start": 135.2823,
+      "end": 135.4018
+    },
+    {
+      "stanza": 18,
+      "wordIdx": 8,
+      "word": "giugne",
+      "start": 135.4863,
+      "end": 135.8325
+    },
+    {
+      "stanza": 18,
+      "wordIdx": 9,
+      "word": "'l",
+      "start": 135.8562,
+      "end": 135.9046
+    },
+    {
+      "stanza": 18,
+      "wordIdx": 10,
+      "word": "tempo",
+      "start": 135.9767,
+      "end": 136.2755
+    },
+    {
+      "stanza": 18,
+      "wordIdx": 11,
+      "word": "che",
+      "start": 136.3115,
+      "end": 136.395
+    },
+    {
+      "stanza": 18,
+      "wordIdx": 12,
+      "word": "perder",
+      "start": 136.4547,
+      "end": 136.7896
+    },
+    {
+      "stanza": 18,
+      "wordIdx": 13,
+      "word": "lo",
+      "start": 136.838,
+      "end": 136.9214
+    },
+    {
+      "stanza": 18,
+      "wordIdx": 14,
+      "word": "face,",
+      "start": 136.9688,
+      "end": 137.5674
+    },
+    {
+      "stanza": 18,
+      "wordIdx": 15,
+      "word": "che",
+      "start": 137.7827,
+      "end": 137.9022
+    },
+    {
+      "stanza": 18,
+      "wordIdx": 16,
+      "word": "'n",
+      "start": 137.9259,
+      "end": 137.9733
+    },
+    {
+      "stanza": 18,
+      "wordIdx": 17,
+      "word": "tutt'",
+      "start": 138.0691,
+      "end": 138.3803
+    },
+    {
+      "stanza": 18,
+      "wordIdx": 18,
+      "word": "i",
+      "start": 138.404,
+      "end": 138.4287
+    },
+    {
+      "stanza": 18,
+      "wordIdx": 19,
+      "word": "suoi",
+      "start": 138.4761,
+      "end": 138.644
+    },
+    {
+      "stanza": 18,
+      "wordIdx": 20,
+      "word": "pensier",
+      "start": 138.679,
+      "end": 139.2416
+    },
+    {
+      "stanza": 18,
+      "wordIdx": 21,
+      "word": "piange",
+      "start": 139.3374,
+      "end": 139.8154
+    },
+    {
+      "stanza": 18,
+      "wordIdx": 22,
+      "word": "e",
+      "start": 139.8401,
+      "end": 139.8638
+    },
+    {
+      "stanza": 18,
+      "wordIdx": 23,
+      "word": "s'attrista;",
+      "start": 139.9236,
+      "end": 140.7612
+    },
+    {
+      "stanza": 19,
+      "wordIdx": 0,
+      "word": "tal",
+      "start": 141.2447,
+      "end": 141.5198
+    },
+    {
+      "stanza": 19,
+      "wordIdx": 1,
+      "word": "mi",
+      "start": 141.592,
+      "end": 141.6755
+    },
+    {
+      "stanza": 19,
+      "wordIdx": 2,
+      "word": "fece",
+      "start": 141.7352,
+      "end": 141.963
+    },
+    {
+      "stanza": 19,
+      "wordIdx": 3,
+      "word": "la",
+      "start": 142.0104,
+      "end": 142.0826
+    },
+    {
+      "stanza": 19,
+      "wordIdx": 4,
+      "word": "bestia",
+      "start": 142.1423,
+      "end": 142.5494
+    },
+    {
+      "stanza": 19,
+      "wordIdx": 5,
+      "word": "sanza",
+      "start": 142.5969,
+      "end": 142.9205
+    },
+    {
+      "stanza": 19,
+      "wordIdx": 6,
+      "word": "pace,",
+      "start": 142.9802,
+      "end": 143.5306
+    },
+    {
+      "stanza": 19,
+      "wordIdx": 7,
+      "word": "che,",
+      "start": 143.7099,
+      "end": 143.8893
+    },
+    {
+      "stanza": 19,
+      "wordIdx": 8,
+      "word": "venendomi",
+      "start": 143.949,
+      "end": 144.5592
+    },
+    {
+      "stanza": 19,
+      "wordIdx": 9,
+      "word": "'ncontro,",
+      "start": 144.5829,
+      "end": 145.3847
+    },
+    {
+      "stanza": 19,
+      "wordIdx": 10,
+      "word": "a",
+      "start": 145.5403,
+      "end": 145.6249
+    },
+    {
+      "stanza": 19,
+      "wordIdx": 11,
+      "word": "poco",
+      "start": 145.7197,
+      "end": 146.0794
+    },
+    {
+      "stanza": 19,
+      "wordIdx": 12,
+      "word": "a",
+      "start": 146.1154,
+      "end": 146.1391
+    },
+    {
+      "stanza": 19,
+      "wordIdx": 13,
+      "word": "poco",
+      "start": 146.2103,
+      "end": 146.6174
+    },
+    {
+      "stanza": 19,
+      "wordIdx": 14,
+      "word": "mi",
+      "start": 146.6658,
+      "end": 146.7369
+    },
+    {
+      "stanza": 19,
+      "wordIdx": 15,
+      "word": "ripigneva",
+      "start": 146.7854,
+      "end": 147.3831
+    },
+    {
+      "stanza": 19,
+      "wordIdx": 16,
+      "word": "là",
+      "start": 147.4192,
+      "end": 147.4913
+    },
+    {
+      "stanza": 19,
+      "wordIdx": 17,
+      "word": "dove",
+      "start": 147.5387,
+      "end": 147.7902
+    },
+    {
+      "stanza": 19,
+      "wordIdx": 18,
+      "word": "'l",
+      "start": 147.8139,
+      "end": 147.8737
+    },
+    {
+      "stanza": 19,
+      "wordIdx": 19,
+      "word": "sol",
+      "start": 147.9696,
+      "end": 148.1973
+    },
+    {
+      "stanza": 19,
+      "wordIdx": 20,
+      "word": "tace.",
+      "start": 148.3169,
+      "end": 148.9631
+    },
+    {
+      "stanza": 20,
+      "wordIdx": 0,
+      "word": "Mentre",
+      "start": 149.4234,
+      "end": 149.822
+    },
+    {
+      "stanza": 20,
+      "wordIdx": 1,
+      "word": "ch'i'",
+      "start": 149.8584,
+      "end": 149.9916
+    },
+    {
+      "stanza": 20,
+      "wordIdx": 2,
+      "word": "rovinava",
+      "start": 150.0394,
+      "end": 150.5837
+    },
+    {
+      "stanza": 20,
+      "wordIdx": 3,
+      "word": "in",
+      "start": 150.619,
+      "end": 150.6794
+    },
+    {
+      "stanza": 20,
+      "wordIdx": 4,
+      "word": "basso",
+      "start": 150.7283,
+      "end": 151.054
+    },
+    {
+      "stanza": 20,
+      "wordIdx": 5,
+      "word": "loco,",
+      "start": 151.1029,
+      "end": 151.5857
+    },
+    {
+      "stanza": 20,
+      "wordIdx": 6,
+      "word": "dinanzi",
+      "start": 151.7668,
+      "end": 152.2381
+    },
+    {
+      "stanza": 20,
+      "wordIdx": 7,
+      "word": "a",
+      "start": 152.287,
+      "end": 152.311
+    },
+    {
+      "stanza": 20,
+      "wordIdx": 8,
+      "word": "li",
+      "start": 152.3588,
+      "end": 152.4681
+    },
+    {
+      "stanza": 20,
+      "wordIdx": 9,
+      "word": "occhi",
+      "start": 152.5524,
+      "end": 152.8427
+    },
+    {
+      "stanza": 20,
+      "wordIdx": 10,
+      "word": "mi",
+      "start": 152.8906,
+      "end": 152.9634
+    },
+    {
+      "stanza": 20,
+      "wordIdx": 11,
+      "word": "si",
+      "start": 153.0113,
+      "end": 153.0956
+    },
+    {
+      "stanza": 20,
+      "wordIdx": 12,
+      "word": "fu",
+      "start": 153.157,
+      "end": 153.338
+    },
+    {
+      "stanza": 20,
+      "wordIdx": 13,
+      "word": "offerto",
+      "start": 153.3859,
+      "end": 153.9301
+    },
+    {
+      "stanza": 20,
+      "wordIdx": 14,
+      "word": "chi",
+      "start": 153.978,
+      "end": 154.1111
+    },
+    {
+      "stanza": 20,
+      "wordIdx": 15,
+      "word": "per",
+      "start": 154.159,
+      "end": 154.3036
+    },
+    {
+      "stanza": 20,
+      "wordIdx": 16,
+      "word": "lungo",
+      "start": 154.389,
+      "end": 154.6782
+    },
+    {
+      "stanza": 20,
+      "wordIdx": 17,
+      "word": "silenzio",
+      "start": 154.7272,
+      "end": 155.4035
+    },
+    {
+      "stanza": 20,
+      "wordIdx": 18,
+      "word": "parea",
+      "start": 155.5242,
+      "end": 155.8624
+    },
+    {
+      "stanza": 20,
+      "wordIdx": 19,
+      "word": "fioco.",
+      "start": 155.9352,
+      "end": 156.5148
+    },
+    {
+      "stanza": 21,
+      "wordIdx": 0,
+      "word": "Quando",
+      "start": 156.9746,
+      "end": 157.2263
+    },
+    {
+      "stanza": 21,
+      "wordIdx": 1,
+      "word": "vidi",
+      "start": 157.2737,
+      "end": 157.4532
+    },
+    {
+      "stanza": 21,
+      "wordIdx": 2,
+      "word": "costui",
+      "start": 157.5016,
+      "end": 157.9801
+    },
+    {
+      "stanza": 21,
+      "wordIdx": 3,
+      "word": "nel",
+      "start": 158.0286,
+      "end": 158.1596
+    },
+    {
+      "stanza": 21,
+      "wordIdx": 4,
+      "word": "gran",
+      "start": 158.2194,
+      "end": 158.4236
+    },
+    {
+      "stanza": 21,
+      "wordIdx": 5,
+      "word": "diserto,",
+      "start": 158.471,
+      "end": 159.2022
+    },
+    {
+      "stanza": 21,
+      "wordIdx": 6,
+      "word": "<<Miserere",
+      "start": 159.2733,
+      "end": 159.9076
+    },
+    {
+      "stanza": 21,
+      "wordIdx": 7,
+      "word": "di",
+      "start": 159.956,
+      "end": 160.0282
+    },
+    {
+      "stanza": 21,
+      "wordIdx": 8,
+      "word": "me»,",
+      "start": 160.0757,
+      "end": 160.3747
+    },
+    {
+      "stanza": 21,
+      "wordIdx": 9,
+      "word": "gridai",
+      "start": 160.5305,
+      "end": 160.9378
+    },
+    {
+      "stanza": 21,
+      "wordIdx": 10,
+      "word": "a",
+      "start": 160.9852,
+      "end": 161.01
+    },
+    {
+      "stanza": 21,
+      "wordIdx": 11,
+      "word": "lui,",
+      "start": 161.0698,
+      "end": 161.4411
+    },
+    {
+      "stanza": 21,
+      "wordIdx": 12,
+      "word": "<<qual",
+      "start": 161.5009,
+      "end": 161.7762
+    },
+    {
+      "stanza": 21,
+      "wordIdx": 13,
+      "word": "che",
+      "start": 161.8237,
+      "end": 161.9072
+    },
+    {
+      "stanza": 21,
+      "wordIdx": 14,
+      "word": "tu",
+      "start": 161.9557,
+      "end": 162.0629
+    },
+    {
+      "stanza": 21,
+      "wordIdx": 15,
+      "word": "sii,",
+      "start": 162.1475,
+      "end": 162.626
+    },
+    {
+      "stanza": 21,
+      "wordIdx": 16,
+      "word": "od",
+      "start": 162.758,
+      "end": 162.9137
+    },
+    {
+      "stanza": 21,
+      "wordIdx": 17,
+      "word": "ombra",
+      "start": 162.9849,
+      "end": 163.2241
+    },
+    {
+      "stanza": 21,
+      "wordIdx": 18,
+      "word": "od",
+      "start": 163.2489,
+      "end": 163.3324
+    },
+    {
+      "stanza": 21,
+      "wordIdx": 19,
+      "word": "omo",
+      "start": 163.3798,
+      "end": 163.5242
+    },
+    {
+      "stanza": 21,
+      "wordIdx": 20,
+      "word": "certo!».",
+      "start": 163.5717,
+      "end": 164.2059
+    },
+    {
+      "stanza": 22,
+      "wordIdx": 0,
+      "word": "Rispuosemi:",
+      "start": 164.6417,
+      "end": 165.5671
+    },
+    {
+      "stanza": 22,
+      "wordIdx": 1,
+      "word": "<<Non",
+      "start": 166.019,
+      "end": 166.4699
+    },
+    {
+      "stanza": 22,
+      "wordIdx": 2,
+      "word": "omo,",
+      "start": 166.5885,
+      "end": 166.9679
+    },
+    {
+      "stanza": 22,
+      "wordIdx": 3,
+      "word": "omo",
+      "start": 167.3002,
+      "end": 167.609
+    },
+    {
+      "stanza": 22,
+      "wordIdx": 4,
+      "word": "già",
+      "start": 167.6683,
+      "end": 167.7869
+    },
+    {
+      "stanza": 22,
+      "wordIdx": 5,
+      "word": "fui,",
+      "start": 167.8708,
+      "end": 168.4168
+    },
+    {
+      "stanza": 22,
+      "wordIdx": 6,
+      "word": "e",
+      "start": 168.7491,
+      "end": 168.8207
+    },
+    {
+      "stanza": 22,
+      "wordIdx": 7,
+      "word": "li",
+      "start": 168.8677,
+      "end": 168.9628
+    },
+    {
+      "stanza": 22,
+      "wordIdx": 8,
+      "word": "parenti",
+      "start": 169.0098,
+      "end": 169.3902
+    },
+    {
+      "stanza": 22,
+      "wordIdx": 9,
+      "word": "miei",
+      "start": 169.4373,
+      "end": 169.699
+    },
+    {
+      "stanza": 22,
+      "wordIdx": 10,
+      "word": "furon",
+      "start": 169.7696,
+      "end": 170.0313
+    },
+    {
+      "stanza": 22,
+      "wordIdx": 11,
+      "word": "lombardi,",
+      "start": 170.0906,
+      "end": 170.8616
+    },
+    {
+      "stanza": 22,
+      "wordIdx": 12,
+      "word": "mantoani",
+      "start": 171.0405,
+      "end": 171.6571
+    },
+    {
+      "stanza": 22,
+      "wordIdx": 13,
+      "word": "per",
+      "start": 171.6929,
+      "end": 171.8115
+    },
+    {
+      "stanza": 22,
+      "wordIdx": 14,
+      "word": "patrïa",
+      "start": 171.8831,
+      "end": 172.2624
+    },
+    {
+      "stanza": 22,
+      "wordIdx": 15,
+      "word": "ambedui.",
+      "start": 172.287,
+      "end": 173.058
+    },
+    {
+      "stanza": 23,
+      "wordIdx": 0,
+      "word": "Nacqui",
+      "start": 173.494,
+      "end": 173.8887
+    },
+    {
+      "stanza": 23,
+      "wordIdx": 1,
+      "word": "sub",
+      "start": 173.9247,
+      "end": 174.1762
+    },
+    {
+      "stanza": 23,
+      "wordIdx": 2,
+      "word": "Iulio,",
+      "start": 174.2359,
+      "end": 174.7264
+    },
+    {
+      "stanza": 23,
+      "wordIdx": 3,
+      "word": "ancor",
+      "start": 174.882,
+      "end": 175.1922
+    },
+    {
+      "stanza": 23,
+      "wordIdx": 4,
+      "word": "che",
+      "start": 175.2282,
+      "end": 175.3127
+    },
+    {
+      "stanza": 23,
+      "wordIdx": 5,
+      "word": "fosse",
+      "start": 175.3725,
+      "end": 175.6476
+    },
+    {
+      "stanza": 23,
+      "wordIdx": 6,
+      "word": "tardi,",
+      "start": 175.695,
+      "end": 176.2453
+    },
+    {
+      "stanza": 23,
+      "wordIdx": 7,
+      "word": "e",
+      "start": 176.4606,
+      "end": 176.5328
+    },
+    {
+      "stanza": 23,
+      "wordIdx": 8,
+      "word": "vissi",
+      "start": 176.5925,
+      "end": 176.844
+    },
+    {
+      "stanza": 23,
+      "wordIdx": 9,
+      "word": "a",
+      "start": 176.8914,
+      "end": 176.9151
+    },
+    {
+      "stanza": 23,
+      "wordIdx": 10,
+      "word": "Roma",
+      "start": 176.9748,
+      "end": 177.2263
+    },
+    {
+      "stanza": 23,
+      "wordIdx": 11,
+      "word": "sotto",
+      "start": 177.2747,
+      "end": 177.5251
+    },
+    {
+      "stanza": 23,
+      "wordIdx": 12,
+      "word": "'l",
+      "start": 177.5498,
+      "end": 177.5972
+    },
+    {
+      "stanza": 23,
+      "wordIdx": 13,
+      "word": "buono",
+      "start": 177.6807,
+      "end": 178.0279
+    },
+    {
+      "stanza": 23,
+      "wordIdx": 14,
+      "word": "Augusto",
+      "start": 178.064,
+      "end": 178.5782
+    },
+    {
+      "stanza": 23,
+      "wordIdx": 15,
+      "word": "nel",
+      "start": 178.6266,
+      "end": 178.7461
+    },
+    {
+      "stanza": 23,
+      "wordIdx": 16,
+      "word": "tempo",
+      "start": 178.8172,
+      "end": 179.081
+    },
+    {
+      "stanza": 23,
+      "wordIdx": 17,
+      "word": "de",
+      "start": 179.1284,
+      "end": 179.2006
+    },
+    {
+      "stanza": 23,
+      "wordIdx": 18,
+      "word": "li",
+      "start": 179.2366,
+      "end": 179.3314
+    },
+    {
+      "stanza": 23,
+      "wordIdx": 19,
+      "word": "dèi",
+      "start": 179.3799,
+      "end": 179.6189
+    },
+    {
+      "stanza": 23,
+      "wordIdx": 20,
+      "word": "falsi",
+      "start": 179.691,
+      "end": 180.1094
+    },
+    {
+      "stanza": 23,
+      "wordIdx": 21,
+      "word": "e",
+      "start": 180.1455,
+      "end": 180.1692
+    },
+    {
+      "stanza": 23,
+      "wordIdx": 22,
+      "word": "bugiardi.",
+      "start": 180.2176,
+      "end": 180.9348
+    },
+    {
+      "stanza": 24,
+      "wordIdx": 0,
+      "word": "Poeta",
+      "start": 181.3944,
+      "end": 181.8481
+    },
+    {
+      "stanza": 24,
+      "wordIdx": 1,
+      "word": "fui,",
+      "start": 181.9077,
+      "end": 182.3973
+    },
+    {
+      "stanza": 24,
+      "wordIdx": 2,
+      "word": "e",
+      "start": 182.5763,
+      "end": 182.672
+    },
+    {
+      "stanza": 24,
+      "wordIdx": 3,
+      "word": "cantai",
+      "start": 182.744,
+      "end": 183.1379
+    },
+    {
+      "stanza": 24,
+      "wordIdx": 4,
+      "word": "di",
+      "start": 183.1739,
+      "end": 183.2459
+    },
+    {
+      "stanza": 24,
+      "wordIdx": 5,
+      "word": "quel",
+      "start": 183.2933,
+      "end": 183.4609
+    },
+    {
+      "stanza": 24,
+      "wordIdx": 6,
+      "word": "giusto",
+      "start": 183.5319,
+      "end": 183.8662
+    },
+    {
+      "stanza": 24,
+      "wordIdx": 7,
+      "word": "figliuol",
+      "start": 183.9259,
+      "end": 184.2962
+    },
+    {
+      "stanza": 24,
+      "wordIdx": 8,
+      "word": "d'Anchise",
+      "start": 184.3558,
+      "end": 184.8814
+    },
+    {
+      "stanza": 24,
+      "wordIdx": 9,
+      "word": "che",
+      "start": 184.9174,
+      "end": 185.0008
+    },
+    {
+      "stanza": 24,
+      "wordIdx": 10,
+      "word": "venne",
+      "start": 185.0851,
+      "end": 185.3474
+    },
+    {
+      "stanza": 24,
+      "wordIdx": 11,
+      "word": "di",
+      "start": 185.3834,
+      "end": 185.4667
+    },
+    {
+      "stanza": 24,
+      "wordIdx": 12,
+      "word": "Troia,",
+      "start": 185.5264,
+      "end": 186.124
+    },
+    {
+      "stanza": 24,
+      "wordIdx": 13,
+      "word": "poi",
+      "start": 186.303,
+      "end": 186.6136
+    },
+    {
+      "stanza": 24,
+      "wordIdx": 14,
+      "word": "che",
+      "start": 186.6486,
+      "end": 186.7329
+    },
+    {
+      "stanza": 24,
+      "wordIdx": 15,
+      "word": "'l",
+      "start": 186.7566,
+      "end": 186.8039
+    },
+    {
+      "stanza": 24,
+      "wordIdx": 16,
+      "word": "superbo",
+      "start": 186.8759,
+      "end": 187.4128
+    },
+    {
+      "stanza": 24,
+      "wordIdx": 17,
+      "word": "Ilïon",
+      "start": 187.4489,
+      "end": 187.7955
+    },
+    {
+      "stanza": 24,
+      "wordIdx": 18,
+      "word": "fu",
+      "start": 187.8675,
+      "end": 187.9868
+    },
+    {
+      "stanza": 24,
+      "wordIdx": 19,
+      "word": "combusto.",
+      "start": 188.0341,
+      "end": 188.858
+    },
+    {
+      "stanza": 25,
+      "wordIdx": 0,
+      "word": "Ma",
+      "start": 189.3177,
+      "end": 189.4134
+    },
+    {
+      "stanza": 25,
+      "wordIdx": 1,
+      "word": "tu",
+      "start": 189.4608,
+      "end": 189.5452
+    },
+    {
+      "stanza": 25,
+      "wordIdx": 2,
+      "word": "perché",
+      "start": 189.5925,
+      "end": 189.8436
+    },
+    {
+      "stanza": 25,
+      "wordIdx": 3,
+      "word": "ritorni",
+      "start": 189.9033,
+      "end": 190.2974
+    },
+    {
+      "stanza": 25,
+      "wordIdx": 4,
+      "word": "a",
+      "start": 190.3211,
+      "end": 190.3458
+    },
+    {
+      "stanza": 25,
+      "wordIdx": 5,
+      "word": "tanta",
+      "start": 190.4055,
+      "end": 190.6915
+    },
+    {
+      "stanza": 25,
+      "wordIdx": 6,
+      "word": "noia?",
+      "start": 190.7399,
+      "end": 191.2051
+    },
+    {
+      "stanza": 25,
+      "wordIdx": 7,
+      "word": "perché",
+      "start": 191.3604,
+      "end": 191.6352
+    },
+    {
+      "stanza": 25,
+      "wordIdx": 8,
+      "word": "non",
+      "start": 191.6836,
+      "end": 191.803
+    },
+    {
+      "stanza": 25,
+      "wordIdx": 9,
+      "word": "sali",
+      "start": 191.8626,
+      "end": 192.1137
+    },
+    {
+      "stanza": 25,
+      "wordIdx": 10,
+      "word": "il",
+      "start": 192.1374,
+      "end": 192.1971
+    },
+    {
+      "stanza": 25,
+      "wordIdx": 11,
+      "word": "dilettoso",
+      "start": 192.2568,
+      "end": 192.7229
+    },
+    {
+      "stanza": 25,
+      "wordIdx": 12,
+      "word": "monte",
+      "start": 192.7826,
+      "end": 193.0574
+    },
+    {
+      "stanza": 25,
+      "wordIdx": 13,
+      "word": "ch'è",
+      "start": 193.1047,
+      "end": 193.2004
+    },
+    {
+      "stanza": 25,
+      "wordIdx": 14,
+      "word": "principio",
+      "start": 193.2601,
+      "end": 193.8096
+    },
+    {
+      "stanza": 25,
+      "wordIdx": 15,
+      "word": "e",
+      "start": 193.8457,
+      "end": 193.8693
+    },
+    {
+      "stanza": 25,
+      "wordIdx": 16,
+      "word": "cagion",
+      "start": 193.9054,
+      "end": 194.3355
+    },
+    {
+      "stanza": 25,
+      "wordIdx": 17,
+      "word": "di",
+      "start": 194.4075,
+      "end": 194.4909
+    },
+    {
+      "stanza": 25,
+      "wordIdx": 18,
+      "word": "tutta",
+      "start": 194.5393,
+      "end": 194.814
+    },
+    {
+      "stanza": 25,
+      "wordIdx": 19,
+      "word": "gioia?».",
+      "start": 194.8737,
+      "end": 195.4346
+    },
+    {
+      "stanza": 26,
+      "wordIdx": 0,
+      "word": "<<Or",
+      "start": 195.8584,
+      "end": 196.0509
+    },
+    {
+      "stanza": 26,
+      "wordIdx": 1,
+      "word": "se'",
+      "start": 196.0986,
+      "end": 196.2435
+    },
+    {
+      "stanza": 26,
+      "wordIdx": 2,
+      "word": "tu",
+      "start": 196.2911,
+      "end": 196.4474
+    },
+    {
+      "stanza": 26,
+      "wordIdx": 3,
+      "word": "quel",
+      "start": 196.5075,
+      "end": 196.6638
+    },
+    {
+      "stanza": 26,
+      "wordIdx": 4,
+      "word": "Virgilio",
+      "start": 196.7363,
+      "end": 197.2405
+    },
+    {
+      "stanza": 26,
+      "wordIdx": 5,
+      "word": "e",
+      "start": 197.2767,
+      "end": 197.3005
+    },
+    {
+      "stanza": 26,
+      "wordIdx": 6,
+      "word": "quella",
+      "start": 197.3492,
+      "end": 197.5894
+    },
+    {
+      "stanza": 26,
+      "wordIdx": 7,
+      "word": "fonte",
+      "start": 197.6494,
+      "end": 197.9859
+    },
+    {
+      "stanza": 26,
+      "wordIdx": 8,
+      "word": "che",
+      "start": 198.0221,
+      "end": 198.1184
+    },
+    {
+      "stanza": 26,
+      "wordIdx": 9,
+      "word": "spandi",
+      "start": 198.1546,
+      "end": 198.5988
+    },
+    {
+      "stanza": 26,
+      "wordIdx": 10,
+      "word": "di",
+      "start": 198.6474,
+      "end": 198.7189
+    },
+    {
+      "stanza": 26,
+      "wordIdx": 11,
+      "word": "parlar",
+      "start": 198.7551,
+      "end": 199.1278
+    },
+    {
+      "stanza": 26,
+      "wordIdx": 12,
+      "word": "sì",
+      "start": 199.2003,
+      "end": 199.3079
+    },
+    {
+      "stanza": 26,
+      "wordIdx": 13,
+      "word": "largo",
+      "start": 199.3928,
+      "end": 199.7531
+    },
+    {
+      "stanza": 26,
+      "wordIdx": 14,
+      "word": "fiume?»,",
+      "start": 199.8132,
+      "end": 200.4022
+    },
+    {
+      "stanza": 26,
+      "wordIdx": 15,
+      "word": "rispuos'",
+      "start": 200.7987,
+      "end": 201.2553
+    },
+    {
+      "stanza": 26,
+      "wordIdx": 16,
+      "word": "io",
+      "start": 201.2791,
+      "end": 201.3754
+    },
+    {
+      "stanza": 26,
+      "wordIdx": 17,
+      "word": "lui",
+      "start": 201.4241,
+      "end": 201.6404
+    },
+    {
+      "stanza": 26,
+      "wordIdx": 18,
+      "word": "con",
+      "start": 201.6881,
+      "end": 201.8081
+    },
+    {
+      "stanza": 26,
+      "wordIdx": 19,
+      "word": "vergognosa",
+      "start": 201.8568,
+      "end": 202.3848
+    },
+    {
+      "stanza": 26,
+      "wordIdx": 20,
+      "word": "fronte.",
+      "start": 202.4335,
+      "end": 202.9863
+    },
+    {
+      "stanza": 27,
+      "wordIdx": 0,
+      "word": "<<O",
+      "start": 203.4101,
+      "end": 203.5189
+    },
+    {
+      "stanza": 27,
+      "wordIdx": 1,
+      "word": "de",
+      "start": 203.5903,
+      "end": 203.6504
+    },
+    {
+      "stanza": 27,
+      "wordIdx": 2,
+      "word": "li",
+      "start": 203.6991,
+      "end": 203.7829
+    },
+    {
+      "stanza": 27,
+      "wordIdx": 3,
+      "word": "altri",
+      "start": 203.843,
+      "end": 204.1081
+    },
+    {
+      "stanza": 27,
+      "wordIdx": 4,
+      "word": "poeti",
+      "start": 204.1433,
+      "end": 204.5648
+    },
+    {
+      "stanza": 27,
+      "wordIdx": 5,
+      "word": "onore",
+      "start": 204.6011,
+      "end": 205.0215
+    },
+    {
+      "stanza": 27,
+      "wordIdx": 6,
+      "word": "e",
+      "start": 205.0578,
+      "end": 205.0816
+    },
+    {
+      "stanza": 27,
+      "wordIdx": 7,
+      "word": "lume,",
+      "start": 205.1655,
+      "end": 205.6709
+    },
+    {
+      "stanza": 27,
+      "wordIdx": 8,
+      "word": "vagliami",
+      "start": 205.851,
+      "end": 206.2839
+    },
+    {
+      "stanza": 27,
+      "wordIdx": 9,
+      "word": "'l",
+      "start": 206.3078,
+      "end": 206.3564
+    },
+    {
+      "stanza": 27,
+      "wordIdx": 10,
+      "word": "lungo",
+      "start": 206.4041,
+      "end": 206.7044
+    },
+    {
+      "stanza": 27,
+      "wordIdx": 11,
+      "word": "studio",
+      "start": 206.7531,
+      "end": 207.2336
+    },
+    {
+      "stanza": 27,
+      "wordIdx": 12,
+      "word": "e",
+      "start": 207.3175,
+      "end": 207.3661
+    },
+    {
+      "stanza": 27,
+      "wordIdx": 13,
+      "word": "'l",
+      "start": 207.39,
+      "end": 207.45
+    },
+    {
+      "stanza": 27,
+      "wordIdx": 14,
+      "word": "grande",
+      "start": 207.5225,
+      "end": 207.8715
+    },
+    {
+      "stanza": 27,
+      "wordIdx": 15,
+      "word": "amore",
+      "start": 207.9067,
+      "end": 208.2682
+    },
+    {
+      "stanza": 27,
+      "wordIdx": 16,
+      "word": "che",
+      "start": 208.3034,
+      "end": 208.3883
+    },
+    {
+      "stanza": 27,
+      "wordIdx": 17,
+      "word": "m'ha",
+      "start": 208.4359,
+      "end": 208.5447
+    },
+    {
+      "stanza": 27,
+      "wordIdx": 18,
+      "word": "fatto",
+      "start": 208.6648,
+      "end": 209.0614
+    },
+    {
+      "stanza": 27,
+      "wordIdx": 19,
+      "word": "cercar",
+      "start": 209.1215,
+      "end": 209.5544
+    },
+    {
+      "stanza": 27,
+      "wordIdx": 20,
+      "word": "lo",
+      "start": 209.602,
+      "end": 209.6869
+    },
+    {
+      "stanza": 27,
+      "wordIdx": 21,
+      "word": "tuo",
+      "start": 209.7346,
+      "end": 209.891
+    },
+    {
+      "stanza": 27,
+      "wordIdx": 22,
+      "word": "volume.",
+      "start": 209.951,
+      "end": 210.4916
+    },
+    {
+      "stanza": 28,
+      "wordIdx": 0,
+      "word": "Tu",
+      "start": 210.9517,
+      "end": 211.0957
+    },
+    {
+      "stanza": 28,
+      "wordIdx": 1,
+      "word": "se'",
+      "start": 211.1682,
+      "end": 211.2769
+    },
+    {
+      "stanza": 28,
+      "wordIdx": 2,
+      "word": "lo",
+      "start": 211.3007,
+      "end": 211.3971
+    },
+    {
+      "stanza": 28,
+      "wordIdx": 3,
+      "word": "mio",
+      "start": 211.4447,
+      "end": 211.5887
+    },
+    {
+      "stanza": 28,
+      "wordIdx": 4,
+      "word": "maestro",
+      "start": 211.6374,
+      "end": 212.3583
+    },
+    {
+      "stanza": 28,
+      "wordIdx": 5,
+      "word": "e",
+      "start": 212.5395,
+      "end": 212.5996
+    },
+    {
+      "stanza": 28,
+      "wordIdx": 6,
+      "word": "'l",
+      "start": 212.6234,
+      "end": 212.6835
+    },
+    {
+      "stanza": 28,
+      "wordIdx": 7,
+      "word": "mio",
+      "start": 212.756,
+      "end": 212.9476
+    },
+    {
+      "stanza": 28,
+      "wordIdx": 8,
+      "word": "autore,",
+      "start": 212.9725,
+      "end": 213.6458
+    },
+    {
+      "stanza": 28,
+      "wordIdx": 9,
+      "word": "tu",
+      "start": 213.7659,
+      "end": 213.8975
+    },
+    {
+      "stanza": 28,
+      "wordIdx": 10,
+      "word": "se'",
+      "start": 213.97,
+      "end": 214.0901
+    },
+    {
+      "stanza": 28,
+      "wordIdx": 11,
+      "word": "solo",
+      "start": 214.1139,
+      "end": 214.4153
+    },
+    {
+      "stanza": 28,
+      "wordIdx": 12,
+      "word": "colui",
+      "start": 214.463,
+      "end": 214.812
+    },
+    {
+      "stanza": 28,
+      "wordIdx": 13,
+      "word": "da",
+      "start": 214.8597,
+      "end": 214.9446
+    },
+    {
+      "stanza": 28,
+      "wordIdx": 14,
+      "word": "cu'",
+      "start": 214.9923,
+      "end": 215.1362
+    },
+    {
+      "stanza": 28,
+      "wordIdx": 15,
+      "word": "io",
+      "start": 215.1725,
+      "end": 215.3413
+    },
+    {
+      "stanza": 28,
+      "wordIdx": 16,
+      "word": "tolsi",
+      "start": 215.4014,
+      "end": 215.7494
+    },
+    {
+      "stanza": 28,
+      "wordIdx": 17,
+      "word": "lo",
+      "start": 215.8095,
+      "end": 215.8944
+    },
+    {
+      "stanza": 28,
+      "wordIdx": 18,
+      "word": "bello",
+      "start": 215.9545,
+      "end": 216.2186
+    },
+    {
+      "stanza": 28,
+      "wordIdx": 19,
+      "word": "stilo",
+      "start": 216.2549,
+      "end": 216.5801
+    },
+    {
+      "stanza": 28,
+      "wordIdx": 20,
+      "word": "che",
+      "start": 216.6153,
+      "end": 216.6879
+    },
+    {
+      "stanza": 28,
+      "wordIdx": 21,
+      "word": "m'ha",
+      "start": 216.7479,
+      "end": 216.8567
+    },
+    {
+      "stanza": 28,
+      "wordIdx": 22,
+      "word": "fatto",
+      "start": 216.9406,
+      "end": 217.3373
+    },
+    {
+      "stanza": 28,
+      "wordIdx": 23,
+      "word": "onore.",
+      "start": 217.3849,
+      "end": 217.9505
+    },
+    {
+      "stanza": 29,
+      "wordIdx": 0,
+      "word": "Vedi",
+      "start": 218.4226,
+      "end": 218.6729
+    },
+    {
+      "stanza": 29,
+      "wordIdx": 1,
+      "word": "la",
+      "start": 218.7213,
+      "end": 218.7934
+    },
+    {
+      "stanza": 29,
+      "wordIdx": 2,
+      "word": "bestia",
+      "start": 218.8408,
+      "end": 219.1993
+    },
+    {
+      "stanza": 29,
+      "wordIdx": 3,
+      "word": "per",
+      "start": 219.2354,
+      "end": 219.3549
+    },
+    {
+      "stanza": 29,
+      "wordIdx": 4,
+      "word": "cu'",
+      "start": 219.4146,
+      "end": 219.5589
+    },
+    {
+      "stanza": 29,
+      "wordIdx": 5,
+      "word": "io",
+      "start": 219.5825,
+      "end": 219.7144
+    },
+    {
+      "stanza": 29,
+      "wordIdx": 6,
+      "word": "mi",
+      "start": 219.7618,
+      "end": 219.8452
+    },
+    {
+      "stanza": 29,
+      "wordIdx": 7,
+      "word": "volsi;",
+      "start": 219.8937,
+      "end": 220.5148
+    },
+    {
+      "stanza": 29,
+      "wordIdx": 8,
+      "word": "aiutami",
+      "start": 220.7301,
+      "end": 221.3524
+    },
+    {
+      "stanza": 29,
+      "wordIdx": 9,
+      "word": "da",
+      "start": 221.4008,
+      "end": 221.4719
+    },
+    {
+      "stanza": 29,
+      "wordIdx": 10,
+      "word": "lei,",
+      "start": 221.5203,
+      "end": 221.8314
+    },
+    {
+      "stanza": 29,
+      "wordIdx": 11,
+      "word": "famoso",
+      "start": 221.8788,
+      "end": 222.2733
+    },
+    {
+      "stanza": 29,
+      "wordIdx": 12,
+      "word": "saggio,",
+      "start": 222.3331,
+      "end": 222.9192
+    },
+    {
+      "stanza": 29,
+      "wordIdx": 13,
+      "word": "ch'ella",
+      "start": 223.1345,
+      "end": 223.493
+    },
+    {
+      "stanza": 29,
+      "wordIdx": 14,
+      "word": "mi",
+      "start": 223.5528,
+      "end": 223.6249
+    },
+    {
+      "stanza": 29,
+      "wordIdx": 15,
+      "word": "fa",
+      "start": 223.6846,
+      "end": 223.7928
+    },
+    {
+      "stanza": 29,
+      "wordIdx": 16,
+      "word": "tremar",
+      "start": 223.8402,
+      "end": 224.2348
+    },
+    {
+      "stanza": 29,
+      "wordIdx": 17,
+      "word": "le",
+      "start": 224.3069,
+      "end": 224.3779
+    },
+    {
+      "stanza": 29,
+      "wordIdx": 18,
+      "word": "vene",
+      "start": 224.4264,
+      "end": 224.8333
+    },
+    {
+      "stanza": 29,
+      "wordIdx": 19,
+      "word": "e",
+      "start": 224.9528,
+      "end": 225.0723
+    },
+    {
+      "stanza": 29,
+      "wordIdx": 20,
+      "word": "i",
+      "start": 225.1083,
+      "end": 225.1434
+    },
+    {
+      "stanza": 29,
+      "wordIdx": 21,
+      "word": "polsi».",
+      "start": 225.2041,
+      "end": 225.8737
+    },
+    {
+      "stanza": 30,
+      "wordIdx": 0,
+      "word": "<<A",
+      "start": 226.2974,
+      "end": 226.4169
+    },
+    {
+      "stanza": 30,
+      "wordIdx": 1,
+      "word": "te",
+      "start": 226.5363,
+      "end": 226.6444
+    },
+    {
+      "stanza": 30,
+      "wordIdx": 2,
+      "word": "convien",
+      "start": 226.7042,
+      "end": 227.1583
+    },
+    {
+      "stanza": 30,
+      "wordIdx": 3,
+      "word": "tenere",
+      "start": 227.2304,
+      "end": 227.5887
+    },
+    {
+      "stanza": 30,
+      "wordIdx": 4,
+      "word": "altro",
+      "start": 227.6371,
+      "end": 227.9358
+    },
+    {
+      "stanza": 30,
+      "wordIdx": 5,
+      "word": "vïaggio»,",
+      "start": 227.9831,
+      "end": 228.6288
+    },
+    {
+      "stanza": 30,
+      "wordIdx": 6,
+      "word": "rispuose,",
+      "start": 228.844,
+      "end": 229.6451
+    },
+    {
+      "stanza": 30,
+      "wordIdx": 7,
+      "word": "poi",
+      "start": 229.8604,
+      "end": 230.0993
+    },
+    {
+      "stanza": 30,
+      "wordIdx": 8,
+      "word": "che",
+      "start": 230.1229,
+      "end": 230.2074
+    },
+    {
+      "stanza": 30,
+      "wordIdx": 9,
+      "word": "lagrimar",
+      "start": 230.2547,
+      "end": 230.7573
+    },
+    {
+      "stanza": 30,
+      "wordIdx": 10,
+      "word": "mi",
+      "start": 230.8283,
+      "end": 230.9128
+    },
+    {
+      "stanza": 30,
+      "wordIdx": 11,
+      "word": "vide,",
+      "start": 230.9601,
+      "end": 231.4266
+    },
+    {
+      "stanza": 30,
+      "wordIdx": 12,
+      "word": "<<se",
+      "start": 231.6058,
+      "end": 231.9168
+    },
+    {
+      "stanza": 30,
+      "wordIdx": 13,
+      "word": "vuo'",
+      "start": 232.0002,
+      "end": 232.2514
+    },
+    {
+      "stanza": 30,
+      "wordIdx": 14,
+      "word": "campar",
+      "start": 232.2875,
+      "end": 232.7292
+    },
+    {
+      "stanza": 30,
+      "wordIdx": 15,
+      "word": "d'esto",
+      "start": 232.825,
+      "end": 233.1597
+    },
+    {
+      "stanza": 30,
+      "wordIdx": 16,
+      "word": "loco",
+      "start": 233.2194,
+      "end": 233.4943
+    },
+    {
+      "stanza": 30,
+      "wordIdx": 17,
+      "word": "selvaggio;",
+      "start": 233.5427,
+      "end": 234.3078
+    },
+    {
+      "stanza": 31,
+      "wordIdx": 0,
+      "word": "ché",
+      "start": 234.7803,
+      "end": 234.9004
+    },
+    {
+      "stanza": 31,
+      "wordIdx": 1,
+      "word": "questa",
+      "start": 234.9605,
+      "end": 235.2607
+    },
+    {
+      "stanza": 31,
+      "wordIdx": 2,
+      "word": "bestia,",
+      "start": 235.3083,
+      "end": 235.7297
+    },
+    {
+      "stanza": 31,
+      "wordIdx": 3,
+      "word": "per",
+      "start": 235.7535,
+      "end": 235.8622
+    },
+    {
+      "stanza": 31,
+      "wordIdx": 4,
+      "word": "la",
+      "start": 235.9222,
+      "end": 235.9937
+    },
+    {
+      "stanza": 31,
+      "wordIdx": 5,
+      "word": "qual",
+      "start": 236.0537,
+      "end": 236.3187
+    },
+    {
+      "stanza": 31,
+      "wordIdx": 6,
+      "word": "tu",
+      "start": 236.3902,
+      "end": 236.4989
+    },
+    {
+      "stanza": 31,
+      "wordIdx": 7,
+      "word": "gride,",
+      "start": 236.5589,
+      "end": 237.088
+    },
+    {
+      "stanza": 31,
+      "wordIdx": 8,
+      "word": "non",
+      "start": 237.2681,
+      "end": 237.4244
+    },
+    {
+      "stanza": 31,
+      "wordIdx": 9,
+      "word": "lascia",
+      "start": 237.4969,
+      "end": 237.8209
+    },
+    {
+      "stanza": 31,
+      "wordIdx": 10,
+      "word": "altrui",
+      "start": 237.8448,
+      "end": 238.2413
+    },
+    {
+      "stanza": 31,
+      "wordIdx": 11,
+      "word": "passar",
+      "start": 238.2899,
+      "end": 238.6626
+    },
+    {
+      "stanza": 31,
+      "wordIdx": 12,
+      "word": "per",
+      "start": 238.7227,
+      "end": 238.8428
+    },
+    {
+      "stanza": 31,
+      "wordIdx": 13,
+      "word": "la",
+      "start": 238.8904,
+      "end": 238.9629
+    },
+    {
+      "stanza": 31,
+      "wordIdx": 14,
+      "word": "sua",
+      "start": 239.0105,
+      "end": 239.143
+    },
+    {
+      "stanza": 31,
+      "wordIdx": 15,
+      "word": "via,",
+      "start": 239.1917,
+      "end": 239.5758
+    },
+    {
+      "stanza": 31,
+      "wordIdx": 16,
+      "word": "ma",
+      "start": 239.7559,
+      "end": 239.8646
+    },
+    {
+      "stanza": 31,
+      "wordIdx": 17,
+      "word": "tanto",
+      "start": 239.9246,
+      "end": 240.2373
+    },
+    {
+      "stanza": 31,
+      "wordIdx": 18,
+      "word": "lo",
+      "start": 240.2849,
+      "end": 240.3688
+    },
+    {
+      "stanza": 31,
+      "wordIdx": 19,
+      "word": "'mpedisce",
+      "start": 240.3936,
+      "end": 241.0417
+    },
+    {
+      "stanza": 31,
+      "wordIdx": 20,
+      "word": "che",
+      "start": 241.0904,
+      "end": 241.1628
+    },
+    {
+      "stanza": 31,
+      "wordIdx": 21,
+      "word": "l'uccide;",
+      "start": 241.2105,
+      "end": 241.8596
+    },
+    {
+      "stanza": 32,
+      "wordIdx": 0,
+      "word": "e",
+      "start": 242.3194,
+      "end": 242.3668
+    },
+    {
+      "stanza": 32,
+      "wordIdx": 1,
+      "word": "ha",
+      "start": 242.4153,
+      "end": 242.4627
+    },
+    {
+      "stanza": 32,
+      "wordIdx": 2,
+      "word": "natura",
+      "start": 242.5472,
+      "end": 242.9421
+    },
+    {
+      "stanza": 32,
+      "wordIdx": 3,
+      "word": "sì",
+      "start": 242.9896,
+      "end": 243.1092
+    },
+    {
+      "stanza": 32,
+      "wordIdx": 4,
+      "word": "malvagia",
+      "start": 243.1937,
+      "end": 243.7556
+    },
+    {
+      "stanza": 32,
+      "wordIdx": 5,
+      "word": "e",
+      "start": 243.8515,
+      "end": 243.9
+    },
+    {
+      "stanza": 32,
+      "wordIdx": 6,
+      "word": "ria,",
+      "start": 243.9948,
+      "end": 244.4258
+    },
+    {
+      "stanza": 32,
+      "wordIdx": 7,
+      "word": "che",
+      "start": 244.6062,
+      "end": 244.7495
+    },
+    {
+      "stanza": 32,
+      "wordIdx": 8,
+      "word": "mai",
+      "start": 244.8691,
+      "end": 245.2166
+    },
+    {
+      "stanza": 32,
+      "wordIdx": 9,
+      "word": "non",
+      "start": 245.396,
+      "end": 245.5754
+    },
+    {
+      "stanza": 32,
+      "wordIdx": 10,
+      "word": "empie",
+      "start": 245.6476,
+      "end": 245.8744
+    },
+    {
+      "stanza": 32,
+      "wordIdx": 11,
+      "word": "la",
+      "start": 245.9105,
+      "end": 245.9703
+    },
+    {
+      "stanza": 32,
+      "wordIdx": 12,
+      "word": "bramosa",
+      "start": 246.0187,
+      "end": 246.425
+    },
+    {
+      "stanza": 32,
+      "wordIdx": 13,
+      "word": "voglia,",
+      "start": 246.4734,
+      "end": 247.0003
+    },
+    {
+      "stanza": 32,
+      "wordIdx": 14,
+      "word": "e",
+      "start": 247.1549,
+      "end": 247.2508
+    },
+    {
+      "stanza": 32,
+      "wordIdx": 15,
+      "word": "dopo",
+      "start": 247.323,
+      "end": 247.5983
+    },
+    {
+      "stanza": 32,
+      "wordIdx": 16,
+      "word": "'l",
+      "start": 247.622,
+      "end": 247.6704
+    },
+    {
+      "stanza": 32,
+      "wordIdx": 17,
+      "word": "pasto",
+      "start": 247.7663,
+      "end": 248.2922
+    },
+    {
+      "stanza": 32,
+      "wordIdx": 18,
+      "word": "ha",
+      "start": 248.4478,
+      "end": 248.5922
+    },
+    {
+      "stanza": 32,
+      "wordIdx": 19,
+      "word": "più",
+      "start": 248.652,
+      "end": 248.7953
+    },
+    {
+      "stanza": 32,
+      "wordIdx": 20,
+      "word": "fame",
+      "start": 248.9149,
+      "end": 249.2737
+    },
+    {
+      "stanza": 32,
+      "wordIdx": 21,
+      "word": "che",
+      "start": 249.3222,
+      "end": 249.418
+    },
+    {
+      "stanza": 32,
+      "wordIdx": 22,
+      "word": "pria.",
+      "start": 249.4778,
+      "end": 249.9686
+    },
+    {
+      "stanza": 33,
+      "wordIdx": 0,
+      "word": "Molti",
+      "start": 250.4049,
+      "end": 250.9098
+    },
+    {
+      "stanza": 33,
+      "wordIdx": 1,
+      "word": "son",
+      "start": 250.9585,
+      "end": 251.1151
+    },
+    {
+      "stanza": 33,
+      "wordIdx": 2,
+      "word": "li",
+      "start": 251.1628,
+      "end": 251.2354
+    },
+    {
+      "stanza": 33,
+      "wordIdx": 3,
+      "word": "animali",
+      "start": 251.2716,
+      "end": 251.8014
+    },
+    {
+      "stanza": 33,
+      "wordIdx": 4,
+      "word": "a",
+      "start": 251.8491,
+      "end": 251.873
+    },
+    {
+      "stanza": 33,
+      "wordIdx": 5,
+      "word": "cui",
+      "start": 251.9331,
+      "end": 252.1021
+    },
+    {
+      "stanza": 33,
+      "wordIdx": 6,
+      "word": "s'ammoglia,",
+      "start": 252.1498,
+      "end": 252.8963
+    },
+    {
+      "stanza": 33,
+      "wordIdx": 7,
+      "word": "e",
+      "start": 253.0767,
+      "end": 253.1731
+    },
+    {
+      "stanza": 33,
+      "wordIdx": 8,
+      "word": "più",
+      "start": 253.2332,
+      "end": 253.4136
+    },
+    {
+      "stanza": 33,
+      "wordIdx": 9,
+      "word": "saranno",
+      "start": 253.4862,
+      "end": 253.8231
+    },
+    {
+      "stanza": 33,
+      "wordIdx": 10,
+      "word": "ancora,",
+      "start": 253.847,
+      "end": 254.4006
+    },
+    {
+      "stanza": 33,
+      "wordIdx": 11,
+      "word": "infin",
+      "start": 254.4607,
+      "end": 254.9066
+    },
+    {
+      "stanza": 33,
+      "wordIdx": 12,
+      "word": "che",
+      "start": 254.9542,
+      "end": 255.0631
+    },
+    {
+      "stanza": 33,
+      "wordIdx": 13,
+      "word": "'l",
+      "start": 255.087,
+      "end": 255.1357
+    },
+    {
+      "stanza": 33,
+      "wordIdx": 14,
+      "word": "veltro",
+      "start": 255.2197,
+      "end": 255.653
+    },
+    {
+      "stanza": 33,
+      "wordIdx": 15,
+      "word": "verrà,",
+      "start": 255.6893,
+      "end": 256.2067
+    },
+    {
+      "stanza": 33,
+      "wordIdx": 16,
+      "word": "che",
+      "start": 256.3871,
+      "end": 256.5073
+    },
+    {
+      "stanza": 33,
+      "wordIdx": 17,
+      "word": "la",
+      "start": 256.5675,
+      "end": 256.64
+    },
+    {
+      "stanza": 33,
+      "wordIdx": 18,
+      "word": "farà",
+      "start": 256.7116,
+      "end": 256.9169
+    },
+    {
+      "stanza": 33,
+      "wordIdx": 19,
+      "word": "morir",
+      "start": 256.977,
+      "end": 257.2901
+    },
+    {
+      "stanza": 33,
+      "wordIdx": 20,
+      "word": "con",
+      "start": 257.3741,
+      "end": 257.5545
+    },
+    {
+      "stanza": 33,
+      "wordIdx": 21,
+      "word": "doglia.",
+      "start": 257.627,
+      "end": 258.217
+    },
+    {
+      "stanza": 34,
+      "wordIdx": 0,
+      "word": "Questi",
+      "start": 258.6767,
+      "end": 259.0946
+    },
+    {
+      "stanza": 34,
+      "wordIdx": 1,
+      "word": "non",
+      "start": 259.1543,
+      "end": 259.2861
+    },
+    {
+      "stanza": 34,
+      "wordIdx": 2,
+      "word": "ciberà",
+      "start": 259.3458,
+      "end": 259.705
+    },
+    {
+      "stanza": 34,
+      "wordIdx": 3,
+      "word": "terra",
+      "start": 259.8244,
+      "end": 260.2063
+    },
+    {
+      "stanza": 34,
+      "wordIdx": 4,
+      "word": "né",
+      "start": 260.266,
+      "end": 260.3494
+    },
+    {
+      "stanza": 34,
+      "wordIdx": 5,
+      "word": "peltro,",
+      "start": 260.4338,
+      "end": 261.0432
+    },
+    {
+      "stanza": 34,
+      "wordIdx": 6,
+      "word": "ma",
+      "start": 261.2584,
+      "end": 261.3778
+    },
+    {
+      "stanza": 34,
+      "wordIdx": 7,
+      "word": "sapïenza,",
+      "start": 261.4375,
+      "end": 262.2981
+    },
+    {
+      "stanza": 34,
+      "wordIdx": 8,
+      "word": "amore",
+      "start": 262.4772,
+      "end": 263.0505
+    },
+    {
+      "stanza": 34,
+      "wordIdx": 9,
+      "word": "e",
+      "start": 263.17,
+      "end": 263.2657
+    },
+    {
+      "stanza": 34,
+      "wordIdx": 10,
+      "word": "virtute,",
+      "start": 263.3254,
+      "end": 264.0902
+    },
+    {
+      "stanza": 34,
+      "wordIdx": 11,
+      "word": "e",
+      "start": 264.2704,
+      "end": 264.3898
+    },
+    {
+      "stanza": 34,
+      "wordIdx": 12,
+      "word": "sua",
+      "start": 264.4495,
+      "end": 264.6286
+    },
+    {
+      "stanza": 34,
+      "wordIdx": 13,
+      "word": "nazion",
+      "start": 264.6646,
+      "end": 265.1896
+    },
+    {
+      "stanza": 34,
+      "wordIdx": 14,
+      "word": "sarà",
+      "start": 265.4048,
+      "end": 265.728
+    },
+    {
+      "stanza": 34,
+      "wordIdx": 15,
+      "word": "tra",
+      "start": 265.8114,
+      "end": 265.9431
+    },
+    {
+      "stanza": 34,
+      "wordIdx": 16,
+      "word": "feltro",
+      "start": 266.0389,
+      "end": 266.5999
+    },
+    {
+      "stanza": 34,
+      "wordIdx": 17,
+      "word": "e",
+      "start": 266.7553,
+      "end": 266.8747
+    },
+    {
+      "stanza": 34,
+      "wordIdx": 18,
+      "word": "feltro.",
+      "start": 266.9705,
+      "end": 267.5799
+    },
+    {
+      "stanza": 35,
+      "wordIdx": 0,
+      "word": "Di",
+      "start": 268.0398,
+      "end": 268.1482
+    },
+    {
+      "stanza": 35,
+      "wordIdx": 1,
+      "word": "quella",
+      "start": 268.1957,
+      "end": 268.4838
+    },
+    {
+      "stanza": 35,
+      "wordIdx": 2,
+      "word": "umile",
+      "start": 268.6036,
+      "end": 268.8793
+    },
+    {
+      "stanza": 35,
+      "wordIdx": 3,
+      "word": "Italia",
+      "start": 268.9155,
+      "end": 269.3823
+    },
+    {
+      "stanza": 35,
+      "wordIdx": 4,
+      "word": "fia",
+      "start": 269.4545,
+      "end": 269.6704
+    },
+    {
+      "stanza": 35,
+      "wordIdx": 5,
+      "word": "salute",
+      "start": 269.7303,
+      "end": 270.1495
+    },
+    {
+      "stanza": 35,
+      "wordIdx": 6,
+      "word": "per",
+      "start": 270.1981,
+      "end": 270.3055
+    },
+    {
+      "stanza": 35,
+      "wordIdx": 7,
+      "word": "cui",
+      "start": 270.3778,
+      "end": 270.5936
+    },
+    {
+      "stanza": 35,
+      "wordIdx": 8,
+      "word": "morì",
+      "start": 270.6535,
+      "end": 270.9168
+    },
+    {
+      "stanza": 35,
+      "wordIdx": 9,
+      "word": "la",
+      "start": 271.0015,
+      "end": 271.0614
+    },
+    {
+      "stanza": 35,
+      "wordIdx": 10,
+      "word": "vergine",
+      "start": 271.1089,
+      "end": 271.5292
+    },
+    {
+      "stanza": 35,
+      "wordIdx": 11,
+      "word": "Cammilla,",
+      "start": 271.5767,
+      "end": 272.2717
+    },
+    {
+      "stanza": 35,
+      "wordIdx": 12,
+      "word": "Eurialo",
+      "start": 272.4875,
+      "end": 273.2796
+    },
+    {
+      "stanza": 35,
+      "wordIdx": 13,
+      "word": "e",
+      "start": 273.4955,
+      "end": 273.6266
+    },
+    {
+      "stanza": 35,
+      "wordIdx": 14,
+      "word": "Turno",
+      "start": 273.7113,
+      "end": 274.2142
+    },
+    {
+      "stanza": 35,
+      "wordIdx": 15,
+      "word": "e",
+      "start": 274.43,
+      "end": 274.5498
+    },
+    {
+      "stanza": 35,
+      "wordIdx": 16,
+      "word": "Niso",
+      "start": 274.6459,
+      "end": 274.9453
+    },
+    {
+      "stanza": 35,
+      "wordIdx": 17,
+      "word": "di",
+      "start": 274.9939,
+      "end": 275.0538
+    },
+    {
+      "stanza": 35,
+      "wordIdx": 18,
+      "word": "ferute.",
+      "start": 275.1013,
+      "end": 275.6889
+    },
+    {
+      "stanza": 36,
+      "wordIdx": 0,
+      "word": "Questi",
+      "start": 276.161,
+      "end": 276.5316
+    },
+    {
+      "stanza": 36,
+      "wordIdx": 1,
+      "word": "la",
+      "start": 276.5789,
+      "end": 276.651
+    },
+    {
+      "stanza": 36,
+      "wordIdx": 2,
+      "word": "caccerà",
+      "start": 276.6984,
+      "end": 277.1163
+    },
+    {
+      "stanza": 36,
+      "wordIdx": 3,
+      "word": "per",
+      "start": 277.1771,
+      "end": 277.3078
+    },
+    {
+      "stanza": 36,
+      "wordIdx": 4,
+      "word": "ogne",
+      "start": 277.3676,
+      "end": 277.5714
+    },
+    {
+      "stanza": 36,
+      "wordIdx": 5,
+      "word": "villa,",
+      "start": 277.6188,
+      "end": 278.1088
+    },
+    {
+      "stanza": 36,
+      "wordIdx": 6,
+      "word": "fin",
+      "start": 278.324,
+      "end": 278.5628
+    },
+    {
+      "stanza": 36,
+      "wordIdx": 7,
+      "word": "che",
+      "start": 278.6112,
+      "end": 278.707
+    },
+    {
+      "stanza": 36,
+      "wordIdx": 8,
+      "word": "l'avrà",
+      "start": 278.7543,
+      "end": 279.0292
+    },
+    {
+      "stanza": 36,
+      "wordIdx": 9,
+      "word": "rimessa",
+      "start": 279.1249,
+      "end": 279.615
+    },
+    {
+      "stanza": 36,
+      "wordIdx": 10,
+      "word": "ne",
+      "start": 279.6624,
+      "end": 279.7344
+    },
+    {
+      "stanza": 36,
+      "wordIdx": 11,
+      "word": "lo",
+      "start": 279.7705,
+      "end": 279.8662
+    },
+    {
+      "stanza": 36,
+      "wordIdx": 12,
+      "word": "'nferno,",
+      "start": 279.8899,
+      "end": 280.6672
+    },
+    {
+      "stanza": 36,
+      "wordIdx": 13,
+      "word": "là",
+      "start": 280.8823,
+      "end": 281.1572
+    },
+    {
+      "stanza": 36,
+      "wordIdx": 14,
+      "word": "onde",
+      "start": 281.2046,
+      "end": 281.4795
+    },
+    {
+      "stanza": 36,
+      "wordIdx": 15,
+      "word": "'nvidia",
+      "start": 281.5031,
+      "end": 282.0416
+    },
+    {
+      "stanza": 36,
+      "wordIdx": 16,
+      "word": "prima",
+      "start": 282.1013,
+      "end": 282.4235
+    },
+    {
+      "stanza": 36,
+      "wordIdx": 17,
+      "word": "dipartilla.",
+      "start": 282.4719,
+      "end": 283.38
+    },
+    {
+      "stanza": 37,
+      "wordIdx": 0,
+      "word": "Ond'",
+      "start": 283.816,
+      "end": 284.0908
+    },
+    {
+      "stanza": 37,
+      "wordIdx": 1,
+      "word": "io",
+      "start": 284.1268,
+      "end": 284.3532
+    },
+    {
+      "stanza": 37,
+      "wordIdx": 2,
+      "word": "per",
+      "start": 284.4129,
+      "end": 284.5446
+    },
+    {
+      "stanza": 37,
+      "wordIdx": 3,
+      "word": "lo",
+      "start": 284.6043,
+      "end": 284.6877
+    },
+    {
+      "stanza": 37,
+      "wordIdx": 4,
+      "word": "tuo",
+      "start": 284.7474,
+      "end": 285.1426
+    },
+    {
+      "stanza": 37,
+      "wordIdx": 5,
+      "word": "me'",
+      "start": 285.4287,
+      "end": 285.5841
+    },
+    {
+      "stanza": 37,
+      "wordIdx": 6,
+      "word": "penso",
+      "start": 285.6201,
+      "end": 286.0266
+    },
+    {
+      "stanza": 37,
+      "wordIdx": 7,
+      "word": "e",
+      "start": 286.0503,
+      "end": 286.0739
+    },
+    {
+      "stanza": 37,
+      "wordIdx": 8,
+      "word": "discerno",
+      "start": 286.11,
+      "end": 286.6832
+    },
+    {
+      "stanza": 37,
+      "wordIdx": 9,
+      "word": "che",
+      "start": 286.7316,
+      "end": 286.8149
+    },
+    {
+      "stanza": 37,
+      "wordIdx": 10,
+      "word": "tu",
+      "start": 286.8746,
+      "end": 286.9703
+    },
+    {
+      "stanza": 37,
+      "wordIdx": 11,
+      "word": "mi",
+      "start": 287.03,
+      "end": 287.1134
+    },
+    {
+      "stanza": 37,
+      "wordIdx": 12,
+      "word": "segui,",
+      "start": 287.1731,
+      "end": 287.7587
+    },
+    {
+      "stanza": 37,
+      "wordIdx": 13,
+      "word": "e",
+      "start": 287.9738,
+      "end": 288.0931
+    },
+    {
+      "stanza": 37,
+      "wordIdx": 14,
+      "word": "io",
+      "start": 288.1168,
+      "end": 288.3206
+    },
+    {
+      "stanza": 37,
+      "wordIdx": 15,
+      "word": "sarò",
+      "start": 288.3803,
+      "end": 288.6067
+    },
+    {
+      "stanza": 37,
+      "wordIdx": 16,
+      "word": "tua",
+      "start": 288.6664,
+      "end": 288.8341
+    },
+    {
+      "stanza": 37,
+      "wordIdx": 17,
+      "word": "guida,",
+      "start": 288.8815,
+      "end": 289.4434
+    },
+    {
+      "stanza": 37,
+      "wordIdx": 18,
+      "word": "e",
+      "start": 289.5988,
+      "end": 289.6945
+    },
+    {
+      "stanza": 37,
+      "wordIdx": 19,
+      "word": "trarrotti",
+      "start": 289.7665,
+      "end": 290.3995
+    },
+    {
+      "stanza": 37,
+      "wordIdx": 20,
+      "word": "di",
+      "start": 290.4468,
+      "end": 290.5312
+    },
+    {
+      "stanza": 37,
+      "wordIdx": 21,
+      "word": "qui",
+      "start": 290.5909,
+      "end": 290.8657
+    },
+    {
+      "stanza": 37,
+      "wordIdx": 22,
+      "word": "per",
+      "start": 291.0448,
+      "end": 291.2362
+    },
+    {
+      "stanza": 37,
+      "wordIdx": 23,
+      "word": "loco",
+      "start": 291.3195,
+      "end": 291.5943
+    },
+    {
+      "stanza": 37,
+      "wordIdx": 24,
+      "word": "etterno;",
+      "start": 291.6303,
+      "end": 292.3713
+    },
+    {
+      "stanza": 38,
+      "wordIdx": 0,
+      "word": "ove",
+      "start": 292.8072,
+      "end": 293.0571
+    },
+    {
+      "stanza": 38,
+      "wordIdx": 1,
+      "word": "udirai",
+      "start": 293.0919,
+      "end": 293.5917
+    },
+    {
+      "stanza": 38,
+      "wordIdx": 2,
+      "word": "le",
+      "start": 293.6398,
+      "end": 293.7105
+    },
+    {
+      "stanza": 38,
+      "wordIdx": 3,
+      "word": "disperate",
+      "start": 293.7586,
+      "end": 294.3167
+    },
+    {
+      "stanza": 38,
+      "wordIdx": 4,
+      "word": "strida,",
+      "start": 294.3649,
+      "end": 294.9712
+    },
+    {
+      "stanza": 38,
+      "wordIdx": 5,
+      "word": "vedrai",
+      "start": 295.1494,
+      "end": 295.6491
+    },
+    {
+      "stanza": 38,
+      "wordIdx": 6,
+      "word": "li",
+      "start": 295.6962,
+      "end": 295.8038
+    },
+    {
+      "stanza": 38,
+      "wordIdx": 7,
+      "word": "antichi",
+      "start": 295.8386,
+      "end": 296.2667
+    },
+    {
+      "stanza": 38,
+      "wordIdx": 8,
+      "word": "spiriti",
+      "start": 296.3148,
+      "end": 296.707
+    },
+    {
+      "stanza": 38,
+      "wordIdx": 9,
+      "word": "dolenti,",
+      "start": 296.7542,
+      "end": 297.468
+    },
+    {
+      "stanza": 38,
+      "wordIdx": 10,
+      "word": "ch'a",
+      "start": 297.682,
+      "end": 297.8131
+    },
+    {
+      "stanza": 38,
+      "wordIdx": 11,
+      "word": "la",
+      "start": 297.8602,
+      "end": 297.9432
+    },
+    {
+      "stanza": 38,
+      "wordIdx": 12,
+      "word": "seconda",
+      "start": 298.0026,
+      "end": 298.4788
+    },
+    {
+      "stanza": 38,
+      "wordIdx": 13,
+      "word": "morte",
+      "start": 298.5382,
+      "end": 298.9663
+    },
+    {
+      "stanza": 38,
+      "wordIdx": 14,
+      "word": "ciascun",
+      "start": 299.0134,
+      "end": 299.5132
+    },
+    {
+      "stanza": 38,
+      "wordIdx": 15,
+      "word": "grida;",
+      "start": 299.5726,
+      "end": 300.1553
+    },
+    {
+      "stanza": 39,
+      "wordIdx": 0,
+      "word": "e",
+      "start": 300.6158,
+      "end": 300.6524
+    },
+    {
+      "stanza": 39,
+      "wordIdx": 1,
+      "word": "vederai",
+      "start": 300.7004,
+      "end": 301.0762
+    },
+    {
+      "stanza": 39,
+      "wordIdx": 2,
+      "word": "color",
+      "start": 301.1252,
+      "end": 301.3674
+    },
+    {
+      "stanza": 39,
+      "wordIdx": 3,
+      "word": "che",
+      "start": 301.4154,
+      "end": 301.501
+    },
+    {
+      "stanza": 39,
+      "wordIdx": 4,
+      "word": "son",
+      "start": 301.5491,
+      "end": 301.6942
+    },
+    {
+      "stanza": 39,
+      "wordIdx": 5,
+      "word": "contenti",
+      "start": 301.7547,
+      "end": 302.2276
+    },
+    {
+      "stanza": 39,
+      "wordIdx": 6,
+      "word": "nel",
+      "start": 302.2767,
+      "end": 302.3852
+    },
+    {
+      "stanza": 39,
+      "wordIdx": 7,
+      "word": "foco,",
+      "start": 302.4698,
+      "end": 302.9792
+    },
+    {
+      "stanza": 39,
+      "wordIdx": 8,
+      "word": "perché",
+      "start": 303.1368,
+      "end": 303.3915
+    },
+    {
+      "stanza": 39,
+      "wordIdx": 9,
+      "word": "speran",
+      "start": 303.4281,
+      "end": 303.7913
+    },
+    {
+      "stanza": 39,
+      "wordIdx": 10,
+      "word": "di",
+      "start": 303.8394,
+      "end": 303.8999
+    },
+    {
+      "stanza": 39,
+      "wordIdx": 11,
+      "word": "venire",
+      "start": 303.9364,
+      "end": 304.2997
+    },
+    {
+      "stanza": 39,
+      "wordIdx": 12,
+      "word": "quando",
+      "start": 304.3488,
+      "end": 304.591
+    },
+    {
+      "stanza": 39,
+      "wordIdx": 13,
+      "word": "che",
+      "start": 304.6275,
+      "end": 304.7246
+    },
+    {
+      "stanza": 39,
+      "wordIdx": 14,
+      "word": "sia",
+      "start": 304.7726,
+      "end": 304.9668
+    },
+    {
+      "stanza": 39,
+      "wordIdx": 15,
+      "word": "a",
+      "start": 305.0033,
+      "end": 305.0273
+    },
+    {
+      "stanza": 39,
+      "wordIdx": 16,
+      "word": "le",
+      "start": 305.0638,
+      "end": 305.1244
+    },
+    {
+      "stanza": 39,
+      "wordIdx": 17,
+      "word": "beate",
+      "start": 305.1849,
+      "end": 305.5002
+    },
+    {
+      "stanza": 39,
+      "wordIdx": 18,
+      "word": "genti.",
+      "start": 305.5482,
+      "end": 306.0816
+    },
+    {
+      "stanza": 40,
+      "wordIdx": 0,
+      "word": "A",
+      "start": 306.5291,
+      "end": 306.5775
+    },
+    {
+      "stanza": 40,
+      "wordIdx": 1,
+      "word": "le",
+      "start": 306.6497,
+      "end": 306.7209
+    },
+    {
+      "stanza": 40,
+      "wordIdx": 2,
+      "word": "quai",
+      "start": 306.7694,
+      "end": 307.02
+    },
+    {
+      "stanza": 40,
+      "wordIdx": 3,
+      "word": "poi",
+      "start": 307.0798,
+      "end": 307.2954
+    },
+    {
+      "stanza": 40,
+      "wordIdx": 4,
+      "word": "se",
+      "start": 307.3315,
+      "end": 307.4274
+    },
+    {
+      "stanza": 40,
+      "wordIdx": 5,
+      "word": "tu",
+      "start": 307.4872,
+      "end": 307.5831
+    },
+    {
+      "stanza": 40,
+      "wordIdx": 6,
+      "word": "vorrai",
+      "start": 307.643,
+      "end": 307.907
+    },
+    {
+      "stanza": 40,
+      "wordIdx": 7,
+      "word": "salire,",
+      "start": 307.9544,
+      "end": 308.5052
+    },
+    {
+      "stanza": 40,
+      "wordIdx": 8,
+      "word": "anima",
+      "start": 308.7569,
+      "end": 309.1642
+    },
+    {
+      "stanza": 40,
+      "wordIdx": 9,
+      "word": "fia",
+      "start": 309.2354,
+      "end": 309.5593
+    },
+    {
+      "stanza": 40,
+      "wordIdx": 10,
+      "word": "a",
+      "start": 309.6428,
+      "end": 309.7026
+    },
+    {
+      "stanza": 40,
+      "wordIdx": 11,
+      "word": "ciò",
+      "start": 309.7862,
+      "end": 309.9306
+    },
+    {
+      "stanza": 40,
+      "wordIdx": 12,
+      "word": "più",
+      "start": 309.9904,
+      "end": 310.0976
+    },
+    {
+      "stanza": 40,
+      "wordIdx": 13,
+      "word": "di",
+      "start": 310.1575,
+      "end": 310.2173
+    },
+    {
+      "stanza": 40,
+      "wordIdx": 14,
+      "word": "me",
+      "start": 310.2658,
+      "end": 310.3493
+    },
+    {
+      "stanza": 40,
+      "wordIdx": 15,
+      "word": "degna:",
+      "start": 310.3967,
+      "end": 310.9362
+    },
+    {
+      "stanza": 40,
+      "wordIdx": 16,
+      "word": "con",
+      "start": 311.3312,
+      "end": 311.4869
+    },
+    {
+      "stanza": 40,
+      "wordIdx": 17,
+      "word": "lei",
+      "start": 311.5591,
+      "end": 311.7262
+    },
+    {
+      "stanza": 40,
+      "wordIdx": 18,
+      "word": "ti",
+      "start": 311.7623,
+      "end": 311.8345
+    },
+    {
+      "stanza": 40,
+      "wordIdx": 19,
+      "word": "lascerò",
+      "start": 311.8819,
+      "end": 312.2769
+    },
+    {
+      "stanza": 40,
+      "wordIdx": 20,
+      "word": "nel",
+      "start": 312.3491,
+      "end": 312.4564
+    },
+    {
+      "stanza": 40,
+      "wordIdx": 21,
+      "word": "mio",
+      "start": 312.4925,
+      "end": 312.6121
+    },
+    {
+      "stanza": 40,
+      "wordIdx": 22,
+      "word": "partire;",
+      "start": 312.6606,
+      "end": 313.3547
+    },
+    {
+      "stanza": 41,
+      "wordIdx": 0,
+      "word": "ché",
+      "start": 313.8147,
+      "end": 313.9233
+    },
+    {
+      "stanza": 41,
+      "wordIdx": 1,
+      "word": "quello",
+      "start": 314.007,
+      "end": 314.2831
+    },
+    {
+      "stanza": 41,
+      "wordIdx": 2,
+      "word": "imperador",
+      "start": 314.3193,
+      "end": 314.8953
+    },
+    {
+      "stanza": 41,
+      "wordIdx": 3,
+      "word": "che",
+      "start": 314.9677,
+      "end": 315.0628
+    },
+    {
+      "stanza": 41,
+      "wordIdx": 4,
+      "word": "là",
+      "start": 315.1114,
+      "end": 315.1952
+    },
+    {
+      "stanza": 41,
+      "wordIdx": 5,
+      "word": "sù",
+      "start": 315.2552,
+      "end": 315.4351
+    },
+    {
+      "stanza": 41,
+      "wordIdx": 6,
+      "word": "regna,",
+      "start": 315.555,
+      "end": 316.1434
+    },
+    {
+      "stanza": 41,
+      "wordIdx": 7,
+      "word": "perch'",
+      "start": 316.3595,
+      "end": 316.6842
+    },
+    {
+      "stanza": 41,
+      "wordIdx": 8,
+      "word": "i'",
+      "start": 316.708,
+      "end": 316.7556
+    },
+    {
+      "stanza": 41,
+      "wordIdx": 9,
+      "word": "fu'",
+      "start": 316.8042,
+      "end": 317.0327
+    },
+    {
+      "stanza": 41,
+      "wordIdx": 10,
+      "word": "ribellante",
+      "start": 317.0679,
+      "end": 317.7162
+    },
+    {
+      "stanza": 41,
+      "wordIdx": 11,
+      "word": "a",
+      "start": 317.741,
+      "end": 317.7648
+    },
+    {
+      "stanza": 41,
+      "wordIdx": 12,
+      "word": "la",
+      "start": 317.801,
+      "end": 317.8848
+    },
+    {
+      "stanza": 41,
+      "wordIdx": 13,
+      "word": "sua",
+      "start": 317.9323,
+      "end": 318.1009
+    },
+    {
+      "stanza": 41,
+      "wordIdx": 14,
+      "word": "legge,",
+      "start": 318.1371,
+      "end": 318.6293
+    },
+    {
+      "stanza": 41,
+      "wordIdx": 15,
+      "word": "non",
+      "start": 318.8454,
+      "end": 319.0729
+    },
+    {
+      "stanza": 41,
+      "wordIdx": 16,
+      "word": "vuol",
+      "start": 319.1329,
+      "end": 319.349
+    },
+    {
+      "stanza": 41,
+      "wordIdx": 17,
+      "word": "che",
+      "start": 319.4214,
+      "end": 319.5176
+    },
+    {
+      "stanza": 41,
+      "wordIdx": 18,
+      "word": "'n",
+      "start": 319.5413,
+      "end": 319.5889
+    },
+    {
+      "stanza": 41,
+      "wordIdx": 19,
+      "word": "sua",
+      "start": 319.6737,
+      "end": 319.8898
+    },
+    {
+      "stanza": 41,
+      "wordIdx": 20,
+      "word": "città",
+      "start": 319.926,
+      "end": 320.3572
+    },
+    {
+      "stanza": 41,
+      "wordIdx": 21,
+      "word": "per",
+      "start": 320.4296,
+      "end": 320.5733
+    },
+    {
+      "stanza": 41,
+      "wordIdx": 22,
+      "word": "me",
+      "start": 320.6457,
+      "end": 320.7657
+    },
+    {
+      "stanza": 41,
+      "wordIdx": 23,
+      "word": "si",
+      "start": 320.8143,
+      "end": 320.9342
+    },
+    {
+      "stanza": 41,
+      "wordIdx": 24,
+      "word": "vegna.",
+      "start": 320.9818,
+      "end": 321.5102
+    },
+    {
+      "stanza": 42,
+      "wordIdx": 0,
+      "word": "In",
+      "start": 321.9462,
+      "end": 322.0653
+    },
+    {
+      "stanza": 42,
+      "wordIdx": 1,
+      "word": "tutte",
+      "start": 322.1249,
+      "end": 322.3868
+    },
+    {
+      "stanza": 42,
+      "wordIdx": 2,
+      "word": "parti",
+      "start": 322.4351,
+      "end": 322.7453
+    },
+    {
+      "stanza": 42,
+      "wordIdx": 3,
+      "word": "impera",
+      "start": 322.7689,
+      "end": 323.2815
+    },
+    {
+      "stanza": 42,
+      "wordIdx": 4,
+      "word": "e",
+      "start": 323.3647,
+      "end": 323.4366
+    },
+    {
+      "stanza": 42,
+      "wordIdx": 5,
+      "word": "quivi",
+      "start": 323.5198,
+      "end": 323.8659
+    },
+    {
+      "stanza": 42,
+      "wordIdx": 6,
+      "word": "regge;",
+      "start": 323.9132,
+      "end": 324.4976
+    },
+    {
+      "stanza": 42,
+      "wordIdx": 7,
+      "word": "quivi",
+      "start": 324.7483,
+      "end": 325.118
+    },
+    {
+      "stanza": 42,
+      "wordIdx": 8,
+      "word": "è",
+      "start": 325.1663,
+      "end": 325.1899
+    },
+    {
+      "stanza": 42,
+      "wordIdx": 9,
+      "word": "la",
+      "start": 325.2372,
+      "end": 325.3204
+    },
+    {
+      "stanza": 42,
+      "wordIdx": 10,
+      "word": "sua",
+      "start": 325.3687,
+      "end": 325.5474
+    },
+    {
+      "stanza": 42,
+      "wordIdx": 11,
+      "word": "città",
+      "start": 325.5833,
+      "end": 326.0486
+    },
+    {
+      "stanza": 42,
+      "wordIdx": 12,
+      "word": "e",
+      "start": 326.2274,
+      "end": 326.3229
+    },
+    {
+      "stanza": 42,
+      "wordIdx": 13,
+      "word": "l'alto",
+      "start": 326.4184,
+      "end": 326.7163
+    },
+    {
+      "stanza": 42,
+      "wordIdx": 14,
+      "word": "seggio:",
+      "start": 326.7759,
+      "end": 327.348
+    },
+    {
+      "stanza": 42,
+      "wordIdx": 15,
+      "word": "oh",
+      "start": 327.5267,
+      "end": 327.6818
+    },
+    {
+      "stanza": 42,
+      "wordIdx": 16,
+      "word": "felice",
+      "start": 327.7414,
+      "end": 328.1944
+    },
+    {
+      "stanza": 42,
+      "wordIdx": 17,
+      "word": "colui",
+      "start": 328.2427,
+      "end": 328.5888
+    },
+    {
+      "stanza": 42,
+      "wordIdx": 18,
+      "word": "cu'",
+      "start": 328.6361,
+      "end": 328.7788
+    },
+    {
+      "stanza": 42,
+      "wordIdx": 19,
+      "word": "ivi",
+      "start": 328.8148,
+      "end": 329.1014
+    },
+    {
+      "stanza": 42,
+      "wordIdx": 20,
+      "word": "elegge!».",
+      "start": 329.125,
+      "end": 329.805
+    },
+    {
+      "stanza": 43,
+      "wordIdx": 0,
+      "word": "E",
+      "start": 330.2411,
+      "end": 330.3246
+    },
+    {
+      "stanza": 43,
+      "wordIdx": 1,
+      "word": "io",
+      "start": 330.4442,
+      "end": 330.6236
+    },
+    {
+      "stanza": 43,
+      "wordIdx": 2,
+      "word": "a",
+      "start": 330.6833,
+      "end": 330.7081
+    },
+    {
+      "stanza": 43,
+      "wordIdx": 3,
+      "word": "lui:",
+      "start": 330.7679,
+      "end": 331.2339
+    },
+    {
+      "stanza": 43,
+      "wordIdx": 4,
+      "word": "<<Poeta,",
+      "start": 331.3658,
+      "end": 332.1916
+    },
+    {
+      "stanza": 43,
+      "wordIdx": 5,
+      "word": "io",
+      "start": 332.371,
+      "end": 332.5865
+    },
+    {
+      "stanza": 43,
+      "wordIdx": 6,
+      "word": "ti",
+      "start": 332.6463,
+      "end": 332.7184
+    },
+    {
+      "stanza": 43,
+      "wordIdx": 7,
+      "word": "richeggio",
+      "start": 332.7669,
+      "end": 333.1968
+    },
+    {
+      "stanza": 43,
+      "wordIdx": 8,
+      "word": "per",
+      "start": 333.2453,
+      "end": 333.3525
+    },
+    {
+      "stanza": 43,
+      "wordIdx": 9,
+      "word": "quello",
+      "start": 333.4123,
+      "end": 333.6762
+    },
+    {
+      "stanza": 43,
+      "wordIdx": 10,
+      "word": "Dio",
+      "start": 333.7597,
+      "end": 334.035
+    },
+    {
+      "stanza": 43,
+      "wordIdx": 11,
+      "word": "che",
+      "start": 334.0711,
+      "end": 334.1669
+    },
+    {
+      "stanza": 43,
+      "wordIdx": 12,
+      "word": "tu",
+      "start": 334.2267,
+      "end": 334.3463
+    },
+    {
+      "stanza": 43,
+      "wordIdx": 13,
+      "word": "non",
+      "start": 334.4061,
+      "end": 334.502
+    },
+    {
+      "stanza": 43,
+      "wordIdx": 14,
+      "word": "conoscesti,",
+      "start": 334.5618,
+      "end": 335.4597
+    },
+    {
+      "stanza": 43,
+      "wordIdx": 15,
+      "word": "acciò",
+      "start": 335.6391,
+      "end": 335.9742
+    },
+    {
+      "stanza": 43,
+      "wordIdx": 16,
+      "word": "ch'io",
+      "start": 336.0216,
+      "end": 336.2495
+    },
+    {
+      "stanza": 43,
+      "wordIdx": 17,
+      "word": "fugga",
+      "start": 336.2969,
+      "end": 336.6082
+    },
+    {
+      "stanza": 43,
+      "wordIdx": 18,
+      "word": "questo",
+      "start": 336.6567,
+      "end": 336.9196
+    },
+    {
+      "stanza": 43,
+      "wordIdx": 19,
+      "word": "male",
+      "start": 336.9794,
+      "end": 337.3392
+    },
+    {
+      "stanza": 43,
+      "wordIdx": 20,
+      "word": "e",
+      "start": 337.5186,
+      "end": 337.6381
+    },
+    {
+      "stanza": 43,
+      "wordIdx": 21,
+      "word": "peggio,",
+      "start": 337.7577,
+      "end": 338.332
+    },
+    {
+      "stanza": 44,
+      "wordIdx": 0,
+      "word": "che",
+      "start": 338.8042,
+      "end": 338.9239
+    },
+    {
+      "stanza": 44,
+      "wordIdx": 1,
+      "word": "tu",
+      "start": 339.0199,
+      "end": 339.1509
+    },
+    {
+      "stanza": 44,
+      "wordIdx": 2,
+      "word": "mi",
+      "start": 339.2231,
+      "end": 339.3067
+    },
+    {
+      "stanza": 44,
+      "wordIdx": 3,
+      "word": "meni",
+      "start": 339.3666,
+      "end": 339.5822
+    },
+    {
+      "stanza": 44,
+      "wordIdx": 4,
+      "word": "là",
+      "start": 339.6307,
+      "end": 339.8464
+    },
+    {
+      "stanza": 44,
+      "wordIdx": 5,
+      "word": "dov'",
+      "start": 339.9299,
+      "end": 340.1332
+    },
+    {
+      "stanza": 44,
+      "wordIdx": 6,
+      "word": "or",
+      "start": 340.158,
+      "end": 340.2292
+    },
+    {
+      "stanza": 44,
+      "wordIdx": 7,
+      "word": "dicesti,",
+      "start": 340.3014,
+      "end": 341.0557
+    },
+    {
+      "stanza": 44,
+      "wordIdx": 8,
+      "word": "sì",
+      "start": 341.2352,
+      "end": 341.4395
+    },
+    {
+      "stanza": 44,
+      "wordIdx": 9,
+      "word": "ch'io",
+      "start": 341.5231,
+      "end": 341.6913
+    },
+    {
+      "stanza": 44,
+      "wordIdx": 10,
+      "word": "veggia",
+      "start": 341.7388,
+      "end": 342.0628
+    },
+    {
+      "stanza": 44,
+      "wordIdx": 11,
+      "word": "la",
+      "start": 342.1102,
+      "end": 342.1701
+    },
+    {
+      "stanza": 44,
+      "wordIdx": 12,
+      "word": "porta",
+      "start": 342.2299,
+      "end": 342.5539
+    },
+    {
+      "stanza": 44,
+      "wordIdx": 13,
+      "word": "di",
+      "start": 342.589,
+      "end": 342.6613
+    },
+    {
+      "stanza": 44,
+      "wordIdx": 14,
+      "word": "san",
+      "start": 342.7097,
+      "end": 342.8408
+    },
+    {
+      "stanza": 44,
+      "wordIdx": 15,
+      "word": "Pietro",
+      "start": 342.913,
+      "end": 343.3918
+    },
+    {
+      "stanza": 44,
+      "wordIdx": 16,
+      "word": "e",
+      "start": 343.5476,
+      "end": 343.6673
+    },
+    {
+      "stanza": 44,
+      "wordIdx": 17,
+      "word": "color",
+      "start": 343.7272,
+      "end": 344.0873
+    },
+    {
+      "stanza": 44,
+      "wordIdx": 18,
+      "word": "cui",
+      "start": 344.1585,
+      "end": 344.3143
+    },
+    {
+      "stanza": 44,
+      "wordIdx": 19,
+      "word": "tu",
+      "start": 344.3504,
+      "end": 344.434
+    },
+    {
+      "stanza": 44,
+      "wordIdx": 20,
+      "word": "fai",
+      "start": 344.5186,
+      "end": 344.7456
+    },
+    {
+      "stanza": 44,
+      "wordIdx": 21,
+      "word": "cotanto",
+      "start": 344.7941,
+      "end": 345.2729
+    },
+    {
+      "stanza": 44,
+      "wordIdx": 22,
+      "word": "mesti».",
+      "start": 345.3327,
+      "end": 345.8837
+    },
+    {
+      "stanza": 45,
+      "wordIdx": 0,
+      "word": "Allor",
+      "start": 346.335,
+      "end": 346.6207
+    },
+    {
+      "stanza": 45,
+      "wordIdx": 1,
+      "word": "si",
+      "start": 346.6854,
+      "end": 346.7891
+    },
+    {
+      "stanza": 45,
+      "wordIdx": 2,
+      "word": "mosse,",
+      "start": 346.8539,
+      "end": 347.4106
+    },
+    {
+      "stanza": 45,
+      "wordIdx": 3,
+      "word": "e",
+      "start": 347.54,
+      "end": 347.6304
+    },
+    {
+      "stanza": 45,
+      "wordIdx": 4,
+      "word": "io",
+      "start": 347.6695,
+      "end": 347.7989
+    },
+    {
+      "stanza": 45,
+      "wordIdx": 5,
+      "word": "li",
+      "start": 347.8379,
+      "end": 347.916
+    },
+    {
+      "stanza": 45,
+      "wordIdx": 6,
+      "word": "tenni",
+      "start": 347.9551,
+      "end": 348.1883
+    },
+    {
+      "stanza": 45,
+      "wordIdx": 7,
+      "word": "dietro.",
+      "start": 348.2396,
+      "end": 348.745
+    }
+  ]
+}
